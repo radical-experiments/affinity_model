@@ -1,4 +1,5 @@
 from pprint import pprint
+from operator import itemgetter
 import json
 import sys
 
@@ -268,14 +269,14 @@ def read_res_list(filename):
 def satisfy_form(req, cap):
 
     for attr in req['form'].keys():
-        if (isinstance(req['form'][attr], str) and isinstance(cap['form'][attr], str)) \
-            (isinstance(req['form'][attr], unicode) and isinstance(cap['form'][attr], unicode):
-            if req[attr] != cap[attr]:
+        if (isinstance(req['form'][attr], str) and isinstance(cap['form'][attr], str)) or \
+            (isinstance(req['form'][attr], unicode) and isinstance(cap['form'][attr], unicode)):
+            if req['form'][attr] != cap['form'][attr]:
                 return False
             else:
                 pass
         elif isinstance(req['form'][attr], int) and isinstance(cap['form'][attr], int):
-            if req[attr] > cap[attr]:
+            if req['form'][attr] > cap['form'][attr]:
                 return False
             else:
                 pass
@@ -294,7 +295,7 @@ def satisfy_task(res, task):
             if req['type'] == cap['type']:
                 if satisfy_form(req, cap) == True:
                     match = 1
-            if match = 0:
+            if match == 0:
                 return False
     # Resource capabilities can satisfy all task requirements
     return True
@@ -307,7 +308,7 @@ def satisfy_wkd(wkd, res_list):
         for res_id, res in res_list.iteritems():
             if satisfy_task(res, task) == True:
                 match = 1
-        if match = 0:
+        if match == 0:
             return False
     # There is at least one resource in res_list which can run each task in wkd        
     return True
@@ -316,40 +317,37 @@ def satisfy_wkd(wkd, res_list):
 ############################################################################################
 
 
-def max_execution_time(res, task):
+def max_execution_time(task, res):
 
-    exec_time = 0
+    exec_time = 0.
 
-    for req in task:
-        for cap in res:
-            if req['type'] == cap['type']:
-                for attr in req['form'].keys():
-                    if satisfy_form(req, cap) == True:
-                        exec_time += req['amount'] / cap['rate']
-
-    return exec_time
-
-
-def min_execution_time(res, task)
-
-    exec_time = 0
-
-    for req in task:
-        tmp_exec_time = 0
-        for cap in res:
-            if req['type'] == cap['type']:
-                for attr in req['form'].keys():
-                    if satisfy_form(req, cap) == True:
-                        tmp_exec_time = req['amount'] / cap['rate']
-                    if tmp_exec_time > exec_time:
-                        exec_time = tmp_exec_time
+    for req in range(len(task)):
+        for cap in range(req, len(res)):
+            if task[req]['type'] == res[cap]['type']:
+                if satisfy_form(task[req], res[cap]) == True:
+                    exec_time += float(task[req]['amount']) / float(res[cap]['rate'])
 
     return exec_time
 
 
-def affinity(task, res, exec_time_metric):
-    
-    return exec_time_metric(res, task)
+def min_execution_time(task, res):
+
+    exec_time = 0.
+
+    for req in range(len(task)):
+        tmp_exec_time = 0.
+        for cap in range(req, len(res)):
+            if task[req]['type'] == res[cap]['type']:
+                if satisfy_form(task[req], res[cap]) == True:
+                    tmp_exec_time = float(task[req]['amount']) / float(res[cap]['rate'])
+                if tmp_exec_time > exec_time:
+                    exec_time = tmp_exec_time
+
+    return exec_time
+
+
+def affinity(task, res, exec_time_metric):    
+    return exec_time_metric(task, res)
 
 
 
@@ -359,7 +357,7 @@ def res_select(task, viable_res_list,  exec_time_metric):
     best_res_aff = -1000000000      #Suppose to represent minus infinity
 
     for res_id, res in viable_res_list.iteritems():
-        res_aff = affinity(res, task, exec_time_metric)
+        res_aff = affinity(task, res, exec_time_metric)
         if res_aff > best_res_aff:
             best_res_aff = res_aff
             best_res = res_id
@@ -367,14 +365,55 @@ def res_select(task, viable_res_list,  exec_time_metric):
     return best_res
 
 
+def res_select_rank(task, viable_res_list,  exec_time_metric):
+
+    res_aff_list = list()
+
+    for res_id, res in viable_res_list.iteritems():
+        res_aff = affinity(task, res, exec_time_metric)
+        res_aff_list.append([res_id, res_aff])
+        
+    res_aff_list = sorted(res_aff_list, key=itemgetter(1))
+
+    return res_aff_list
+
+
+def wkd_res_select_rank(wkd, viable_res_list, exec_time_metric):
+
+    wkd_aff_dict = dict()
+
+    for task_id, task in wkd.iteritems():
+        wkd_aff_dict[task_id] = res_select_rank(task, viable_res_list, exec_time_metric)
+
+    print wkd_aff_dict
+
+
 ############################################################################################
 
 if __name__ == "__main__":
 
-    fname = sys.argv[1]
-    #wkd = read_workload(fname)
+    wname = sys.argv[1]
+    rname = sys.argv[2]
+    wkd = read_workload(wname)
     #pprint(wkd)
-    #res_list = read_res_list(fname)
+    res_list = read_res_list(rname)
     #pprint(res_list)
 
+    max_tx1 = max_execution_time(wkd['task_1'], res_list['res_1'])
+    min_tx1 = min_execution_time(wkd['task_1'], res_list['res_1'])
+    print max_tx1
+    print min_tx1
 
+    max_tx2 = max_execution_time(wkd['task_1'], res_list['res_2'])
+    min_tx2 = min_execution_time(wkd['task_1'], res_list['res_2'])
+    print max_tx2
+    print min_tx2
+
+    print affinity(wkd['task_1'], res_list['res_1'], max_execution_time)
+    print affinity(wkd['task_1'], res_list['res_1'], min_execution_time)
+
+    print res_select_rank(wkd['task_1'], res_list, max_execution_time)
+    print res_select_rank(wkd['task_2'], res_list, max_execution_time)
+
+    pprint(wkd_res_select_rank(wkd, res_list, max_execution_time))
+    pprint(wkd_res_select_rank(wkd, res_list, min_execution_time))
