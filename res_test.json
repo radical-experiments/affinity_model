@@ -1,0 +1,78 @@
+{
+    "res_1" : [
+           { 
+            "rate"    : 1000000000,
+            "type"      : "compute",
+            "form"      : {
+                "num_threads"   : 16,
+                "ISA"           : "x86_64" 
+            }
+        },
+        
+        {
+            "rate"    : 100000,
+            "type"      : "memory",
+            "form"      : {
+                "max_mem"       : 16000000000,
+                "device"        : "RAM"
+            }
+        },
+
+        {
+            "rate"    : 1000,
+            "type"      : "network",
+            "form"      : {
+                "L2_protocol"   : "Ethernet",
+                "direction"     : "DL"
+            }
+        },
+
+        {
+            "rate"    : 10000,
+            "type"      : "memory",
+            "form"      : {
+                "max_mem"       : 100000000000,
+                "device"        : "hard disk"
+            }
+
+        }
+    ],
+    "res_2" : [
+           { 
+            "rate"    : 250000000,
+            "type"      : "compute",
+            "form"      : {
+                "num_threads"   : 2,
+                "ISA"           : "x86_64" 
+            }
+        },
+        
+        {
+            "rate"    : 10000000,
+            "type"      : "memory",
+            "form"      : {
+                "max_mem"       : 1000000,
+                "device"        : "RAM"
+            }
+        },
+
+        {
+            "rate"    : 1000000,
+            "type"      : "network",
+            "form"      : {
+                "L2_protocol"   : "Ethernet",
+                "direction"     : "UL"
+            }
+        },
+
+        {
+            "rate"    : 1000,
+            "type"      : "memory",
+            "form"      : {
+                "max_mem"       : 1000000,
+                "device"        : "hard disk"
+            }
+
+        }
+    ]
+}
