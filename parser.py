@@ -392,13 +392,17 @@ def wkd_res_select_rank(wkd, viable_res_list, exec_time_metric):
 
 if __name__ == "__main__":
 
+    if len(sys.argv) != 3:
+        print "usage parser.py <workload>.json <resource_list>.json"
+        exit()
+
     wname = sys.argv[1]
     rname = sys.argv[2]
     wkd = read_workload(wname)
     #pprint(wkd)
     res_list = read_res_list(rname)
     #pprint(res_list)
-
+    """
     max_tx1 = max_execution_time(wkd['task_1'], res_list['res_1'])
     min_tx1 = min_execution_time(wkd['task_1'], res_list['res_1'])
     print max_tx1
@@ -414,6 +418,7 @@ if __name__ == "__main__":
 
     print res_select_rank(wkd['task_1'], res_list, max_execution_time)
     print res_select_rank(wkd['task_2'], res_list, max_execution_time)
+    """
 
     pprint(wkd_res_select_rank(wkd, res_list, max_execution_time))
     pprint(wkd_res_select_rank(wkd, res_list, min_execution_time))
