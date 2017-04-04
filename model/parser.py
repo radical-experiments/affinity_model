@@ -1,5 +1,6 @@
 from pprint import pprint
 from operator import itemgetter
+import csv
 import json
 import sys
 
@@ -385,7 +386,20 @@ def wkd_res_select_rank(wkd, viable_res_list, exec_time_metric):
     for task_id, task in wkd.iteritems():
         wkd_aff_dict[task_id] = res_select_rank(task, viable_res_list, exec_time_metric)
 
-    print wkd_aff_dict
+    return wkd_aff_dict
+
+
+def write_predictions(wkd_aff_dict, opt_name=""):
+
+    for task_name, task_pred_l in wkd_aff_dict.iteritems():
+        opt_name = "_"  + opt_name
+        fname = task_name + "_" + "aff_pred" + opt_name + ".csv"
+
+    with open(fname, "wb") as csvfile:
+        c = csv.writer(csvfile)
+        for task_pred in task_pred_l:
+            c.writerow(task_pred)
+    pass
 
 
 ############################################################################################
@@ -420,5 +434,11 @@ if __name__ == "__main__":
     print res_select_rank(wkd['task_2'], res_list, max_execution_time)
     """
 
-    pprint(wkd_res_select_rank(wkd, res_list, max_execution_time))
-    pprint(wkd_res_select_rank(wkd, res_list, min_execution_time))
+    max_tx_rank = wkd_res_select_rank(wkd, res_list, max_execution_time)
+    min_tx_rank = wkd_res_select_rank(wkd, res_list, min_execution_time)
+
+    pprint(max_tx_rank)
+    pprint(min_tx_rank)
+
+    write_predictions(max_tx_rank, opt_name="max_tx")
+    write_predictions(min_tx_rank, opt_name="min_tx")
