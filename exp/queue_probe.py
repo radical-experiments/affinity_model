@@ -6,7 +6,7 @@ import radical.pilot as rp
 import saga.url as surl
 import saga.utils.pty_shell as sups
 
-SAMPLE_SIZE = 1
+SAMPLE_SIZE = 20
 WALLTIME = 60   #In minutes
 OVERHEAD = 5    #Overhead incurred throughout the process
 CORES = 1024
