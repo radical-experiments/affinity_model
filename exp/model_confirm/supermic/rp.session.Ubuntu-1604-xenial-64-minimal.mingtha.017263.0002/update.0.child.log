@@ -1,0 +1,51 @@
+2017-04-07 19:19:30,131: update.0.child      : update.0                        : update.0.child.subscriber: ERROR   : bulk exec error: {'nModified': 88, 'nUpserted': 0, 'nMatched': 88, 'writeErrors': [{u'index': 88, u'code': 12501, u'errmsg': u'quota exceeded', u'op': SON([('q', {'type': 'unit', 'uid': 'unit.000998'}), ('u', {'$set': {'state': 'AGENT_STAGING_INPUT', 'type': 'unit', 'uid': 'unit.000998'}, '$push': {'states': 'AGENT_STAGING_INPUT'}}), ('multi', True), ('upsert', False)])}], 'upserted': [], 'writeConcernErrors': [], 'nRemoved': 0, 'nInserted': 0}
+Traceback (most recent call last):
+  File "/home/mingtha/ve/ve.exec_model_exp/local/lib/python2.7/site-packages/radical/pilot/worker/update.py", line 97, in _timed_bulk_execute
+    res = self._bulk.execute()
+  File "/home/mingtha/ve/ve.exec_model_exp/local/lib/python2.7/site-packages/pymongo/bulk.py", line 587, in execute
+    return self.__bulk.execute(write_concern)
+  File "/home/mingtha/ve/ve.exec_model_exp/local/lib/python2.7/site-packages/pymongo/bulk.py", line 433, in execute
+    return self.execute_command(generator, write_concern)
+  File "/home/mingtha/ve/ve.exec_model_exp/local/lib/python2.7/site-packages/pymongo/bulk.py", line 300, in execute_command
+    raise BulkWriteError(full_result)
+BulkWriteError: batch op errors occurred
+2017-04-07 19:19:30,132: update.0.child      : update.0                        : update.0.child.subscriber: ERROR   : subscriber failed update.0.child.subscriber
+Traceback (most recent call last):
+  File "/home/mingtha/ve/ve.exec_model_exp/local/lib/python2.7/site-packages/radical/pilot/utils/component.py", line 1199, in _subscriber
+    callback(topic=topic, msg=m)
+  File "/home/mingtha/ve/ve.exec_model_exp/local/lib/python2.7/site-packages/radical/pilot/worker/update.py", line 250, in _state_cb
+    self._timed_bulk_execute()
+  File "/home/mingtha/ve/ve.exec_model_exp/local/lib/python2.7/site-packages/radical/pilot/worker/update.py", line 97, in _timed_bulk_execute
+    res = self._bulk.execute()
+  File "/home/mingtha/ve/ve.exec_model_exp/local/lib/python2.7/site-packages/pymongo/bulk.py", line 587, in execute
+    return self.__bulk.execute(write_concern)
+  File "/home/mingtha/ve/ve.exec_model_exp/local/lib/python2.7/site-packages/pymongo/bulk.py", line 433, in execute
+    return self.execute_command(generator, write_concern)
+  File "/home/mingtha/ve/ve.exec_model_exp/local/lib/python2.7/site-packages/pymongo/bulk.py", line 300, in execute_command
+    raise BulkWriteError(full_result)
+BulkWriteError: batch op errors occurred
+2017-04-07 19:19:32,496: update.0.child      : update.0                        : update.0.child.idler._idle_cb: ERROR   : mongodb error: Bulk operations can only be executed once.
+Traceback (most recent call last):
+  File "/home/mingtha/ve/ve.exec_model_exp/local/lib/python2.7/site-packages/radical/pilot/worker/update.py", line 97, in _timed_bulk_execute
+    res = self._bulk.execute()
+  File "/home/mingtha/ve/ve.exec_model_exp/local/lib/python2.7/site-packages/pymongo/bulk.py", line 587, in execute
+    return self.__bulk.execute(write_concern)
+  File "/home/mingtha/ve/ve.exec_model_exp/local/lib/python2.7/site-packages/pymongo/bulk.py", line 418, in execute
+    raise InvalidOperation('Bulk operations can '
+InvalidOperation: Bulk operations can only be executed once.
+2017-04-07 19:19:32,497: update.0.child      : update.0                        : update.0.child.idler._idle_cb: ERROR   : TERM : update.0.child idler failed update.0.child.idler._idle_cb
+Traceback (most recent call last):
+  File "/home/mingtha/ve/ve.exec_model_exp/local/lib/python2.7/site-packages/radical/pilot/utils/component.py", line 1055, in _idler
+    callback()
+  File "/home/mingtha/ve/ve.exec_model_exp/local/lib/python2.7/site-packages/radical/pilot/worker/update.py", line 133, in _idle_cb
+    return self._timed_bulk_execute()
+  File "/home/mingtha/ve/ve.exec_model_exp/local/lib/python2.7/site-packages/radical/pilot/worker/update.py", line 97, in _timed_bulk_execute
+    res = self._bulk.execute()
+  File "/home/mingtha/ve/ve.exec_model_exp/local/lib/python2.7/site-packages/pymongo/bulk.py", line 587, in execute
+    return self.__bulk.execute(write_concern)
+  File "/home/mingtha/ve/ve.exec_model_exp/local/lib/python2.7/site-packages/pymongo/bulk.py", line 418, in execute
+    raise InvalidOperation('Bulk operations can '
+InvalidOperation: Bulk operations can only be executed once.
+2017-04-07 19:19:33,138: update.0.child      : update.0                        : update.0.child.idler._thread_watcher_cb: ERROR   : TERM : update.0.child idler update.0.child.idler._idle_cb died
+2017-04-07 19:19:33,225: update.0.child      : update.0                        : MainThread     : ERROR   : TERM : update.0.child run intr
+2017-04-07 19:19:33,225: update.0.child      : update.0                        : MainThread     : ERROR   : TERM : update.0.child run final
