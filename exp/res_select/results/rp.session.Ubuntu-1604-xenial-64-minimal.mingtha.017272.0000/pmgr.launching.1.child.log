@@ -1,0 +1,21 @@
+2017-04-16 19:04:37,993: pmgr.launching.1.child: pmgr.launching.1                : MainThread     : ERROR   : bulk launch failed
+Traceback (most recent call last):
+  File "/home/mingtha/ve/ve.exec_model_exp/local/lib/python2.7/site-packages/radical/pilot/pmgr/launching/default.py", line 298, in work
+    self._start_pilot_bulk(resource, schema, pilots)
+  File "/home/mingtha/ve/ve.exec_model_exp/local/lib/python2.7/site-packages/radical/pilot/pmgr/launching/default.py", line 374, in _start_pilot_bulk
+    session_sandbox = self._session._get_session_sandbox(pilots[0]).path
+  File "/home/mingtha/ve/ve.exec_model_exp/local/lib/python2.7/site-packages/radical/pilot/session.py", line 809, in _get_session_sandbox
+    global_sandbox  = self._get_global_sandbox(pilot)
+  File "/home/mingtha/ve/ve.exec_model_exp/local/lib/python2.7/site-packages/radical/pilot/session.py", line 774, in _get_global_sandbox
+    shell = rsup.PTYShell(js_url, self)
+  File "/home/mingtha/ve/ve.exec_model_exp/local/lib/python2.7/site-packages/saga/utils/pty_shell.py", line 247, in __init__
+    interactive=self.interactive)
+  File "/home/mingtha/ve/ve.exec_model_exp/local/lib/python2.7/site-packages/saga/utils/pty_shell_factory.py", line 198, in initialize
+    self._initialize_pty (info['pty'], info)
+  File "/home/mingtha/ve/ve.exec_model_exp/local/lib/python2.7/site-packages/saga/utils/pty_shell_factory.py", line 413, in _initialize_pty
+    raise ptye.translate_exception (e)
+PermissionDenied: read from process failed '[Errno 5] Input/output error' : (Permission denied (gssapi-keyex,gssapi-with-mic).
+) ((Permission denied (gssapi-keyex,gssapi-with-mic).
+)) (/home/mingtha/ve/ve.exec_model_exp/local/lib/python2.7/site-packages/saga/utils/pty_exceptions.py +61 (translate_exception)  :  e = se.PermissionDenied (cmsg))
+2017-04-16 19:55:25,213: pmgr.launching.1.child: pmgr.launching.1                : MainThread     : ERROR   : TERM : pmgr.launching.1.child run intr
+2017-04-16 19:55:25,213: pmgr.launching.1.child: pmgr.launching.1                : MainThread     : ERROR   : TERM : pmgr.launching.1.child run final

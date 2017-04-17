@@ -4,8 +4,6 @@ import json
 import random
 from pprint import pprint
 import radical.pilot as rp
-import saga.url as surl
-import saga.utils.pty_shell as sups
 
 SAMPLE_SIZE = 1
 WALLTIME = 60   #In minutes
@@ -13,16 +11,6 @@ OVERHEAD = 5    #Overhead incurred throughout the process
 CORES = 20
 UTIL = 1        #Percent of Cores Utilized
 
-def job_select():
-    pass    
-
-'''
-if sys.argv[1] == "stampede" or sys.argv[1] == "gordon" or sys.argv[1] == "comet" or sys.argv[1] == "supermic":
-    res = sys.argv[1]
-    random.seed()
-else:
-    sys.exit()
-'''
 
 for run in range(SAMPLE_SIZE):
 
@@ -43,7 +31,8 @@ for run in range(SAMPLE_SIZE):
         session_id = session.uid
 
         print "Initializing pmgrs, pilots, units\n"
-        pmgr_list = [rp.PilotManager(session=session) for i in range(num_pilots)]
+        #pmgr_list = [rp.PilotManager(session=session) for i in range(num_pilots)]
+        pmgr = rp.PilotManager(session=session)
         umgr_list = [rp.UnitManager(session=session) for i in range(num_pilots)]
         pilot_list = ["" for i in range(num_pilots)]
 
@@ -68,7 +57,7 @@ for run in range(SAMPLE_SIZE):
             pdescs.append(rp.ComputePilotDescription(pd_init))
 
             # Associating pilot i with pmgr i
-            pilot_list[i] = pmgr_list[i].submit_pilots(pdescs)
+            pilot_list[i] = pmgr.submit_pilots(pdescs)
     
             # Associating pilot i with umgr i
             umgr_list[i].add_pilots(pilot_list[i])
@@ -95,6 +84,9 @@ for run in range(SAMPLE_SIZE):
         # Otherwise, the function returns.
         for i in range(num_pilots):
             umgr_list[i].wait_units()
+
+        print "Waiting for pilots to return (land) gracefully\n"
+        pmgr.wait_pilots()
 
 
     except Exception as e:

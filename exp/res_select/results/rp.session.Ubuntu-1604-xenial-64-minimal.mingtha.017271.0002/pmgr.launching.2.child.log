@@ -1,0 +1,19 @@
+2017-04-16 13:25:52,024: pmgr.launching.2.child: pmgr.launching.2                : pmgr.launching.2.child.idler._pilot_watcher_cb: ERROR   : TERM : pmgr.launching.2.child idler failed pmgr.launching.2.child.idler._pilot_watcher_cb
+Traceback (most recent call last):
+  File "/home/mingtha/ve/ve.exec_model_exp/local/lib/python2.7/site-packages/radical/pilot/utils/component.py", line 1055, in _idler
+    callback()
+  File "/home/mingtha/ve/ve.exec_model_exp/local/lib/python2.7/site-packages/radical/pilot/pmgr/launching/default.py", line 180, in _pilot_watcher_cb
+    states = tc.get_states()
+  File "/home/mingtha/ve/ve.exec_model_exp/local/lib/python2.7/site-packages/saga/task.py", line 630, in get_states
+    raise future.exception
+NoSuccess: Error getting the job state for job 8426655:
+read from process failed '[Errno 5] Input/output error' : (tstrap_1.err
+   StdIn=/dev/null
+   StdOut=/work/03662/tg829619/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017271.0002/pilot.0002//bootstrap_1.out
+   Power= SICP=0
+
+PROMPT-0->Shared connection to stampede.tacc.utexas.edu closed.
+) (/home/mingtha/ve/ve.exec_model_exp/local/lib/python2.7/site-packages/saga/utils/pty_process.py +679 (read)  :  % (e, self.tail))) (/home/mingtha/ve/ve.exec_model_exp/local/lib/python2.7/site-packages/saga/adaptors/slurm/slurm_job.py +1022 (_job_get_state)  :  "job %s:\n%s"%(pid,ex)))
+2017-04-16 13:25:52,620: pmgr.launching.2.child: pmgr.launching.2                : pmgr.launching.2.child.idler._thread_watcher_cb: ERROR   : TERM : pmgr.launching.2.child idler pmgr.launching.2.child.idler._pilot_watcher_cb died
+2017-04-16 13:25:53,313: pmgr.launching.2.child: pmgr.launching.2                : MainThread     : ERROR   : TERM : pmgr.launching.2.child run intr
+2017-04-16 13:25:53,313: pmgr.launching.2.child: pmgr.launching.2                : MainThread     : ERROR   : TERM : pmgr.launching.2.child run final
