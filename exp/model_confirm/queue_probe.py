@@ -57,7 +57,8 @@ for run in range(SAMPLE_SIZE):
         for task in range(CORES * UTIL):
             cud = rp.ComputeUnitDescription()
             #cud.pre_exec = ['module load python', 'source $HOME/bin/ve.synapse/bin/activate']
-            cud.executable = 'module load python; source $HOME/bin/ve.synapse/bin/activate; aimes-skeleton-synapse.py serial flops 1 1715750072310 65536 65536 0 0 0'
+            #cud.executable = 'module load python; source $HOME/bin/ve.synapse/bin/activate; aimes-skeleton-synapse.py serial flops 1 1715750072310 65536 65536 0 0 0'
+            cud.executable = 'module load python; source $HOME/bin/ve.synapse/bin/activate; aimes-skeleton-synapse.py serial flops 1 0 65536 65536 0 0 0'
             #cud.executable = 'aimes-skeleton-synapse.py'
             #cud.arguments = ['serial', 'flops', '1', '1715750072310', '65536', '65536', '0', '0', '0']
             cuds.append(cud)
