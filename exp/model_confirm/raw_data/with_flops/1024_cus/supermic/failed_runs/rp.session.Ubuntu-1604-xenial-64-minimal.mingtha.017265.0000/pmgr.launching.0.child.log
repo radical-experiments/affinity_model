@@ -1,0 +1,27 @@
+2017-04-09 02:10:08,407: pmgr.launching.0.child: pmgr.launching.0                : MainThread     : ERROR   : bulk launch failed
+Traceback (most recent call last):
+  File "/home/mingtha/ve/ve.exec_model_exp/local/lib/python2.7/site-packages/radical/pilot/pmgr/launching/default.py", line 298, in work
+    self._start_pilot_bulk(resource, schema, pilots)
+  File "/home/mingtha/ve/ve.exec_model_exp/local/lib/python2.7/site-packages/radical/pilot/pmgr/launching/default.py", line 460, in _start_pilot_bulk
+    js_tmp  = rs.job.Service(js_url, session=self._session)
+  File "/home/mingtha/ve/ve.exec_model_exp/local/lib/python2.7/site-packages/saga/job/service.py", line 115, in __init__
+    url, session, ttype=_ttype)
+  File "/home/mingtha/ve/ve.exec_model_exp/local/lib/python2.7/site-packages/saga/base.py", line 101, in __init__
+    self._init_task = self._adaptor.init_instance (adaptor_state, *args, **kwargs)
+  File "/home/mingtha/ve/ve.exec_model_exp/local/lib/python2.7/site-packages/saga/adaptors/cpi/decorators.py", line 57, in wrap_function
+    return sync_function (self, *args, **kwargs)
+  File "/home/mingtha/ve/ve.exec_model_exp/local/lib/python2.7/site-packages/saga/adaptors/shell/shell_job.py", line 515, in init_instance
+    self.initialize ()
+  File "/home/mingtha/ve/ve.exec_model_exp/local/lib/python2.7/site-packages/saga/adaptors/shell/shell_job.py", line 632, in initialize
+    raise saga.NoSuccess ("failed to run bootstrap: (%s)(%s)" % (ret, out))
+NoSuccess: failed to run bootstrap: (127)(/bin/sh: .saga/adaptors/shell_job//wrapper.sh: No such file or directory
+) (/home/mingtha/ve/ve.exec_model_exp/local/lib/python2.7/site-packages/saga/adaptors/shell/shell_job.py +632 (initialize)  :  raise saga.NoSuccess ("failed to run bootstrap: (%s)(%s)" % (ret, out)))
+2017-04-09 02:10:08,524: pmgr.launching.0.child: pmgr.launching.0                : MainThread     : ERROR   : TERM : pmgr.launching.0.child run exit
+2017-04-09 02:10:08,524: pmgr.launching.0.child: pmgr.launching.0                : MainThread     : ERROR   : TERM : pmgr.launching.0.child run final
+2017-04-09 02:10:08,929: pmgr.launching.0.child: pmgr.launching.0                : pmgr.launching.0.child.subscriber: ERROR   : subscriber failed pmgr.launching.0.child.subscriber
+Traceback (most recent call last):
+  File "/home/mingtha/ve/ve.exec_model_exp/local/lib/python2.7/site-packages/radical/pilot/utils/component.py", line 1199, in _subscriber
+    callback(topic=topic, msg=m)
+  File "/home/mingtha/ve/ve.exec_model_exp/local/lib/python2.7/site-packages/radical/pilot/pmgr/launching/default.py", line 146, in _pmgr_control_cb
+    self._pilots[pid]['pilot']['cancel_requested'] = now
+KeyError: 'pilot.0000'
