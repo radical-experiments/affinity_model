@@ -1,0 +1,1608 @@
+{
+    "pilot": [
+        {
+            "_id": "pilot.0000", 
+            "cfg": {
+                "agent_launch_method": "ORTE", 
+                "agent_layout": {
+                    "agent_1": {
+                        "components": {
+                            "AgentExecutingComponent": 1, 
+                            "AgentSchedulingComponent": 1, 
+                            "AgentStagingInputComponent": 1, 
+                            "AgentStagingOutputComponent": 1
+                        }, 
+                        "target": "local"
+                    }
+                }, 
+                "bridges": {
+                    "agent_executing_queue": {
+                        "bulk_size": 0, 
+                        "log_level": "debug", 
+                        "stall_hwm": 1
+                    }, 
+                    "agent_reschedule_pubsub": {
+                        "bulk_size": 0, 
+                        "log_level": "debug", 
+                        "stall_hwm": 1
+                    }, 
+                    "agent_scheduling_queue": {
+                        "bulk_size": 0, 
+                        "log_level": "debug", 
+                        "stall_hwm": 1
+                    }, 
+                    "agent_staging_input_queue": {
+                        "bulk_size": 0, 
+                        "log_level": "debug", 
+                        "stall_hwm": 1
+                    }, 
+                    "agent_staging_output_queue": {
+                        "bulk_size": 0, 
+                        "log_level": "debug", 
+                        "stall_hwm": 1
+                    }, 
+                    "agent_unschedule_pubsub": {
+                        "bulk_size": 0, 
+                        "log_level": "debug", 
+                        "stall_hwm": 1
+                    }, 
+                    "control_pubsub": {
+                        "bulk_size": 0, 
+                        "log_level": "debug", 
+                        "stall_hwm": 1
+                    }, 
+                    "log_pubsub": {
+                        "bulk_size": 0, 
+                        "log_level": "debug", 
+                        "stall_hwm": 1
+                    }, 
+                    "state_pubsub": {
+                        "bulk_size": 0, 
+                        "log_level": "debug", 
+                        "stall_hwm": 1
+                    }
+                }, 
+                "bulk_collection_size": 100, 
+                "bulk_collection_time": 5.0, 
+                "cname": "PMGRLaunchingComponent", 
+                "components": {
+                    "UpdateWorker": 1
+                }, 
+                "cores": 24, 
+                "cores_per_node": 24, 
+                "cu_post_exec": null, 
+                "cu_pre_exec": null, 
+                "cu_tmp": null, 
+                "db_poll_sleeptime": 1.0, 
+                "dburl": "mongodb://mingtaiha:mingtaiha@ds053838.mlab.com:53838/hicomb", 
+                "debug": 35, 
+                "export_to_cu": null, 
+                "global_sandbox": "/home/mingtha/radical.pilot.sandbox", 
+                "heartbeat_interval": 100, 
+                "heartbeat_timeout": 3000, 
+                "logdir": ".", 
+                "lrms": "SLURM", 
+                "max_io_loglength": 1024, 
+                "mpi_launch_method": "ORTE_LIB", 
+                "owner": "agent_0", 
+                "pilot_id": "pilot.0000", 
+                "pilot_sandbox": "/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000/", 
+                "resource_cfg": {
+                    "agent_config": "default", 
+                    "agent_launch_method": "ORTE", 
+                    "agent_scheduler": "CONTINUOUS", 
+                    "agent_spawner": "ORTE", 
+                    "cores_per_node": "24", 
+                    "default_queue": "compute", 
+                    "description": "The Comet HPC resource at SDSC 'HPC for the 99%' (http://www.sdsc.edu/services/hpc/hpc_systems.html#comet).", 
+                    "filesystem_endpoint": "sftp://comet.sdsc.xsede.org/", 
+                    "gsissh": {
+                        "filesystem_endpoint": "gsisftp://comet.sdsc.xsede.org/", 
+                        "job_manager_endpoint": "slurm+gsissh://comet.sdsc.xsede.org/"
+                    }, 
+                    "job_manager_endpoint": "slurm+ssh://comet.sdsc.xsede.org/", 
+                    "label": "xsede.comet_ortelib", 
+                    "lrms": "SLURM", 
+                    "mandatory_args": [
+                        "project"
+                    ], 
+                    "mpi_launch_method": "ORTE_LIB", 
+                    "notes": "Always set the ``project`` attribute in the ComputePilotDescription or the pilot will fail.", 
+                    "pre_bootstrap_1": [
+                        "module use --append /home/amerzky/ompi/modules", 
+                        "module load python", 
+                        "module load openmpi/2017_02_17_6da4dbb"
+                    ], 
+                    "python_dist": "default", 
+                    "rp_version": "local", 
+                    "schemas": [
+                        "ssh", 
+                        "gsissh"
+                    ], 
+                    "ssh": {
+                        "filesystem_endpoint": "sftp://comet.sdsc.xsede.org/", 
+                        "job_manager_endpoint": "slurm+ssh://comet.sdsc.xsede.org/"
+                    }, 
+                    "task_launch_method": "ORTE_LIB", 
+                    "valid_roots": [
+                        "/home"
+                    ], 
+                    "virtenv": "%(global_sandbox)s/ve_comet", 
+                    "virtenv_mode": "create"
+                }, 
+                "runtime": 60, 
+                "scheduler": "CONTINUOUS", 
+                "session_id": "rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070", 
+                "session_sandbox": "/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070", 
+                "spawner": "ORTE", 
+                "staging_area": "staging_area", 
+                "staging_schema": "staging", 
+                "task_launch_method": "ORTE_LIB"
+            }, 
+            "cmd": [], 
+            "control": "pmgr", 
+            "description": {
+                "access_schema": "ssh", 
+                "candidate_hosts": null, 
+                "cleanup": null, 
+                "cores": 16, 
+                "exit_on_error": false, 
+                "memory": null, 
+                "project": "TG-MCB090174", 
+                "queue": "compute", 
+                "resource": "xsede.comet_ortelib", 
+                "runtime": 60, 
+                "sandbox": null
+            }, 
+            "log": null, 
+            "pmgr": "pmgr.0000", 
+            "resource": "xsede.comet_ortelib", 
+            "resource_details": null, 
+            "sandbox": "sftp://comet.sdsc.xsede.org/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000/", 
+            "session": "rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070", 
+            "state": "PMGR_ACTIVE", 
+            "states": [
+                "NEW", 
+                "PMGR_LAUNCHING_PENDING", 
+                "PMGR_LAUNCHING", 
+                "PMGR_ACTIVE_PENDING", 
+                "PMGR_ACTIVE", 
+                "PMGR_ACTIVE"
+            ], 
+            "stderr": null, 
+            "stdout": null, 
+            "type": "pilot", 
+            "uid": "pilot.0000", 
+            "unit_ids": [
+                "unit.000015", 
+                "unit.000012", 
+                "unit.000013", 
+                "unit.000014", 
+                "unit.000011", 
+                "unit.000006", 
+                "unit.000000", 
+                "unit.000007", 
+                "unit.000001", 
+                "unit.000008", 
+                "unit.000005", 
+                "unit.000004", 
+                "unit.000003", 
+                "unit.000009", 
+                "unit.000010", 
+                "unit.000002"
+            ]
+        }
+    ], 
+    "pmgr": [
+        {
+            "_id": "pmgr.0000", 
+            "cfg": {
+                "bridges": {
+                    "control_pubsub": {
+                        "addr_in": "tcp://138.201.86.166:35187", 
+                        "addr_out": "tcp://138.201.86.166:34016", 
+                        "bulk_size": 0, 
+                        "log_level": "debug", 
+                        "stall_hwm": 1
+                    }, 
+                    "log_pubsub": {
+                        "addr_in": "tcp://138.201.86.166:43335", 
+                        "addr_out": "tcp://138.201.86.166:33067", 
+                        "bulk_size": 0, 
+                        "log_level": "debug", 
+                        "stall_hwm": 1
+                    }, 
+                    "pmgr_launching_queue": {
+                        "addr_in": "tcp://138.201.86.166:44880", 
+                        "addr_out": "tcp://138.201.86.166:36493", 
+                        "bulk_size": 0, 
+                        "log_level": "debug", 
+                        "stall_hwm": 1
+                    }, 
+                    "state_pubsub": {
+                        "addr_in": "tcp://138.201.86.166:46802", 
+                        "addr_out": "tcp://138.201.86.166:37590", 
+                        "bulk_size": 0, 
+                        "log_level": "debug", 
+                        "stall_hwm": 1
+                    }
+                }, 
+                "components": {
+                    "PMGRLaunchingComponent": 1
+                }, 
+                "db_poll_sleeptime": 1.0, 
+                "dburl": "mongodb://mingtaiha:mingtaiha@ds053838.mlab.com:53838/hicomb", 
+                "heart": "rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070", 
+                "heartbeat_interval": 100, 
+                "heartbeat_timeout": 3000, 
+                "owner": "pmgr.0000", 
+                "session_id": "rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070"
+            }, 
+            "type": "pmgr", 
+            "uid": "pmgr.0000"
+        }
+    ], 
+    "session": {
+        "_id": "rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070", 
+        "cfg": {
+            "bridges": {
+                "control_pubsub": {
+                    "bulk_size": 0, 
+                    "log_level": "debug", 
+                    "stall_hwm": 1
+                }, 
+                "log_pubsub": {
+                    "bulk_size": 0, 
+                    "log_level": "debug", 
+                    "stall_hwm": 1
+                }, 
+                "state_pubsub": {
+                    "bulk_size": 0, 
+                    "log_level": "debug", 
+                    "stall_hwm": 1
+                }
+            }, 
+            "components": {
+                "UpdateWorker": 1
+            }, 
+            "default_dburl": "mongodb://rp:rp@ds015335.mlab.com:15335/rp", 
+            "heartbeat_interval": 100, 
+            "heartbeat_timeout": 3000, 
+            "logdir": "/home/mingtha/repos/affinity_model/exp/model_confirm/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070", 
+            "owner": "rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070"
+        }, 
+        "connected": 1493676727.332911, 
+        "created": 1493676726.797263, 
+        "type": "session", 
+        "uid": "rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070"
+    }, 
+    "umgr": [
+        {
+            "_id": "umgr.0000", 
+            "cfg": {
+                "bridges": {
+                    "control_pubsub": {
+                        "addr_in": "tcp://138.201.86.166:35187", 
+                        "addr_out": "tcp://138.201.86.166:34016", 
+                        "bulk_size": 0, 
+                        "log_level": "debug", 
+                        "stall_hwm": 1
+                    }, 
+                    "log_pubsub": {
+                        "addr_in": "tcp://138.201.86.166:43335", 
+                        "addr_out": "tcp://138.201.86.166:33067", 
+                        "bulk_size": 0, 
+                        "log_level": "debug", 
+                        "stall_hwm": 1
+                    }, 
+                    "state_pubsub": {
+                        "addr_in": "tcp://138.201.86.166:46802", 
+                        "addr_out": "tcp://138.201.86.166:37590", 
+                        "bulk_size": 0, 
+                        "log_level": "debug", 
+                        "stall_hwm": 1
+                    }, 
+                    "umgr_reschedule_pubsub": {
+                        "addr_in": "tcp://138.201.86.166:34525", 
+                        "addr_out": "tcp://138.201.86.166:40299", 
+                        "bulk_size": 0, 
+                        "log_level": "debug", 
+                        "stall_hwm": 1
+                    }, 
+                    "umgr_scheduling_queue": {
+                        "addr_in": "tcp://138.201.86.166:44541", 
+                        "addr_out": "tcp://138.201.86.166:39043", 
+                        "bulk_size": 0, 
+                        "log_level": "debug", 
+                        "stall_hwm": 1
+                    }, 
+                    "umgr_staging_input_queue": {
+                        "addr_in": "tcp://138.201.86.166:46238", 
+                        "addr_out": "tcp://138.201.86.166:41031", 
+                        "bulk_size": 0, 
+                        "log_level": "debug", 
+                        "stall_hwm": 1
+                    }, 
+                    "umgr_staging_output_queue": {
+                        "addr_in": "tcp://138.201.86.166:36254", 
+                        "addr_out": "tcp://138.201.86.166:44750", 
+                        "bulk_size": 0, 
+                        "log_level": "debug", 
+                        "stall_hwm": 1
+                    }, 
+                    "umgr_unschedule_pubsub": {
+                        "addr_in": "tcp://138.201.86.166:39442", 
+                        "addr_out": "tcp://138.201.86.166:45059", 
+                        "bulk_size": 0, 
+                        "log_level": "debug", 
+                        "stall_hwm": 1
+                    }
+                }, 
+                "bulk_collection_size": 100, 
+                "bulk_collection_time": 5.0, 
+                "components": {
+                    "UMGRSchedulingComponent": 1, 
+                    "UMGRStagingInputComponent": 1, 
+                    "UMGRStagingOutputComponent": 1
+                }, 
+                "db_poll_sleeptime": 1.0, 
+                "dburl": "mongodb://mingtaiha:mingtaiha@ds053838.mlab.com:53838/hicomb", 
+                "heart": "rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070", 
+                "heartbeat_interval": 100, 
+                "heartbeat_timeout": 3000, 
+                "owner": "umgr.0000", 
+                "scheduler": "round_robin", 
+                "session_id": "rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070"
+            }, 
+            "type": "umgr", 
+            "uid": "umgr.0000"
+        }
+    ], 
+    "unit": [
+        {
+            "_id": "unit.000015", 
+            "cmd": [], 
+            "control": null, 
+            "description": {
+                "arguments": null, 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "module load python; source $HOME/bin/ve.synapse/bin/activate; aimes-skeleton-synapse.py serial flops 1 1715750072310 65536 65536 0 0 0", 
+                "input_staging": [], 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": [], 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exit_code": 0, 
+            "finished": 1493677084.704964, 
+            "name": null, 
+            "opaque_slots": {
+                "lm_info": {
+                    "dvm_uri": "2403139584.0;tcp://10.22.253.163,198.202.116.128,10.21.253.163,192.168.38.165:35638;ud://30897.29168.1", 
+                    "version_info": {
+                        "ORTE": {
+                            "version": "3.0.0a1", 
+                            "version_detail": "v2.x-dev-3722-g578d881"
+                        }
+                    }
+                }, 
+                "task_offsets": 15, 
+                "task_slots": [
+                    "comet-10-28:15"
+                ]
+            }, 
+            "pilot": "pilot.0000", 
+            "sandbox": "sftp://comet.sdsc.xsede.org/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000//unit.000015/", 
+            "started": 1493676860.543182, 
+            "state": "DONE", 
+            "states": [
+                "NEW", 
+                "UMGR_SCHEDULING_PENDING", 
+                "UMGR_SCHEDULING", 
+                "UMGR_STAGING_INPUT_PENDING", 
+                "UMGR_STAGING_INPUT", 
+                "AGENT_STAGING_INPUT_PENDING", 
+                "AGENT_STAGING_INPUT", 
+                "AGENT_SCHEDULING_PENDING", 
+                "AGENT_SCHEDULING", 
+                "AGENT_EXECUTING_PENDING", 
+                "AGENT_EXECUTING", 
+                "AGENT_EXECUTING", 
+                "AGENT_STAGING_INPUT", 
+                "AGENT_SCHEDULING_PENDING", 
+                "AGENT_SCHEDULING", 
+                "AGENT_EXECUTING_PENDING", 
+                "AGENT_EXECUTING", 
+                "AGENT_STAGING_OUTPUT_PENDING", 
+                "AGENT_STAGING_OUTPUT_PENDING", 
+                "AGENT_STAGING_OUTPUT", 
+                "UMGR_STAGING_OUTPUT_PENDING", 
+                "AGENT_STAGING_OUTPUT", 
+                "UMGR_STAGING_OUTPUT_PENDING", 
+                "UMGR_STAGING_OUTPUT_PENDING", 
+                "UMGR_STAGING_OUTPUT", 
+                "DONE"
+            ], 
+            "stderr": "2017-05-01 15:14:21,247: radical.synapse     : MainProcess                     : MainThread     : INFO    : python.interpreter   version: 2.7.10 (default, Feb 1 2016, 14:30:50) [GCC 4.9.2]\n2017-05-01 15:14:21,247: radical.synapse     : MainProcess                     : MainThread     : INFO    :                      pid: 14921\n2017-05-01 15:14:21,248: radical.synapse     : MainProcess                     : MainThread     : INFO    :                      tid: MainThread\n2017-05-01 15:14:21,396: radical.synapse.self._uid: MainProcess                     : MainThread     : INFO    : python.interpreter   version: 2.7.10 (default, Feb 1 2016, 14:30:50) [GCC 4.9.2]\n2017-05-01 15:14:21,397: radical.synapse.self._uid: MainProcess                     : MainThread     : INFO    :                      pid: 14921\n2017-05-01 15:14:21,397: radical.synapse.self._uid: MainProcess                     : MainThread     : INFO    :                      tid: MainThread\n", 
+            "stderr_file": "/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000/unit.000015/rank.0/stderr", 
+            "stdout": "serial: 10\ntask type     : serial\ntask mode     : flops\nnum_processes : 1\ntask_length   : 1715750072310\nread_buf      : 65536\nwrite_buf     : 65536\nnum_input     : 0\nnum_output    : 0\ninterleave_opt: 0\nprocess 1/1 reading input files\nwarning: emulate needs either command, sample or src\nprocess 1/1 is sleeping\nemulating 1 samples\nemulate  {'efficiency': 1, 'flops': 1029450043386, 'time': 0}\nprocess 1/1 writing output files\nwarning: emulate needs either command, sample or src\n", 
+            "stdout_file": "/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000/unit.000015/rank.0/stdout", 
+            "target_state": "DONE", 
+            "type": "unit", 
+            "uid": "unit.000015", 
+            "umgr": "umgr.0000"
+        }, 
+        {
+            "_id": "unit.000012", 
+            "cmd": [], 
+            "control": null, 
+            "description": {
+                "arguments": null, 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "module load python; source $HOME/bin/ve.synapse/bin/activate; aimes-skeleton-synapse.py serial flops 1 1715750072310 65536 65536 0 0 0", 
+                "input_staging": [], 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": [], 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exit_code": 0, 
+            "finished": 1493677084.799076, 
+            "name": null, 
+            "opaque_slots": {
+                "lm_info": {
+                    "dvm_uri": "2403139584.0;tcp://10.22.253.163,198.202.116.128,10.21.253.163,192.168.38.165:35638;ud://30897.29168.1", 
+                    "version_info": {
+                        "ORTE": {
+                            "version": "3.0.0a1", 
+                            "version_detail": "v2.x-dev-3722-g578d881"
+                        }
+                    }
+                }, 
+                "task_offsets": 12, 
+                "task_slots": [
+                    "comet-10-28:12"
+                ]
+            }, 
+            "pilot": "pilot.0000", 
+            "sandbox": "sftp://comet.sdsc.xsede.org/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000//unit.000012/", 
+            "started": 1493676860.542944, 
+            "state": "DONE", 
+            "states": [
+                "NEW", 
+                "UMGR_SCHEDULING_PENDING", 
+                "UMGR_SCHEDULING", 
+                "UMGR_STAGING_INPUT_PENDING", 
+                "UMGR_STAGING_INPUT", 
+                "AGENT_STAGING_INPUT_PENDING", 
+                "AGENT_STAGING_INPUT", 
+                "AGENT_SCHEDULING_PENDING", 
+                "AGENT_SCHEDULING", 
+                "AGENT_EXECUTING_PENDING", 
+                "AGENT_EXECUTING", 
+                "AGENT_EXECUTING", 
+                "AGENT_STAGING_INPUT", 
+                "AGENT_SCHEDULING_PENDING", 
+                "AGENT_SCHEDULING", 
+                "AGENT_EXECUTING_PENDING", 
+                "AGENT_EXECUTING", 
+                "AGENT_STAGING_OUTPUT_PENDING", 
+                "AGENT_STAGING_OUTPUT", 
+                "UMGR_STAGING_OUTPUT_PENDING", 
+                "AGENT_STAGING_OUTPUT_PENDING", 
+                "AGENT_STAGING_OUTPUT", 
+                "UMGR_STAGING_OUTPUT_PENDING", 
+                "UMGR_STAGING_OUTPUT_PENDING", 
+                "UMGR_STAGING_OUTPUT", 
+                "DONE"
+            ], 
+            "stderr": "2017-05-01 15:14:21,247: radical.synapse     : MainProcess                     : MainThread     : INFO    : python.interpreter   version: 2.7.10 (default, Feb 1 2016, 14:30:50) [GCC 4.9.2]\n2017-05-01 15:14:21,248: radical.synapse     : MainProcess                     : MainThread     : INFO    :                      pid: 14912\n2017-05-01 15:14:21,248: radical.synapse     : MainProcess                     : MainThread     : INFO    :                      tid: MainThread\n2017-05-01 15:14:21,396: radical.synapse.self._uid: MainProcess                     : MainThread     : INFO    : python.interpreter   version: 2.7.10 (default, Feb 1 2016, 14:30:50) [GCC 4.9.2]\n2017-05-01 15:14:21,397: radical.synapse.self._uid: MainProcess                     : MainThread     : INFO    :                      pid: 14912\n2017-05-01 15:14:21,397: radical.synapse.self._uid: MainProcess                     : MainThread     : INFO    :                      tid: MainThread\n", 
+            "stderr_file": "/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000/unit.000012/rank.0/stderr", 
+            "stdout": "serial: 10\ntask type     : serial\ntask mode     : flops\nnum_processes : 1\ntask_length   : 1715750072310\nread_buf      : 65536\nwrite_buf     : 65536\nnum_input     : 0\nnum_output    : 0\ninterleave_opt: 0\nprocess 1/1 reading input files\nwarning: emulate needs either command, sample or src\nprocess 1/1 is sleeping\nemulating 1 samples\nemulate  {'efficiency': 1, 'flops': 1029450043386, 'time': 0}\nprocess 1/1 writing output files\nwarning: emulate needs either command, sample or src\n", 
+            "stdout_file": "/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000/unit.000012/rank.0/stdout", 
+            "target_state": "DONE", 
+            "type": "unit", 
+            "uid": "unit.000012", 
+            "umgr": "umgr.0000"
+        }, 
+        {
+            "_id": "unit.000013", 
+            "cmd": [], 
+            "control": null, 
+            "description": {
+                "arguments": null, 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "module load python; source $HOME/bin/ve.synapse/bin/activate; aimes-skeleton-synapse.py serial flops 1 1715750072310 65536 65536 0 0 0", 
+                "input_staging": [], 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": [], 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exit_code": 0, 
+            "finished": 1493677084.802643, 
+            "name": null, 
+            "opaque_slots": {
+                "lm_info": {
+                    "dvm_uri": "2403139584.0;tcp://10.22.253.163,198.202.116.128,10.21.253.163,192.168.38.165:35638;ud://30897.29168.1", 
+                    "version_info": {
+                        "ORTE": {
+                            "version": "3.0.0a1", 
+                            "version_detail": "v2.x-dev-3722-g578d881"
+                        }
+                    }
+                }, 
+                "task_offsets": 13, 
+                "task_slots": [
+                    "comet-10-28:13"
+                ]
+            }, 
+            "pilot": "pilot.0000", 
+            "sandbox": "sftp://comet.sdsc.xsede.org/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000//unit.000013/", 
+            "started": 1493676860.543023, 
+            "state": "DONE", 
+            "states": [
+                "NEW", 
+                "UMGR_SCHEDULING_PENDING", 
+                "UMGR_SCHEDULING", 
+                "UMGR_STAGING_INPUT_PENDING", 
+                "UMGR_STAGING_INPUT", 
+                "AGENT_STAGING_INPUT_PENDING", 
+                "AGENT_STAGING_INPUT", 
+                "AGENT_SCHEDULING_PENDING", 
+                "AGENT_SCHEDULING", 
+                "AGENT_EXECUTING_PENDING", 
+                "AGENT_EXECUTING", 
+                "AGENT_EXECUTING", 
+                "AGENT_STAGING_INPUT", 
+                "AGENT_SCHEDULING_PENDING", 
+                "AGENT_SCHEDULING", 
+                "AGENT_EXECUTING_PENDING", 
+                "AGENT_EXECUTING", 
+                "AGENT_STAGING_OUTPUT_PENDING", 
+                "AGENT_STAGING_OUTPUT", 
+                "UMGR_STAGING_OUTPUT_PENDING", 
+                "AGENT_STAGING_OUTPUT_PENDING", 
+                "AGENT_STAGING_OUTPUT", 
+                "UMGR_STAGING_OUTPUT_PENDING", 
+                "UMGR_STAGING_OUTPUT_PENDING", 
+                "UMGR_STAGING_OUTPUT", 
+                "DONE"
+            ], 
+            "stderr": "2017-05-01 15:14:21,247: radical.synapse     : MainProcess                     : MainThread     : INFO    : python.interpreter   version: 2.7.10 (default, Feb 1 2016, 14:30:50) [GCC 4.9.2]\n2017-05-01 15:14:21,248: radical.synapse     : MainProcess                     : MainThread     : INFO    :                      pid: 14915\n2017-05-01 15:14:21,248: radical.synapse     : MainProcess                     : MainThread     : INFO    :                      tid: MainThread\n2017-05-01 15:14:21,396: radical.synapse.self._uid: MainProcess                     : MainThread     : INFO    : python.interpreter   version: 2.7.10 (default, Feb 1 2016, 14:30:50) [GCC 4.9.2]\n2017-05-01 15:14:21,397: radical.synapse.self._uid: MainProcess                     : MainThread     : INFO    :                      pid: 14915\n2017-05-01 15:14:21,397: radical.synapse.self._uid: MainProcess                     : MainThread     : INFO    :                      tid: MainThread\n", 
+            "stderr_file": "/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000/unit.000013/rank.0/stderr", 
+            "stdout": "serial: 10\ntask type     : serial\ntask mode     : flops\nnum_processes : 1\ntask_length   : 1715750072310\nread_buf      : 65536\nwrite_buf     : 65536\nnum_input     : 0\nnum_output    : 0\ninterleave_opt: 0\nprocess 1/1 reading input files\nwarning: emulate needs either command, sample or src\nprocess 1/1 is sleeping\nemulating 1 samples\nemulate  {'efficiency': 1, 'flops': 1029450043386, 'time': 0}\nprocess 1/1 writing output files\nwarning: emulate needs either command, sample or src\n", 
+            "stdout_file": "/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000/unit.000013/rank.0/stdout", 
+            "target_state": "DONE", 
+            "type": "unit", 
+            "uid": "unit.000013", 
+            "umgr": "umgr.0000"
+        }, 
+        {
+            "_id": "unit.000014", 
+            "cmd": [], 
+            "control": null, 
+            "description": {
+                "arguments": null, 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "module load python; source $HOME/bin/ve.synapse/bin/activate; aimes-skeleton-synapse.py serial flops 1 1715750072310 65536 65536 0 0 0", 
+                "input_staging": [], 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": [], 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exit_code": 0, 
+            "finished": 1493677084.814769, 
+            "name": null, 
+            "opaque_slots": {
+                "lm_info": {
+                    "dvm_uri": "2403139584.0;tcp://10.22.253.163,198.202.116.128,10.21.253.163,192.168.38.165:35638;ud://30897.29168.1", 
+                    "version_info": {
+                        "ORTE": {
+                            "version": "3.0.0a1", 
+                            "version_detail": "v2.x-dev-3722-g578d881"
+                        }
+                    }
+                }, 
+                "task_offsets": 14, 
+                "task_slots": [
+                    "comet-10-28:14"
+                ]
+            }, 
+            "pilot": "pilot.0000", 
+            "sandbox": "sftp://comet.sdsc.xsede.org/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000//unit.000014/", 
+            "started": 1493676860.543098, 
+            "state": "DONE", 
+            "states": [
+                "NEW", 
+                "UMGR_SCHEDULING_PENDING", 
+                "UMGR_SCHEDULING", 
+                "UMGR_STAGING_INPUT_PENDING", 
+                "UMGR_STAGING_INPUT", 
+                "AGENT_STAGING_INPUT_PENDING", 
+                "AGENT_STAGING_INPUT", 
+                "AGENT_SCHEDULING_PENDING", 
+                "AGENT_SCHEDULING", 
+                "AGENT_EXECUTING_PENDING", 
+                "AGENT_EXECUTING", 
+                "AGENT_EXECUTING", 
+                "AGENT_STAGING_INPUT", 
+                "AGENT_SCHEDULING_PENDING", 
+                "AGENT_SCHEDULING", 
+                "AGENT_EXECUTING_PENDING", 
+                "AGENT_EXECUTING", 
+                "AGENT_STAGING_OUTPUT_PENDING", 
+                "AGENT_STAGING_OUTPUT", 
+                "UMGR_STAGING_OUTPUT_PENDING", 
+                "AGENT_STAGING_OUTPUT_PENDING", 
+                "AGENT_STAGING_OUTPUT", 
+                "UMGR_STAGING_OUTPUT_PENDING", 
+                "UMGR_STAGING_OUTPUT_PENDING", 
+                "UMGR_STAGING_OUTPUT", 
+                "DONE"
+            ], 
+            "stderr": "2017-05-01 15:14:21,247: radical.synapse     : MainProcess                     : MainThread     : INFO    : python.interpreter   version: 2.7.10 (default, Feb 1 2016, 14:30:50) [GCC 4.9.2]\n2017-05-01 15:14:21,247: radical.synapse     : MainProcess                     : MainThread     : INFO    :                      pid: 14918\n2017-05-01 15:14:21,248: radical.synapse     : MainProcess                     : MainThread     : INFO    :                      tid: MainThread\n2017-05-01 15:14:21,396: radical.synapse.self._uid: MainProcess                     : MainThread     : INFO    : python.interpreter   version: 2.7.10 (default, Feb 1 2016, 14:30:50) [GCC 4.9.2]\n2017-05-01 15:14:21,397: radical.synapse.self._uid: MainProcess                     : MainThread     : INFO    :                      pid: 14918\n2017-05-01 15:14:21,397: radical.synapse.self._uid: MainProcess                     : MainThread     : INFO    :                      tid: MainThread\n", 
+            "stderr_file": "/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000/unit.000014/rank.0/stderr", 
+            "stdout": "serial: 10\ntask type     : serial\ntask mode     : flops\nnum_processes : 1\ntask_length   : 1715750072310\nread_buf      : 65536\nwrite_buf     : 65536\nnum_input     : 0\nnum_output    : 0\ninterleave_opt: 0\nprocess 1/1 reading input files\nwarning: emulate needs either command, sample or src\nprocess 1/1 is sleeping\nemulating 1 samples\nemulate  {'efficiency': 1, 'flops': 1029450043386, 'time': 0}\nprocess 1/1 writing output files\nwarning: emulate needs either command, sample or src\n", 
+            "stdout_file": "/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000/unit.000014/rank.0/stdout", 
+            "target_state": "DONE", 
+            "type": "unit", 
+            "uid": "unit.000014", 
+            "umgr": "umgr.0000"
+        }, 
+        {
+            "_id": "unit.000011", 
+            "cmd": [], 
+            "control": null, 
+            "description": {
+                "arguments": null, 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "module load python; source $HOME/bin/ve.synapse/bin/activate; aimes-skeleton-synapse.py serial flops 1 1715750072310 65536 65536 0 0 0", 
+                "input_staging": [], 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": [], 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exit_code": 0, 
+            "finished": 1493677085.260116, 
+            "name": null, 
+            "opaque_slots": {
+                "lm_info": {
+                    "dvm_uri": "2403139584.0;tcp://10.22.253.163,198.202.116.128,10.21.253.163,192.168.38.165:35638;ud://30897.29168.1", 
+                    "version_info": {
+                        "ORTE": {
+                            "version": "3.0.0a1", 
+                            "version_detail": "v2.x-dev-3722-g578d881"
+                        }
+                    }
+                }, 
+                "task_offsets": 11, 
+                "task_slots": [
+                    "comet-10-28:11"
+                ]
+            }, 
+            "pilot": "pilot.0000", 
+            "sandbox": "sftp://comet.sdsc.xsede.org/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000//unit.000011/", 
+            "started": 1493676860.542858, 
+            "state": "DONE", 
+            "states": [
+                "NEW", 
+                "UMGR_SCHEDULING_PENDING", 
+                "UMGR_SCHEDULING", 
+                "UMGR_STAGING_INPUT_PENDING", 
+                "UMGR_STAGING_INPUT", 
+                "AGENT_STAGING_INPUT_PENDING", 
+                "AGENT_STAGING_INPUT", 
+                "AGENT_SCHEDULING_PENDING", 
+                "AGENT_SCHEDULING", 
+                "AGENT_EXECUTING_PENDING", 
+                "AGENT_EXECUTING", 
+                "AGENT_EXECUTING", 
+                "AGENT_STAGING_INPUT", 
+                "AGENT_SCHEDULING_PENDING", 
+                "AGENT_SCHEDULING", 
+                "AGENT_EXECUTING_PENDING", 
+                "AGENT_EXECUTING", 
+                "AGENT_STAGING_OUTPUT_PENDING", 
+                "AGENT_STAGING_OUTPUT", 
+                "UMGR_STAGING_OUTPUT_PENDING", 
+                "AGENT_STAGING_OUTPUT_PENDING", 
+                "AGENT_STAGING_OUTPUT", 
+                "UMGR_STAGING_OUTPUT_PENDING", 
+                "UMGR_STAGING_OUTPUT_PENDING", 
+                "UMGR_STAGING_OUTPUT", 
+                "DONE"
+            ], 
+            "stderr": "2017-05-01 15:14:21,247: radical.synapse     : MainProcess                     : MainThread     : INFO    : python.interpreter   version: 2.7.10 (default, Feb 1 2016, 14:30:50) [GCC 4.9.2]\n2017-05-01 15:14:21,248: radical.synapse     : MainProcess                     : MainThread     : INFO    :                      pid: 14909\n2017-05-01 15:14:21,248: radical.synapse     : MainProcess                     : MainThread     : INFO    :                      tid: MainThread\n2017-05-01 15:14:21,396: radical.synapse.self._uid: MainProcess                     : MainThread     : INFO    : python.interpreter   version: 2.7.10 (default, Feb 1 2016, 14:30:50) [GCC 4.9.2]\n2017-05-01 15:14:21,397: radical.synapse.self._uid: MainProcess                     : MainThread     : INFO    :                      pid: 14909\n2017-05-01 15:14:21,397: radical.synapse.self._uid: MainProcess                     : MainThread     : INFO    :                      tid: MainThread\n", 
+            "stderr_file": "/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000/unit.000011/rank.0/stderr", 
+            "stdout": "serial: 10\ntask type     : serial\ntask mode     : flops\nnum_processes : 1\ntask_length   : 1715750072310\nread_buf      : 65536\nwrite_buf     : 65536\nnum_input     : 0\nnum_output    : 0\ninterleave_opt: 0\nprocess 1/1 reading input files\nwarning: emulate needs either command, sample or src\nprocess 1/1 is sleeping\nemulating 1 samples\nemulate  {'efficiency': 1, 'flops': 1029450043386, 'time': 0}\nprocess 1/1 writing output files\nwarning: emulate needs either command, sample or src\n", 
+            "stdout_file": "/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000/unit.000011/rank.0/stdout", 
+            "target_state": "DONE", 
+            "type": "unit", 
+            "uid": "unit.000011", 
+            "umgr": "umgr.0000"
+        }, 
+        {
+            "_id": "unit.000006", 
+            "cmd": [], 
+            "control": null, 
+            "description": {
+                "arguments": null, 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "module load python; source $HOME/bin/ve.synapse/bin/activate; aimes-skeleton-synapse.py serial flops 1 1715750072310 65536 65536 0 0 0", 
+                "input_staging": [], 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": [], 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exit_code": 0, 
+            "finished": 1493677392.021956, 
+            "name": null, 
+            "opaque_slots": {
+                "lm_info": {
+                    "dvm_uri": "2403139584.0;tcp://10.22.253.163,198.202.116.128,10.21.253.163,192.168.38.165:35638;ud://30897.29168.1", 
+                    "version_info": {
+                        "ORTE": {
+                            "version": "3.0.0a1", 
+                            "version_detail": "v2.x-dev-3722-g578d881"
+                        }
+                    }
+                }, 
+                "task_offsets": 6, 
+                "task_slots": [
+                    "comet-10-28:6"
+                ]
+            }, 
+            "pilot": "pilot.0000", 
+            "sandbox": "sftp://comet.sdsc.xsede.org/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000//unit.000006/", 
+            "started": 1493676860.521092, 
+            "state": "DONE", 
+            "states": [
+                "NEW", 
+                "UMGR_SCHEDULING_PENDING", 
+                "UMGR_SCHEDULING", 
+                "UMGR_STAGING_INPUT_PENDING", 
+                "UMGR_STAGING_INPUT", 
+                "AGENT_STAGING_INPUT_PENDING", 
+                "AGENT_STAGING_INPUT", 
+                "AGENT_SCHEDULING_PENDING", 
+                "AGENT_SCHEDULING", 
+                "AGENT_EXECUTING_PENDING", 
+                "AGENT_EXECUTING", 
+                "AGENT_EXECUTING", 
+                "AGENT_STAGING_INPUT", 
+                "AGENT_SCHEDULING_PENDING", 
+                "AGENT_SCHEDULING", 
+                "AGENT_EXECUTING_PENDING", 
+                "AGENT_EXECUTING", 
+                "AGENT_STAGING_OUTPUT_PENDING", 
+                "AGENT_STAGING_OUTPUT_PENDING", 
+                "AGENT_STAGING_OUTPUT", 
+                "UMGR_STAGING_OUTPUT_PENDING", 
+                "AGENT_STAGING_OUTPUT", 
+                "UMGR_STAGING_OUTPUT_PENDING", 
+                "UMGR_STAGING_OUTPUT_PENDING", 
+                "UMGR_STAGING_OUTPUT", 
+                "DONE"
+            ], 
+            "stderr": "2017-05-01 15:14:21,247: radical.synapse     : MainProcess                     : MainThread     : INFO    : python.interpreter   version: 2.7.10 (default, Feb 1 2016, 14:30:50) [GCC 4.9.2]\n2017-05-01 15:14:21,248: radical.synapse     : MainProcess                     : MainThread     : INFO    :                      pid: 14893\n2017-05-01 15:14:21,248: radical.synapse     : MainProcess                     : MainThread     : INFO    :                      tid: MainThread\n2017-05-01 15:14:21,396: radical.synapse.self._uid: MainProcess                     : MainThread     : INFO    : python.interpreter   version: 2.7.10 (default, Feb 1 2016, 14:30:50) [GCC 4.9.2]\n2017-05-01 15:14:21,397: radical.synapse.self._uid: MainProcess                     : MainThread     : INFO    :                      pid: 14893\n2017-05-01 15:14:21,397: radical.synapse.self._uid: MainProcess                     : MainThread     : INFO    :                      tid: MainThread\n", 
+            "stderr_file": "/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000/unit.000006/rank.0/stderr", 
+            "stdout": "serial: 10\ntask type     : serial\ntask mode     : flops\nnum_processes : 1\ntask_length   : 1715750072310\nread_buf      : 65536\nwrite_buf     : 65536\nnum_input     : 0\nnum_output    : 0\ninterleave_opt: 0\nprocess 1/1 reading input files\nwarning: emulate needs either command, sample or src\nprocess 1/1 is sleeping\nemulating 1 samples\nemulate  {'efficiency': 1, 'flops': 1029450043386, 'time': 0}\nprocess 1/1 writing output files\nwarning: emulate needs either command, sample or src\n", 
+            "stdout_file": "/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000/unit.000006/rank.0/stdout", 
+            "target_state": "DONE", 
+            "type": "unit", 
+            "uid": "unit.000006", 
+            "umgr": "umgr.0000"
+        }, 
+        {
+            "_id": "unit.000000", 
+            "cmd": [], 
+            "control": null, 
+            "description": {
+                "arguments": null, 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "module load python; source $HOME/bin/ve.synapse/bin/activate; aimes-skeleton-synapse.py serial flops 1 1715750072310 65536 65536 0 0 0", 
+                "input_staging": [], 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": [], 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exit_code": 0, 
+            "finished": 1493677398.545132, 
+            "name": null, 
+            "opaque_slots": {
+                "lm_info": {
+                    "dvm_uri": "2403139584.0;tcp://10.22.253.163,198.202.116.128,10.21.253.163,192.168.38.165:35638;ud://30897.29168.1", 
+                    "version_info": {
+                        "ORTE": {
+                            "version": "3.0.0a1", 
+                            "version_detail": "v2.x-dev-3722-g578d881"
+                        }
+                    }
+                }, 
+                "task_offsets": 0, 
+                "task_slots": [
+                    "comet-10-28:0"
+                ]
+            }, 
+            "pilot": "pilot.0000", 
+            "sandbox": "sftp://comet.sdsc.xsede.org/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000//unit.000000/", 
+            "started": 1493676860.489817, 
+            "state": "DONE", 
+            "states": [
+                "NEW", 
+                "UMGR_SCHEDULING_PENDING", 
+                "UMGR_SCHEDULING", 
+                "UMGR_STAGING_INPUT_PENDING", 
+                "UMGR_STAGING_INPUT", 
+                "AGENT_STAGING_INPUT_PENDING", 
+                "AGENT_STAGING_INPUT", 
+                "AGENT_SCHEDULING_PENDING", 
+                "AGENT_SCHEDULING", 
+                "AGENT_EXECUTING_PENDING", 
+                "AGENT_EXECUTING", 
+                "AGENT_EXECUTING", 
+                "AGENT_STAGING_INPUT", 
+                "AGENT_SCHEDULING_PENDING", 
+                "AGENT_SCHEDULING", 
+                "AGENT_EXECUTING_PENDING", 
+                "AGENT_EXECUTING", 
+                "AGENT_STAGING_OUTPUT_PENDING", 
+                "AGENT_STAGING_OUTPUT_PENDING", 
+                "AGENT_STAGING_OUTPUT", 
+                "UMGR_STAGING_OUTPUT_PENDING", 
+                "UMGR_STAGING_OUTPUT_PENDING", 
+                "UMGR_STAGING_OUTPUT", 
+                "DONE"
+            ], 
+            "stderr": "2017-05-01 15:14:21,247: radical.synapse     : MainProcess                     : MainThread     : INFO    : python.interpreter   version: 2.7.10 (default, Feb 1 2016, 14:30:50) [GCC 4.9.2]\n2017-05-01 15:14:21,248: radical.synapse     : MainProcess                     : MainThread     : INFO    :                      pid: 14829\n2017-05-01 15:14:21,248: radical.synapse     : MainProcess                     : MainThread     : INFO    :                      tid: MainThread\n2017-05-01 15:14:21,396: radical.synapse.self._uid: MainProcess                     : MainThread     : INFO    : python.interpreter   version: 2.7.10 (default, Feb 1 2016, 14:30:50) [GCC 4.9.2]\n2017-05-01 15:14:21,397: radical.synapse.self._uid: MainProcess                     : MainThread     : INFO    :                      pid: 14829\n2017-05-01 15:14:21,397: radical.synapse.self._uid: MainProcess                     : MainThread     : INFO    :                      tid: MainThread\n", 
+            "stderr_file": "/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000/unit.000000/rank.0/stderr", 
+            "stdout": "serial: 10\ntask type     : serial\ntask mode     : flops\nnum_processes : 1\ntask_length   : 1715750072310\nread_buf      : 65536\nwrite_buf     : 65536\nnum_input     : 0\nnum_output    : 0\ninterleave_opt: 0\nprocess 1/1 reading input files\nwarning: emulate needs either command, sample or src\nprocess 1/1 is sleeping\nemulating 1 samples\nemulate  {'efficiency': 1, 'flops': 1029450043386, 'time': 0}\nprocess 1/1 writing output files\nwarning: emulate needs either command, sample or src\n", 
+            "stdout_file": "/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000/unit.000000/rank.0/stdout", 
+            "target_state": "DONE", 
+            "type": "unit", 
+            "uid": "unit.000000", 
+            "umgr": "umgr.0000"
+        }, 
+        {
+            "_id": "unit.000007", 
+            "cmd": [], 
+            "control": null, 
+            "description": {
+                "arguments": null, 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "module load python; source $HOME/bin/ve.synapse/bin/activate; aimes-skeleton-synapse.py serial flops 1 1715750072310 65536 65536 0 0 0", 
+                "input_staging": [], 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": [], 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exit_code": 0, 
+            "finished": 1493677406.718997, 
+            "name": null, 
+            "opaque_slots": {
+                "lm_info": {
+                    "dvm_uri": "2403139584.0;tcp://10.22.253.163,198.202.116.128,10.21.253.163,192.168.38.165:35638;ud://30897.29168.1", 
+                    "version_info": {
+                        "ORTE": {
+                            "version": "3.0.0a1", 
+                            "version_detail": "v2.x-dev-3722-g578d881"
+                        }
+                    }
+                }, 
+                "task_offsets": 7, 
+                "task_slots": [
+                    "comet-10-28:7"
+                ]
+            }, 
+            "pilot": "pilot.0000", 
+            "sandbox": "sftp://comet.sdsc.xsede.org/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000//unit.000007/", 
+            "started": 1493676860.5212, 
+            "state": "DONE", 
+            "states": [
+                "NEW", 
+                "UMGR_SCHEDULING_PENDING", 
+                "UMGR_SCHEDULING", 
+                "UMGR_STAGING_INPUT_PENDING", 
+                "UMGR_STAGING_INPUT", 
+                "AGENT_STAGING_INPUT_PENDING", 
+                "AGENT_STAGING_INPUT", 
+                "AGENT_SCHEDULING_PENDING", 
+                "AGENT_SCHEDULING", 
+                "AGENT_EXECUTING_PENDING", 
+                "AGENT_EXECUTING", 
+                "AGENT_EXECUTING", 
+                "AGENT_STAGING_INPUT", 
+                "AGENT_SCHEDULING_PENDING", 
+                "AGENT_SCHEDULING", 
+                "AGENT_EXECUTING_PENDING", 
+                "AGENT_EXECUTING", 
+                "AGENT_STAGING_OUTPUT_PENDING", 
+                "AGENT_STAGING_OUTPUT", 
+                "UMGR_STAGING_OUTPUT_PENDING", 
+                "UMGR_STAGING_OUTPUT_PENDING", 
+                "UMGR_STAGING_OUTPUT", 
+                "DONE"
+            ], 
+            "stderr": "2017-05-01 15:14:21,247: radical.synapse     : MainProcess                     : MainThread     : INFO    : python.interpreter   version: 2.7.10 (default, Feb 1 2016, 14:30:50) [GCC 4.9.2]\n2017-05-01 15:14:21,248: radical.synapse     : MainProcess                     : MainThread     : INFO    :                      pid: 14896\n2017-05-01 15:14:21,248: radical.synapse     : MainProcess                     : MainThread     : INFO    :                      tid: MainThread\n2017-05-01 15:14:21,396: radical.synapse.self._uid: MainProcess                     : MainThread     : INFO    : python.interpreter   version: 2.7.10 (default, Feb 1 2016, 14:30:50) [GCC 4.9.2]\n2017-05-01 15:14:21,397: radical.synapse.self._uid: MainProcess                     : MainThread     : INFO    :                      pid: 14896\n2017-05-01 15:14:21,397: radical.synapse.self._uid: MainProcess                     : MainThread     : INFO    :                      tid: MainThread\n", 
+            "stderr_file": "/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000/unit.000007/rank.0/stderr", 
+            "stdout": "serial: 10\ntask type     : serial\ntask mode     : flops\nnum_processes : 1\ntask_length   : 1715750072310\nread_buf      : 65536\nwrite_buf     : 65536\nnum_input     : 0\nnum_output    : 0\ninterleave_opt: 0\nprocess 1/1 reading input files\nwarning: emulate needs either command, sample or src\nprocess 1/1 is sleeping\nemulating 1 samples\nemulate  {'efficiency': 1, 'flops': 1029450043386, 'time': 0}\nprocess 1/1 writing output files\nwarning: emulate needs either command, sample or src\n", 
+            "stdout_file": "/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000/unit.000007/rank.0/stdout", 
+            "target_state": "DONE", 
+            "type": "unit", 
+            "uid": "unit.000007", 
+            "umgr": "umgr.0000"
+        }, 
+        {
+            "_id": "unit.000001", 
+            "cmd": [], 
+            "control": null, 
+            "description": {
+                "arguments": null, 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "module load python; source $HOME/bin/ve.synapse/bin/activate; aimes-skeleton-synapse.py serial flops 1 1715750072310 65536 65536 0 0 0", 
+                "input_staging": [], 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": [], 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exit_code": 0, 
+            "finished": 1493677406.981714, 
+            "name": null, 
+            "opaque_slots": {
+                "lm_info": {
+                    "dvm_uri": "2403139584.0;tcp://10.22.253.163,198.202.116.128,10.21.253.163,192.168.38.165:35638;ud://30897.29168.1", 
+                    "version_info": {
+                        "ORTE": {
+                            "version": "3.0.0a1", 
+                            "version_detail": "v2.x-dev-3722-g578d881"
+                        }
+                    }
+                }, 
+                "task_offsets": 1, 
+                "task_slots": [
+                    "comet-10-28:1"
+                ]
+            }, 
+            "pilot": "pilot.0000", 
+            "sandbox": "sftp://comet.sdsc.xsede.org/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000//unit.000001/", 
+            "started": 1493676860.500507, 
+            "state": "DONE", 
+            "states": [
+                "NEW", 
+                "UMGR_SCHEDULING_PENDING", 
+                "UMGR_SCHEDULING", 
+                "UMGR_STAGING_INPUT_PENDING", 
+                "UMGR_STAGING_INPUT", 
+                "AGENT_STAGING_INPUT_PENDING", 
+                "AGENT_STAGING_INPUT", 
+                "AGENT_SCHEDULING_PENDING", 
+                "AGENT_SCHEDULING", 
+                "AGENT_EXECUTING_PENDING", 
+                "AGENT_EXECUTING", 
+                "AGENT_EXECUTING", 
+                "AGENT_STAGING_INPUT", 
+                "AGENT_SCHEDULING_PENDING", 
+                "AGENT_SCHEDULING", 
+                "AGENT_EXECUTING_PENDING", 
+                "AGENT_EXECUTING", 
+                "AGENT_STAGING_OUTPUT_PENDING", 
+                "AGENT_STAGING_OUTPUT", 
+                "UMGR_STAGING_OUTPUT_PENDING", 
+                "UMGR_STAGING_OUTPUT_PENDING", 
+                "UMGR_STAGING_OUTPUT", 
+                "DONE"
+            ], 
+            "stderr": "2017-05-01 15:14:21,247: radical.synapse     : MainProcess                     : MainThread     : INFO    : python.interpreter   version: 2.7.10 (default, Feb 1 2016, 14:30:50) [GCC 4.9.2]\n2017-05-01 15:14:21,248: radical.synapse     : MainProcess                     : MainThread     : INFO    :                      pid: 14842\n2017-05-01 15:14:21,248: radical.synapse     : MainProcess                     : MainThread     : INFO    :                      tid: MainThread\n2017-05-01 15:14:21,396: radical.synapse.self._uid: MainProcess                     : MainThread     : INFO    : python.interpreter   version: 2.7.10 (default, Feb 1 2016, 14:30:50) [GCC 4.9.2]\n2017-05-01 15:14:21,397: radical.synapse.self._uid: MainProcess                     : MainThread     : INFO    :                      pid: 14842\n2017-05-01 15:14:21,397: radical.synapse.self._uid: MainProcess                     : MainThread     : INFO    :                      tid: MainThread\n", 
+            "stderr_file": "/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000/unit.000001/rank.0/stderr", 
+            "stdout": "serial: 10\ntask type     : serial\ntask mode     : flops\nnum_processes : 1\ntask_length   : 1715750072310\nread_buf      : 65536\nwrite_buf     : 65536\nnum_input     : 0\nnum_output    : 0\ninterleave_opt: 0\nprocess 1/1 reading input files\nwarning: emulate needs either command, sample or src\nprocess 1/1 is sleeping\nemulating 1 samples\nemulate  {'efficiency': 1, 'flops': 1029450043386, 'time': 0}\nprocess 1/1 writing output files\nwarning: emulate needs either command, sample or src\n", 
+            "stdout_file": "/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000/unit.000001/rank.0/stdout", 
+            "target_state": "DONE", 
+            "type": "unit", 
+            "uid": "unit.000001", 
+            "umgr": "umgr.0000"
+        }, 
+        {
+            "_id": "unit.000008", 
+            "cmd": [], 
+            "control": null, 
+            "description": {
+                "arguments": null, 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "module load python; source $HOME/bin/ve.synapse/bin/activate; aimes-skeleton-synapse.py serial flops 1 1715750072310 65536 65536 0 0 0", 
+                "input_staging": [], 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": [], 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exit_code": 0, 
+            "finished": 1493677411.532056, 
+            "name": null, 
+            "opaque_slots": {
+                "lm_info": {
+                    "dvm_uri": "2403139584.0;tcp://10.22.253.163,198.202.116.128,10.21.253.163,192.168.38.165:35638;ud://30897.29168.1", 
+                    "version_info": {
+                        "ORTE": {
+                            "version": "3.0.0a1", 
+                            "version_detail": "v2.x-dev-3722-g578d881"
+                        }
+                    }
+                }, 
+                "task_offsets": 8, 
+                "task_slots": [
+                    "comet-10-28:8"
+                ]
+            }, 
+            "pilot": "pilot.0000", 
+            "sandbox": "sftp://comet.sdsc.xsede.org/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000//unit.000008/", 
+            "started": 1493676860.521313, 
+            "state": "DONE", 
+            "states": [
+                "NEW", 
+                "UMGR_SCHEDULING_PENDING", 
+                "UMGR_SCHEDULING", 
+                "UMGR_STAGING_INPUT_PENDING", 
+                "UMGR_STAGING_INPUT", 
+                "AGENT_STAGING_INPUT_PENDING", 
+                "AGENT_STAGING_INPUT", 
+                "AGENT_SCHEDULING_PENDING", 
+                "AGENT_SCHEDULING", 
+                "AGENT_EXECUTING_PENDING", 
+                "AGENT_EXECUTING", 
+                "AGENT_EXECUTING", 
+                "AGENT_STAGING_INPUT", 
+                "AGENT_SCHEDULING_PENDING", 
+                "AGENT_SCHEDULING", 
+                "AGENT_EXECUTING_PENDING", 
+                "AGENT_EXECUTING", 
+                "AGENT_STAGING_OUTPUT_PENDING", 
+                "AGENT_STAGING_OUTPUT", 
+                "UMGR_STAGING_OUTPUT_PENDING", 
+                "UMGR_STAGING_OUTPUT_PENDING", 
+                "UMGR_STAGING_OUTPUT", 
+                "DONE"
+            ], 
+            "stderr": "2017-05-01 15:14:21,247: radical.synapse     : MainProcess                     : MainThread     : INFO    : python.interpreter   version: 2.7.10 (default, Feb 1 2016, 14:30:50) [GCC 4.9.2]\n2017-05-01 15:14:21,248: radical.synapse     : MainProcess                     : MainThread     : INFO    :                      pid: 14899\n2017-05-01 15:14:21,248: radical.synapse     : MainProcess                     : MainThread     : INFO    :                      tid: MainThread\n2017-05-01 15:14:21,396: radical.synapse.self._uid: MainProcess                     : MainThread     : INFO    : python.interpreter   version: 2.7.10 (default, Feb 1 2016, 14:30:50) [GCC 4.9.2]\n2017-05-01 15:14:21,397: radical.synapse.self._uid: MainProcess                     : MainThread     : INFO    :                      pid: 14899\n2017-05-01 15:14:21,397: radical.synapse.self._uid: MainProcess                     : MainThread     : INFO    :                      tid: MainThread\n", 
+            "stderr_file": "/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000/unit.000008/rank.0/stderr", 
+            "stdout": "serial: 10\ntask type     : serial\ntask mode     : flops\nnum_processes : 1\ntask_length   : 1715750072310\nread_buf      : 65536\nwrite_buf     : 65536\nnum_input     : 0\nnum_output    : 0\ninterleave_opt: 0\nprocess 1/1 reading input files\nwarning: emulate needs either command, sample or src\nprocess 1/1 is sleeping\nemulating 1 samples\nemulate  {'efficiency': 1, 'flops': 1029450043386, 'time': 0}\nprocess 1/1 writing output files\nwarning: emulate needs either command, sample or src\n", 
+            "stdout_file": "/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000/unit.000008/rank.0/stdout", 
+            "target_state": "DONE", 
+            "type": "unit", 
+            "uid": "unit.000008", 
+            "umgr": "umgr.0000"
+        }, 
+        {
+            "_id": "unit.000005", 
+            "cmd": [], 
+            "control": null, 
+            "description": {
+                "arguments": null, 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "module load python; source $HOME/bin/ve.synapse/bin/activate; aimes-skeleton-synapse.py serial flops 1 1715750072310 65536 65536 0 0 0", 
+                "input_staging": [], 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": [], 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exit_code": 0, 
+            "finished": 1493677417.166533, 
+            "name": null, 
+            "opaque_slots": {
+                "lm_info": {
+                    "dvm_uri": "2403139584.0;tcp://10.22.253.163,198.202.116.128,10.21.253.163,192.168.38.165:35638;ud://30897.29168.1", 
+                    "version_info": {
+                        "ORTE": {
+                            "version": "3.0.0a1", 
+                            "version_detail": "v2.x-dev-3722-g578d881"
+                        }
+                    }
+                }, 
+                "task_offsets": 5, 
+                "task_slots": [
+                    "comet-10-28:5"
+                ]
+            }, 
+            "pilot": "pilot.0000", 
+            "sandbox": "sftp://comet.sdsc.xsede.org/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000//unit.000005/", 
+            "started": 1493676860.520949, 
+            "state": "DONE", 
+            "states": [
+                "NEW", 
+                "UMGR_SCHEDULING_PENDING", 
+                "UMGR_SCHEDULING", 
+                "UMGR_STAGING_INPUT_PENDING", 
+                "UMGR_STAGING_INPUT", 
+                "AGENT_STAGING_INPUT_PENDING", 
+                "AGENT_STAGING_INPUT", 
+                "AGENT_SCHEDULING_PENDING", 
+                "AGENT_SCHEDULING", 
+                "AGENT_EXECUTING_PENDING", 
+                "AGENT_EXECUTING", 
+                "AGENT_EXECUTING", 
+                "AGENT_STAGING_INPUT", 
+                "AGENT_SCHEDULING_PENDING", 
+                "AGENT_SCHEDULING", 
+                "AGENT_EXECUTING_PENDING", 
+                "AGENT_EXECUTING", 
+                "AGENT_STAGING_OUTPUT_PENDING", 
+                "AGENT_STAGING_OUTPUT", 
+                "UMGR_STAGING_OUTPUT_PENDING", 
+                "UMGR_STAGING_OUTPUT_PENDING", 
+                "UMGR_STAGING_OUTPUT", 
+                "DONE"
+            ], 
+            "stderr": "2017-05-01 15:14:21,247: radical.synapse     : MainProcess                     : MainThread     : INFO    : python.interpreter   version: 2.7.10 (default, Feb 1 2016, 14:30:50) [GCC 4.9.2]\n2017-05-01 15:14:21,248: radical.synapse     : MainProcess                     : MainThread     : INFO    :                      pid: 14882\n2017-05-01 15:14:21,248: radical.synapse     : MainProcess                     : MainThread     : INFO    :                      tid: MainThread\n2017-05-01 15:14:21,396: radical.synapse.self._uid: MainProcess                     : MainThread     : INFO    : python.interpreter   version: 2.7.10 (default, Feb 1 2016, 14:30:50) [GCC 4.9.2]\n2017-05-01 15:14:21,397: radical.synapse.self._uid: MainProcess                     : MainThread     : INFO    :                      pid: 14882\n2017-05-01 15:14:21,397: radical.synapse.self._uid: MainProcess                     : MainThread     : INFO    :                      tid: MainThread\n", 
+            "stderr_file": "/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000/unit.000005/rank.0/stderr", 
+            "stdout": "serial: 10\ntask type     : serial\ntask mode     : flops\nnum_processes : 1\ntask_length   : 1715750072310\nread_buf      : 65536\nwrite_buf     : 65536\nnum_input     : 0\nnum_output    : 0\ninterleave_opt: 0\nprocess 1/1 reading input files\nwarning: emulate needs either command, sample or src\nprocess 1/1 is sleeping\nemulating 1 samples\nemulate  {'efficiency': 1, 'flops': 1029450043386, 'time': 0}\nprocess 1/1 writing output files\nwarning: emulate needs either command, sample or src\n", 
+            "stdout_file": "/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000/unit.000005/rank.0/stdout", 
+            "target_state": "DONE", 
+            "type": "unit", 
+            "uid": "unit.000005", 
+            "umgr": "umgr.0000"
+        }, 
+        {
+            "_id": "unit.000004", 
+            "cmd": [], 
+            "control": null, 
+            "description": {
+                "arguments": null, 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "module load python; source $HOME/bin/ve.synapse/bin/activate; aimes-skeleton-synapse.py serial flops 1 1715750072310 65536 65536 0 0 0", 
+                "input_staging": [], 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": [], 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exit_code": 0, 
+            "finished": 1493677418.308262, 
+            "name": null, 
+            "opaque_slots": {
+                "lm_info": {
+                    "dvm_uri": "2403139584.0;tcp://10.22.253.163,198.202.116.128,10.21.253.163,192.168.38.165:35638;ud://30897.29168.1", 
+                    "version_info": {
+                        "ORTE": {
+                            "version": "3.0.0a1", 
+                            "version_detail": "v2.x-dev-3722-g578d881"
+                        }
+                    }
+                }, 
+                "task_offsets": 4, 
+                "task_slots": [
+                    "comet-10-28:4"
+                ]
+            }, 
+            "pilot": "pilot.0000", 
+            "sandbox": "sftp://comet.sdsc.xsede.org/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000//unit.000004/", 
+            "started": 1493676860.520804, 
+            "state": "DONE", 
+            "states": [
+                "NEW", 
+                "UMGR_SCHEDULING_PENDING", 
+                "UMGR_SCHEDULING", 
+                "UMGR_STAGING_INPUT_PENDING", 
+                "UMGR_STAGING_INPUT", 
+                "AGENT_STAGING_INPUT_PENDING", 
+                "AGENT_STAGING_INPUT", 
+                "AGENT_SCHEDULING_PENDING", 
+                "AGENT_SCHEDULING", 
+                "AGENT_EXECUTING_PENDING", 
+                "AGENT_EXECUTING", 
+                "AGENT_EXECUTING", 
+                "AGENT_STAGING_INPUT", 
+                "AGENT_SCHEDULING_PENDING", 
+                "AGENT_SCHEDULING", 
+                "AGENT_EXECUTING_PENDING", 
+                "AGENT_EXECUTING", 
+                "AGENT_STAGING_OUTPUT_PENDING", 
+                "AGENT_STAGING_OUTPUT", 
+                "UMGR_STAGING_OUTPUT_PENDING", 
+                "UMGR_STAGING_OUTPUT_PENDING", 
+                "UMGR_STAGING_OUTPUT", 
+                "DONE"
+            ], 
+            "stderr": "2017-05-01 15:14:21,247: radical.synapse     : MainProcess                     : MainThread     : INFO    : python.interpreter   version: 2.7.10 (default, Feb 1 2016, 14:30:50) [GCC 4.9.2]\n2017-05-01 15:14:21,248: radical.synapse     : MainProcess                     : MainThread     : INFO    :                      pid: 14868\n2017-05-01 15:14:21,248: radical.synapse     : MainProcess                     : MainThread     : INFO    :                      tid: MainThread\n2017-05-01 15:14:21,396: radical.synapse.self._uid: MainProcess                     : MainThread     : INFO    : python.interpreter   version: 2.7.10 (default, Feb 1 2016, 14:30:50) [GCC 4.9.2]\n2017-05-01 15:14:21,397: radical.synapse.self._uid: MainProcess                     : MainThread     : INFO    :                      pid: 14868\n2017-05-01 15:14:21,397: radical.synapse.self._uid: MainProcess                     : MainThread     : INFO    :                      tid: MainThread\n", 
+            "stderr_file": "/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000/unit.000004/rank.0/stderr", 
+            "stdout": "serial: 10\ntask type     : serial\ntask mode     : flops\nnum_processes : 1\ntask_length   : 1715750072310\nread_buf      : 65536\nwrite_buf     : 65536\nnum_input     : 0\nnum_output    : 0\ninterleave_opt: 0\nprocess 1/1 reading input files\nwarning: emulate needs either command, sample or src\nprocess 1/1 is sleeping\nemulating 1 samples\nemulate  {'efficiency': 1, 'flops': 1029450043386, 'time': 0}\nprocess 1/1 writing output files\nwarning: emulate needs either command, sample or src\n", 
+            "stdout_file": "/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000/unit.000004/rank.0/stdout", 
+            "target_state": "DONE", 
+            "type": "unit", 
+            "uid": "unit.000004", 
+            "umgr": "umgr.0000"
+        }, 
+        {
+            "_id": "unit.000003", 
+            "cmd": [], 
+            "control": null, 
+            "description": {
+                "arguments": null, 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "module load python; source $HOME/bin/ve.synapse/bin/activate; aimes-skeleton-synapse.py serial flops 1 1715750072310 65536 65536 0 0 0", 
+                "input_staging": [], 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": [], 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exit_code": 0, 
+            "finished": 1493677418.335839, 
+            "name": null, 
+            "opaque_slots": {
+                "lm_info": {
+                    "dvm_uri": "2403139584.0;tcp://10.22.253.163,198.202.116.128,10.21.253.163,192.168.38.165:35638;ud://30897.29168.1", 
+                    "version_info": {
+                        "ORTE": {
+                            "version": "3.0.0a1", 
+                            "version_detail": "v2.x-dev-3722-g578d881"
+                        }
+                    }
+                }, 
+                "task_offsets": 3, 
+                "task_slots": [
+                    "comet-10-28:3"
+                ]
+            }, 
+            "pilot": "pilot.0000", 
+            "sandbox": "sftp://comet.sdsc.xsede.org/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000//unit.000003/", 
+            "started": 1493676860.500691, 
+            "state": "DONE", 
+            "states": [
+                "NEW", 
+                "UMGR_SCHEDULING_PENDING", 
+                "UMGR_SCHEDULING", 
+                "UMGR_STAGING_INPUT_PENDING", 
+                "UMGR_STAGING_INPUT", 
+                "AGENT_STAGING_INPUT_PENDING", 
+                "AGENT_STAGING_INPUT", 
+                "AGENT_SCHEDULING_PENDING", 
+                "AGENT_SCHEDULING", 
+                "AGENT_EXECUTING_PENDING", 
+                "AGENT_EXECUTING", 
+                "AGENT_EXECUTING", 
+                "AGENT_STAGING_INPUT", 
+                "AGENT_SCHEDULING_PENDING", 
+                "AGENT_SCHEDULING", 
+                "AGENT_EXECUTING_PENDING", 
+                "AGENT_EXECUTING", 
+                "AGENT_STAGING_OUTPUT_PENDING", 
+                "AGENT_STAGING_OUTPUT", 
+                "UMGR_STAGING_OUTPUT_PENDING", 
+                "UMGR_STAGING_OUTPUT_PENDING", 
+                "UMGR_STAGING_OUTPUT", 
+                "DONE"
+            ], 
+            "stderr": "2017-05-01 15:14:21,247: radical.synapse     : MainProcess                     : MainThread     : INFO    : python.interpreter   version: 2.7.10 (default, Feb 1 2016, 14:30:50) [GCC 4.9.2]\n2017-05-01 15:14:21,248: radical.synapse     : MainProcess                     : MainThread     : INFO    :                      pid: 14853\n2017-05-01 15:14:21,248: radical.synapse     : MainProcess                     : MainThread     : INFO    :                      tid: MainThread\n2017-05-01 15:14:21,396: radical.synapse.self._uid: MainProcess                     : MainThread     : INFO    : python.interpreter   version: 2.7.10 (default, Feb 1 2016, 14:30:50) [GCC 4.9.2]\n2017-05-01 15:14:21,397: radical.synapse.self._uid: MainProcess                     : MainThread     : INFO    :                      pid: 14853\n2017-05-01 15:14:21,397: radical.synapse.self._uid: MainProcess                     : MainThread     : INFO    :                      tid: MainThread\n", 
+            "stderr_file": "/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000/unit.000003/rank.0/stderr", 
+            "stdout": "serial: 10\ntask type     : serial\ntask mode     : flops\nnum_processes : 1\ntask_length   : 1715750072310\nread_buf      : 65536\nwrite_buf     : 65536\nnum_input     : 0\nnum_output    : 0\ninterleave_opt: 0\nprocess 1/1 reading input files\nwarning: emulate needs either command, sample or src\nprocess 1/1 is sleeping\nemulating 1 samples\nemulate  {'efficiency': 1, 'flops': 1029450043386, 'time': 0}\nprocess 1/1 writing output files\nwarning: emulate needs either command, sample or src\n", 
+            "stdout_file": "/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000/unit.000003/rank.0/stdout", 
+            "target_state": "DONE", 
+            "type": "unit", 
+            "uid": "unit.000003", 
+            "umgr": "umgr.0000"
+        }, 
+        {
+            "_id": "unit.000009", 
+            "cmd": [], 
+            "control": "umgr", 
+            "description": {
+                "arguments": null, 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "module load python; source $HOME/bin/ve.synapse/bin/activate; aimes-skeleton-synapse.py serial flops 1 1715750072310 65536 65536 0 0 0", 
+                "input_staging": [], 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": [], 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exit_code": 0, 
+            "finished": 1493677419.286205, 
+            "name": null, 
+            "opaque_slots": {
+                "lm_info": {
+                    "dvm_uri": "2403139584.0;tcp://10.22.253.163,198.202.116.128,10.21.253.163,192.168.38.165:35638;ud://30897.29168.1", 
+                    "version_info": {
+                        "ORTE": {
+                            "version": "3.0.0a1", 
+                            "version_detail": "v2.x-dev-3722-g578d881"
+                        }
+                    }
+                }, 
+                "task_offsets": 9, 
+                "task_slots": [
+                    "comet-10-28:9"
+                ]
+            }, 
+            "pilot": "pilot.0000", 
+            "sandbox": "sftp://comet.sdsc.xsede.org/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000//unit.000009/", 
+            "started": 1493676860.52145, 
+            "state": "UMGR_STAGING_OUTPUT_PENDING", 
+            "states": [
+                "NEW", 
+                "UMGR_SCHEDULING_PENDING", 
+                "UMGR_SCHEDULING", 
+                "UMGR_STAGING_INPUT_PENDING", 
+                "UMGR_STAGING_INPUT", 
+                "AGENT_STAGING_INPUT_PENDING", 
+                "AGENT_STAGING_INPUT", 
+                "AGENT_SCHEDULING_PENDING", 
+                "AGENT_SCHEDULING", 
+                "AGENT_EXECUTING_PENDING", 
+                "AGENT_EXECUTING", 
+                "AGENT_EXECUTING", 
+                "AGENT_STAGING_INPUT", 
+                "AGENT_SCHEDULING_PENDING", 
+                "AGENT_SCHEDULING", 
+                "AGENT_EXECUTING_PENDING", 
+                "AGENT_EXECUTING", 
+                "AGENT_STAGING_OUTPUT_PENDING", 
+                "AGENT_STAGING_OUTPUT", 
+                "UMGR_STAGING_OUTPUT_PENDING", 
+                "UMGR_STAGING_OUTPUT_PENDING"
+            ], 
+            "stderr": "2017-05-01 15:14:21,247: radical.synapse     : MainProcess                     : MainThread     : INFO    : python.interpreter   version: 2.7.10 (default, Feb 1 2016, 14:30:50) [GCC 4.9.2]\n2017-05-01 15:14:21,248: radical.synapse     : MainProcess                     : MainThread     : INFO    :                      pid: 14902\n2017-05-01 15:14:21,248: radical.synapse     : MainProcess                     : MainThread     : INFO    :                      tid: MainThread\n2017-05-01 15:14:21,396: radical.synapse.self._uid: MainProcess                     : MainThread     : INFO    : python.interpreter   version: 2.7.10 (default, Feb 1 2016, 14:30:50) [GCC 4.9.2]\n2017-05-01 15:14:21,397: radical.synapse.self._uid: MainProcess                     : MainThread     : INFO    :                      pid: 14902\n2017-05-01 15:14:21,397: radical.synapse.self._uid: MainProcess                     : MainThread     : INFO    :                      tid: MainThread\n", 
+            "stderr_file": "/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000/unit.000009/rank.0/stderr", 
+            "stdout": "serial: 10\ntask type     : serial\ntask mode     : flops\nnum_processes : 1\ntask_length   : 1715750072310\nread_buf      : 65536\nwrite_buf     : 65536\nnum_input     : 0\nnum_output    : 0\ninterleave_opt: 0\nprocess 1/1 reading input files\nwarning: emulate needs either command, sample or src\nprocess 1/1 is sleeping\nemulating 1 samples\nemulate  {'efficiency': 1, 'flops': 1029450043386, 'time': 0}\nprocess 1/1 writing output files\nwarning: emulate needs either command, sample or src\n", 
+            "stdout_file": "/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000/unit.000009/rank.0/stdout", 
+            "target_state": "DONE", 
+            "type": "unit", 
+            "uid": "unit.000009", 
+            "umgr": "umgr.0000"
+        }, 
+        {
+            "_id": "unit.000010", 
+            "cmd": [], 
+            "control": "umgr", 
+            "description": {
+                "arguments": null, 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "module load python; source $HOME/bin/ve.synapse/bin/activate; aimes-skeleton-synapse.py serial flops 1 1715750072310 65536 65536 0 0 0", 
+                "input_staging": [], 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": [], 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exit_code": 0, 
+            "finished": 1493677419.669163, 
+            "name": null, 
+            "opaque_slots": {
+                "lm_info": {
+                    "dvm_uri": "2403139584.0;tcp://10.22.253.163,198.202.116.128,10.21.253.163,192.168.38.165:35638;ud://30897.29168.1", 
+                    "version_info": {
+                        "ORTE": {
+                            "version": "3.0.0a1", 
+                            "version_detail": "v2.x-dev-3722-g578d881"
+                        }
+                    }
+                }, 
+                "task_offsets": 10, 
+                "task_slots": [
+                    "comet-10-28:10"
+                ]
+            }, 
+            "pilot": "pilot.0000", 
+            "sandbox": "sftp://comet.sdsc.xsede.org/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000//unit.000010/", 
+            "started": 1493676860.542697, 
+            "state": "UMGR_STAGING_OUTPUT_PENDING", 
+            "states": [
+                "NEW", 
+                "UMGR_SCHEDULING_PENDING", 
+                "UMGR_SCHEDULING", 
+                "UMGR_STAGING_INPUT_PENDING", 
+                "UMGR_STAGING_INPUT", 
+                "AGENT_STAGING_INPUT_PENDING", 
+                "AGENT_STAGING_INPUT", 
+                "AGENT_SCHEDULING_PENDING", 
+                "AGENT_SCHEDULING", 
+                "AGENT_EXECUTING_PENDING", 
+                "AGENT_EXECUTING", 
+                "AGENT_EXECUTING", 
+                "AGENT_STAGING_INPUT", 
+                "AGENT_SCHEDULING_PENDING", 
+                "AGENT_SCHEDULING", 
+                "AGENT_EXECUTING_PENDING", 
+                "AGENT_EXECUTING", 
+                "AGENT_STAGING_OUTPUT_PENDING", 
+                "AGENT_STAGING_OUTPUT", 
+                "UMGR_STAGING_OUTPUT_PENDING", 
+                "UMGR_STAGING_OUTPUT_PENDING"
+            ], 
+            "stderr": "2017-05-01 15:14:21,247: radical.synapse     : MainProcess                     : MainThread     : INFO    : python.interpreter   version: 2.7.10 (default, Feb 1 2016, 14:30:50) [GCC 4.9.2]\n2017-05-01 15:14:21,248: radical.synapse     : MainProcess                     : MainThread     : INFO    :                      pid: 14906\n2017-05-01 15:14:21,248: radical.synapse     : MainProcess                     : MainThread     : INFO    :                      tid: MainThread\n2017-05-01 15:14:21,396: radical.synapse.self._uid: MainProcess                     : MainThread     : INFO    : python.interpreter   version: 2.7.10 (default, Feb 1 2016, 14:30:50) [GCC 4.9.2]\n2017-05-01 15:14:21,397: radical.synapse.self._uid: MainProcess                     : MainThread     : INFO    :                      pid: 14906\n2017-05-01 15:14:21,397: radical.synapse.self._uid: MainProcess                     : MainThread     : INFO    :                      tid: MainThread\n", 
+            "stderr_file": "/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000/unit.000010/rank.0/stderr", 
+            "stdout": "serial: 10\ntask type     : serial\ntask mode     : flops\nnum_processes : 1\ntask_length   : 1715750072310\nread_buf      : 65536\nwrite_buf     : 65536\nnum_input     : 0\nnum_output    : 0\ninterleave_opt: 0\nprocess 1/1 reading input files\nwarning: emulate needs either command, sample or src\nprocess 1/1 is sleeping\nemulating 1 samples\nemulate  {'efficiency': 1, 'flops': 1029450043386, 'time': 0}\nprocess 1/1 writing output files\nwarning: emulate needs either command, sample or src\n", 
+            "stdout_file": "/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000/unit.000010/rank.0/stdout", 
+            "target_state": "DONE", 
+            "type": "unit", 
+            "uid": "unit.000010", 
+            "umgr": "umgr.0000"
+        }, 
+        {
+            "_id": "unit.000002", 
+            "cmd": [], 
+            "control": "umgr", 
+            "description": {
+                "arguments": null, 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "module load python; source $HOME/bin/ve.synapse/bin/activate; aimes-skeleton-synapse.py serial flops 1 1715750072310 65536 65536 0 0 0", 
+                "input_staging": [], 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": [], 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exit_code": 0, 
+            "finished": 1493677420.975305, 
+            "name": null, 
+            "opaque_slots": {
+                "lm_info": {
+                    "dvm_uri": "2403139584.0;tcp://10.22.253.163,198.202.116.128,10.21.253.163,192.168.38.165:35638;ud://30897.29168.1", 
+                    "version_info": {
+                        "ORTE": {
+                            "version": "3.0.0a1", 
+                            "version_detail": "v2.x-dev-3722-g578d881"
+                        }
+                    }
+                }, 
+                "task_offsets": 2, 
+                "task_slots": [
+                    "comet-10-28:2"
+                ]
+            }, 
+            "pilot": "pilot.0000", 
+            "sandbox": "sftp://comet.sdsc.xsede.org/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000//unit.000002/", 
+            "started": 1493676860.500603, 
+            "state": "UMGR_STAGING_OUTPUT_PENDING", 
+            "states": [
+                "NEW", 
+                "UMGR_SCHEDULING_PENDING", 
+                "UMGR_SCHEDULING", 
+                "UMGR_STAGING_INPUT_PENDING", 
+                "UMGR_STAGING_INPUT", 
+                "AGENT_STAGING_INPUT_PENDING", 
+                "AGENT_STAGING_INPUT", 
+                "AGENT_SCHEDULING_PENDING", 
+                "AGENT_SCHEDULING", 
+                "AGENT_EXECUTING_PENDING", 
+                "AGENT_EXECUTING", 
+                "AGENT_EXECUTING", 
+                "AGENT_STAGING_INPUT", 
+                "AGENT_SCHEDULING_PENDING", 
+                "AGENT_SCHEDULING", 
+                "AGENT_EXECUTING_PENDING", 
+                "AGENT_EXECUTING", 
+                "AGENT_STAGING_OUTPUT_PENDING", 
+                "AGENT_STAGING_OUTPUT", 
+                "UMGR_STAGING_OUTPUT_PENDING", 
+                "UMGR_STAGING_OUTPUT_PENDING"
+            ], 
+            "stderr": "2017-05-01 15:14:21,247: radical.synapse     : MainProcess                     : MainThread     : INFO    : python.interpreter   version: 2.7.10 (default, Feb 1 2016, 14:30:50) [GCC 4.9.2]\n2017-05-01 15:14:21,248: radical.synapse     : MainProcess                     : MainThread     : INFO    :                      pid: 14845\n2017-05-01 15:14:21,248: radical.synapse     : MainProcess                     : MainThread     : INFO    :                      tid: MainThread\n2017-05-01 15:14:21,396: radical.synapse.self._uid: MainProcess                     : MainThread     : INFO    : python.interpreter   version: 2.7.10 (default, Feb 1 2016, 14:30:50) [GCC 4.9.2]\n2017-05-01 15:14:21,397: radical.synapse.self._uid: MainProcess                     : MainThread     : INFO    :                      pid: 14845\n2017-05-01 15:14:21,397: radical.synapse.self._uid: MainProcess                     : MainThread     : INFO    :                      tid: MainThread\n", 
+            "stderr_file": "/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000/unit.000002/rank.0/stderr", 
+            "stdout": "serial: 10\ntask type     : serial\ntask mode     : flops\nnum_processes : 1\ntask_length   : 1715750072310\nread_buf      : 65536\nwrite_buf     : 65536\nnum_input     : 0\nnum_output    : 0\ninterleave_opt: 0\nprocess 1/1 reading input files\nwarning: emulate needs either command, sample or src\nprocess 1/1 is sleeping\nemulating 1 samples\nemulate  {'efficiency': 1, 'flops': 1029450043386, 'time': 0}\nprocess 1/1 writing output files\nwarning: emulate needs either command, sample or src\n", 
+            "stdout_file": "/home/mingtha/radical.pilot.sandbox/rp.session.Ubuntu-1604-xenial-64-minimal.mingtha.017287.0070/pilot.0000/unit.000002/rank.0/stdout", 
+            "target_state": "DONE", 
+            "type": "unit", 
+            "uid": "unit.000002", 
+            "umgr": "umgr.0000"
+        }
+    ]
+}
