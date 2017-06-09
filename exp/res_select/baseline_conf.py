@@ -8,7 +8,7 @@ import radical.pilot as rp
 SAMPLE_SIZE = 1
 WALLTIME = 60   #In minutes
 OVERHEAD = 5    #Overhead incurred throughout the process
-CORES = 20
+CORES = 1024
 UTIL = 1        #Percent of Cores Utilized
 
 
@@ -33,15 +33,17 @@ for run in range(SAMPLE_SIZE):
         print "Initializing pmgrs, pilots, units\n"
         #pmgr_list = [rp.PilotManager(session=session) for i in range(num_pilots)]
         pmgr = rp.PilotManager(session=session)
-        umgr_list = [rp.UnitManager(session=session) for i in range(num_pilots)]
-        pilot_list = ["" for i in range(num_pilots)]
+        umgr = rp.UnitManager(session=session)
+        #umgr_list = [rp.UnitManager(session=session) for i in range(num_pilots)]
+        #pilot_list = ["" for i in range(num_pilots)]
 
         print "Defining pmgrs, pilots, units\n"
         # Creating all pmgr's, pilots, umgr's, and associate each pilot with one pmgr and umgr
+
+        pdescs = list()
         for i in range(num_pilots):
 
             # Creating list of pilot descriptions (currently only one, general enough to support multiple pilots)
-            pdescs = list()
 
             # Getting configuration for resoure i
             res_conf = conf[res[i]]
@@ -54,39 +56,50 @@ for run in range(SAMPLE_SIZE):
                         'project'       :   'TG-MCB090174'
                       }
 
+            if res == 'bridges':
+                pd_init['project'] = 'mc3bggp'
+
             pdescs.append(rp.ComputePilotDescription(pd_init))
 
             # Associating pilot i with pmgr i
-            pilot_list[i] = pmgr.submit_pilots(pdescs)
+            #pilot_list[i] = pmgr.submit_pilots(pdescs)
     
             # Associating pilot i with umgr i
-            umgr_list[i].add_pilots(pilot_list[i])
+            #umgr_list[i].add_pilots(pilot_list[i])
         
+        pilots = pmgr.submit_pilots(pdescs)
+        umgr.add_pilots(pilots)
+
+        #pmgr.wait_pilots(state=rp.PMGR_ACTIVE)
         
         print "Creating and submitting CUs\n"
         # Create CUs (number of CUs randomly generated above), and submit to umgr i
+
+        cuds = list()
         for i in range(num_pilots):    
-            cuds = list()
             for task in range(cu_per_pilot[i]):
                 cud = rp.ComputeUnitDescription()
                 #cud.pre_exec = ['module load python', 'source $HOME/bin/ve.synapse/bin/activate']
                 cud.executable = 'module load python; source $HOME/bin/ve.synapse/bin/activate; aimes-skeleton-synapse.py serial flops 1 1715750072310 65536 65536 0 0 0'
                 #cud.executable = 'aimes-skeleton-synapse.py'
                 #cud.arguments = ['serial', 'flops', '1', '1715750072310', '65536', '65536', '0', '0', '0']
+                cud.pilot = pilots[i].uid
                 cuds.append(cud)
             
-            umgr_list[i].submit_units(cuds)
+        units = umgr.submit_units(cuds)
        
         print "Waiting for units to finish\n"
         # Wait for units on all pilots to reach finish state. wait_units() is a blocking
         # call which waits for all CUs of a umgr reach a finish state [DONE, CANCELED, FAILED]
         # The loop checks each umgr. If umgr has unfinished pilot, then wait_units() blocks.
         # Otherwise, the function returns.
-        for i in range(num_pilots):
-            umgr_list[i].wait_units()
+        #for i in range(num_pilots):
+        #    umgr_list[i].wait_units()
 
-        print "Waiting for pilots to return (land) gracefully\n"
-        pmgr.wait_pilots()
+        umgr.wait_units()
+
+        #print "Waiting for pilots to return (land) gracefully\n"
+        #pmgr.wait_pilots()
 
 
     except Exception as e:
