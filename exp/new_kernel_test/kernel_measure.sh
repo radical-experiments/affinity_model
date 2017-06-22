@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-for loops in 1000000 1000000000 1000000000000
+for loops in 1000000 1000000000 10000000000 100000000000
 do
     echo "emulating ~($loops * 7) cycles"
     for iter in {1..25}
@@ -10,9 +10,13 @@ do
     done
 done
 
-echo "emulating ~(1000000000000 * 7) cycles"
-for iter in {1..25}
+#for loops in 250000000000 500000000000 750000000000 1000000000000
+for loops in 250000000000 500000000000 750000000000
 do
-    echo "Iteration $iter"
-    perf stat ./kernel 1000000000000 2>> perfstat_1000000000000
+        echo "emulating ~($loops * 7) cycles"
+        for iter in {1..10}
+        do
+            echo "Iteration $iter"
+            perf stat ./kernel  2>> perfstat_$loops
+        done
 done
