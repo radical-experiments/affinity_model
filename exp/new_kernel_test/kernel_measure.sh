@@ -10,13 +10,12 @@ do
     done
 done
 
-#for loops in 250000000000 500000000000 750000000000 1000000000000
-for loops in 250000000000 500000000000 750000000000
+for loops in 250000000000 500000000000 750000000000 1000000000000
 do
         echo "emulating ~($loops * 7) cycles"
         for iter in {1..10}
         do
             echo "Iteration $iter"
-            perf stat ./kernel  2>> perfstat_$loops
+            perf stat ./kernel $loops 2>> perfstat_$loops
         done
 done
