@@ -71,8 +71,10 @@ with open(filename, 'r') as f:
 #from pprint import pprint
 #pprint(data_array)
 
-num_iterations = filename.split('/')[-1].split('_')[-1]
-#print num_iterations
+if sys.argv[2] == "kernel":
+    num_iterations = filename.split('/')[-1].split('_')[-1]
+if sys.argv[2] == "synapse":
+    num_iterations = filename.split('/')[-2].split('_')[-1]
 
 out_filename = "timings_" + num_iterations + ".csv"
 
