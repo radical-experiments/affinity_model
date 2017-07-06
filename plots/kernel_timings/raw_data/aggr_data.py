@@ -91,6 +91,7 @@ for ff in files:
 		for line in data_file:
 			writer.writerow(line)
 
+
 for i in range(len(data_files[0])):
     with open(path+data_files[0][i][0]+'.csv', 'w') as f:
         writer = csv.writer(f)
