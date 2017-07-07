@@ -1,4 +1,5 @@
 import math
+import sys
 
 
 def average(input_list):
@@ -18,3 +19,7 @@ def conf_interval(input_list, z=2.576):
    samp_stdev = samp_std_dev(input_list)
    conf_interval = z * samp_stdev / math.sqrt(len(input_list))
    return conf_interval
+
+
+if __name__ == "__main__":
+    sys.exit()

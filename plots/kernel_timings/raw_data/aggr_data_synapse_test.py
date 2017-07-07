@@ -28,9 +28,9 @@ for ff in files:
     with open(path+ff, 'r') as f:
         session_name = float(ff.split('_')[-1].split('.')[0])
         session_id_l.append(session_name)
-        print sys.argv
+#        print sys.argv
         number_of_cycles = float(sys.argv[2])
-        print number_of_cycles
+#        print number_of_cycles
         num_iter = number_of_cycles / 8
         i = 0
         for row in f:
@@ -98,13 +98,13 @@ for ff in files:
 		for line in data_file:
 			writer.writerow(line)
 
-from pprint import pprint
-pprint(data_files[0])
+#from pprint import pprint
+#pprint(data_files[0])
 
 for i in range(len(data_files[0])):
     session_id_counter = 0
     with open(path+data_files[0][i][0]+'.csv', 'w') as f:
-        print data_files[0][i][0]
+#        print data_files[0][i][0]
         writer = csv.writer(f)
         for run_data in data_files:
             #print run_data
