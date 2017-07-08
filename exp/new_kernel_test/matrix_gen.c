@@ -1,10 +1,6 @@
-#include <stdlib.h>
-#include <time.h>
-#include <stdio.h>
-#include <string.h>
-#include <unistd.h>
+#include "matrix_gen.h"
+#define TESTING 0
 
-#define SCALE 10007.0
 
 float* make_matrix(int size)
 {
@@ -61,6 +57,7 @@ void diff_matrices(float* mat1, float* mat2, int size)
     return;
 }
 
+#if TESTING
 int main(int argc, char** argv)
 {
     if (argc != 3)
@@ -73,7 +70,7 @@ int main(int argc, char** argv)
     float* mat1 = make_matrix(size);
     float* mat2 = make_matrix(size);
 
-    print_matrix(mat1, size);
+    //print_matrix(mat1, size);
 
     char mat1_name[256];
     char mat2_name[256];
@@ -92,7 +89,8 @@ int main(int argc, char** argv)
 
     write_matrix(mat1, size, mat1_name);
     write_matrix(mat2, size, mat2_name);
-
+/*
+    # Testing function to read matrix, and making sure matrix written is same as matrix read
     float* new_mat1;
     float* new_mat2;
     new_mat1 = read_matrix(size, mat1_name);
@@ -101,7 +99,9 @@ int main(int argc, char** argv)
     print_matrix(new_mat1, size);
     diff_matrices(mat1, new_mat1, size);
     diff_matrices(mat2, new_mat2, size);
-
+*/
     return 0;
 
 }
+
+#endif
