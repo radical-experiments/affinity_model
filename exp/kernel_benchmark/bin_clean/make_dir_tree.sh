@@ -9,4 +9,5 @@ mkdir $dirname
 cp dir_structure.txt $dirname
 cd $dirname
 xargs mkdir -p < dir_structure.txt
+cd ..
 rm dir_structure.txt

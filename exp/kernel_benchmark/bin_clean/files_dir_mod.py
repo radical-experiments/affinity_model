@@ -82,3 +82,17 @@ measurements = [
                     "p2a_cycles_speedup_prederr_cpi_adj",
                     "time"
                     ]
+
+set1_adder_dirs = [
+            "adder/laptop/clkspeed_2-6",
+            "adder/laptop/clkspeed_3-5",
+            "adder/desktop/clkspeed_2-6",
+            "adder/desktop/clkspeed_3-5"
+				]
+
+set1_matmult_dirs = [
+					"matmult/laptop/clkspeed_2-6",
+					"matmult/laptop/clkspeed_3-5",
+					"matmult/desktop/clkspeed_2-6",
+					"matmult/desktop/clkspeed_3-5"
+					]
