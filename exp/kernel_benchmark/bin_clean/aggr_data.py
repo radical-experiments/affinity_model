@@ -5,7 +5,7 @@ import sys
 from files_dir_mod import *
 
 
-def aggr_data(src_path, aggr_by_transpose_path, aggr_by_measurement_path):
+def aggr_data(src_path, aggr_by_transpose_path, aggr_by_measurement_path, kernel):
 
     files = os.listdir(src_path)
     data_files = list()
@@ -13,7 +13,6 @@ def aggr_data(src_path, aggr_by_transpose_path, aggr_by_measurement_path):
     for ff in files:
 
         if not ff.startswith("timings_"):
-            print ff
             continue
         data_file = list()
         title = list()
@@ -29,13 +28,15 @@ def aggr_data(src_path, aggr_by_transpose_path, aggr_by_measurement_path):
         pred_cycles_err_l = list()
         p2a_ratio_l = list()
         p2a_instr_rate_err_l = list() 
+        instr_rate_err_l = list()
+        cycles_speedup_cpi_l = list()
+        p2a_cycles_speedup_err_cpi_l = list() 
 
         with open(src_path+'/'+ff, 'r') as f:
             num_iter = float(ff.split('_')[-1].split('.')[0])
             i = 0
             for row in f:
                 title = row.split(',')
-                print title
                 if i == 0:
                     utils_l = [title[0]]
                     cycles_l = [title[1]]
@@ -43,12 +44,15 @@ def aggr_data(src_path, aggr_by_transpose_path, aggr_by_measurement_path):
                     instr_l = [title[3]]
                     instr_rate_l = [title[4]]
                     time_l = [title[5].strip()]
-                    est_instr_l = ['instr_est']
+                    est_instr_l = ['instr_pred']
                     est_instr_err_l = ['instr_prederr']
                     pred_cycles_l = ['cycles_pred']
                     pred_cycles_err_l = ['cycles_prederr']
-                    p2a_ratio_l = ['p2a']
-                    p2a_instr_rate_err_l = ['p2a_prederr']
+                    p2a_ratio_l = ['p2a_cycles']
+                    p2a_instr_rate_err_l = ['p2a_cycles_prederr']
+                    instr_rate_err_l = ['instr_rate_prederr']
+                    cycles_speedup_cpi_l = ['cycles_speedup_cpi_adj']
+                    p2a_cycles_speedup_err_cpi_l = ['p2a_cycles_speedup_prederr_cpi_adj']
 
                 else:
                     row_data = row.split(',')
@@ -58,12 +62,27 @@ def aggr_data(src_path, aggr_by_transpose_path, aggr_by_measurement_path):
                     instr = float(row_data[3])
                     instr_rate = float(row_data[4])
                     time = float(row_data[5])
-                    est_instr = instr_rate * cycles
+
+                    if kernel == "matmult":
+                        est_instr = INSTRUCTIONS_MATMULT * num_iter**3
+                        pred_cycles = CYCLES_MATMULT * num_iter**3
+                        instr_rate_err = (instr_rate - INSTR_RATE_MATMULT) / instr_rate
+                    elif kernel == "adder":
+                        est_instr = INSTRUCTIONS_ADDER * num_iter
+                        pred_cycles = CYCLES_ADDER * num_iter
+                        instr_rate_err = (instr_rate - INSTR_RATE_ADDER) / instr_rate
+                    
                     est_instr_err = (est_instr - instr) / instr
-                    pred_cycles = 8. * num_iter
                     pred_cycles_err = (pred_cycles - cycles) / pred_cycles
                     p2a_ratio = pred_cycles / cycles
                     p2a_instr_rate_err = (p2a_ratio - instr_rate) / instr_rate
+
+                    if kernel == "matmult":
+                        cycles_speedup_cpi = instr_rate * CPI_MATMULT
+                    elif kernel == "adder":
+                        cycles_speedup_cpi = instr_rate * CPI_ADDER
+                        
+                    p2a_cycles_speedup_err_cpi = (p2a_ratio - cycles_speedup_cpi) / cycles_speedup_cpi
 
                     utils_l.append(utils)
                     cycles_l.append(cycles)
@@ -77,6 +96,9 @@ def aggr_data(src_path, aggr_by_transpose_path, aggr_by_measurement_path):
                     pred_cycles_err_l.append(pred_cycles_err)
                     p2a_ratio_l.append(p2a_ratio)
                     p2a_instr_rate_err_l.append(p2a_instr_rate_err)
+                    instr_rate_err_l.append(instr_rate_err)
+                    cycles_speedup_cpi_l.append(cycles_speedup_cpi)
+                    p2a_cycles_speedup_err_cpi_l.append(p2a_cycles_speedup_err_cpi)
 
                 i += 1
 
@@ -92,6 +114,9 @@ def aggr_data(src_path, aggr_by_transpose_path, aggr_by_measurement_path):
         data_file.append(pred_cycles_err_l)
         data_file.append(p2a_ratio_l)
         data_file.append(p2a_instr_rate_err_l)
+        data_file.append(instr_rate_err_l)
+        data_file.append(cycles_speedup_cpi_l)
+        data_file.append(p2a_cycles_speedup_err_cpi_l)
 
         data_files.append(data_file)
         with open(aggr_by_transpose_path+'/'+'t_'+ff, 'w') as f:
@@ -124,26 +149,13 @@ def aggr_data_all_dir(src_path, transpose_path, measurement_path):
                 s_path = src_path + '/' + dirname + '/' + session
                 t_path = transpose_path + '/' + dirname + '/' + session
                 m_path = measurement_path + '/' + dirname + '/' + session
-                #if kernel == "adder":
-                #    for timings_file in cleaned_adder_filenames:
-                #        aggr_data(s_path, t_path, m_path)
-                #elif kernel == "matmult":
-                #    for timings_file in cleaned_matmult_filenames:
-                aggr_data(s_path, t_path, m_path)
+                aggr_data(s_path, t_path, m_path, kernel)
 
         elif (hostenv == "laptop") or (hostenv == "desktop"):
             s_path = src_path + '/' + dirname
             t_path = transpose_path + '/' + dirname
             m_path = measurement_path + '/' + dirname
-            #if kernel == "adder":
-            #    for timings_file in cleaned_adder_filenames:
-            aggr_data(s_path, t_path, m_path)
-            #elif kernel == "matmult":
-            #    for timings_file in cleaned_matmult_filenames:
-            #        aggr_data(nv, kernel)
-
-    
-
+            aggr_data(s_path, t_path, m_path, kernel)
 
 
 

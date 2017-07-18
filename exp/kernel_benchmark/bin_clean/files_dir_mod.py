@@ -1,3 +1,13 @@
+INSTRUCTIONS_ADDER = 8.
+CYCLES_ADDER = 8.
+CPI_ADDER = CYCLES_ADDER / INSTRUCTIONS_ADDER
+INSTR_RATE_ADDER = INSTRUCTIONS_ADDER / CYCLES_ADDER
+
+INSTRUCTIONS_MATMULT = 35.
+CYCLES_MATMULT = 40.
+CPI_MATMULT = CYCLES_MATMULT / INSTRUCTIONS_MATMULT
+INSTR_RATE_MATMULT = INSTRUCTIONS_MATMULT / CYCLES_MATMULT
+
 dirnames = [
             "adder/laptop/clkspeed_2-6",
             "adder/laptop/clkspeed_3-5",
@@ -54,3 +64,21 @@ cleaned_matmult_filenames = [
 						"timings_7500",
 						"timings_10000"
 					]
+
+measurements = [
+                    "clkspeed",
+                    "cpu_util",
+                    "cycles",
+                    "cycles_pred",
+                    "cycles_prederr",
+                    "instr",
+                    "instr_pred",
+                    "instr_prederr",
+                    "instr_rate",
+                    "instr_rate_prederr",
+                    "p2a_cycles",
+                    "p2a_cycles_prederr",
+                    "cycles_speedup_cpi_adj",
+                    "p2a_cycles_speedup_prederr_cpi_adj",
+                    "time"
+                    ]
