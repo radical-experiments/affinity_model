@@ -25,7 +25,7 @@ def data_stats(src_path, dst_path, session):
         title_data = [measurement, 'Average', 'Std', 'CI']
         output_data = list()
         for i in range(len(num_cycles)):
-            pprint.pprint(num_cycles_data[i])
+            #pprint.pprint(num_cycles_data[i])
             mean = cbs.average(num_cycles_data[i])
             samp_stdev = cbs.samp_std_dev(num_cycles_data[i])
             conf_intv = cbs.conf_interval(num_cycles_data[i])

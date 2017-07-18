@@ -71,6 +71,7 @@ measurements = [
                     "cycles",
                     "cycles_pred",
                     "cycles_prederr",
+                    "cycles_speedup_cpi_adj",
                     "instr",
                     "instr_pred",
                     "instr_prederr",
@@ -78,7 +79,6 @@ measurements = [
                     "instr_rate_prederr",
                     "p2a_cycles",
                     "p2a_cycles_prederr",
-                    "cycles_speedup_cpi_adj",
                     "p2a_cycles_speedup_prederr_cpi_adj",
                     "time"
                     ]
@@ -96,3 +96,17 @@ set1_matmult_dirs = [
 					"matmult/desktop/clkspeed_2-6",
 					"matmult/desktop/clkspeed_3-5"
 					]
+
+set2_adder_dirs = [
+            "adder/amarel/compute/exclusive",
+            "adder/amarel/compute/shared",
+            "adder/amarel/mem/exclusive",
+            "adder/amarel/mem/shared"
+				]
+
+set2_matmult_dirs = [
+            "matmult/amarel/compute/exclusive",
+            "matmult/amarel/compute/shared",
+            "matmult/amarel/mem/exclusive",
+            "matmult/amarel/mem/shared"
+				]
