@@ -73,7 +73,7 @@ def aggr_data(src_path, aggr_by_transpose_path, aggr_by_measurement_path, kernel
                         instr_rate_err = (instr_rate - INSTR_RATE_ADDER) / instr_rate
                     
                     est_instr_err = (est_instr - instr) / instr
-                    pred_cycles_err = (pred_cycles - cycles) / pred_cycles
+                    pred_cycles_err = (pred_cycles - cycles) / cycles
                     p2a_ratio = pred_cycles / cycles
                     p2a_instr_rate_err = (p2a_ratio - instr_rate) / instr_rate
 

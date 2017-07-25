@@ -110,3 +110,15 @@ set2_matmult_dirs = [
             "matmult/amarel/mem/exclusive",
             "matmult/amarel/mem/shared"
 				]
+
+plot_filenames = [
+            "clkspeed.csv",
+            "cycles_prederr.csv",
+            "cycles.csv",
+            "instr.csv",
+            "instr_prederr.csv",
+            "instr_rate.csv",
+            "p2a_cycles.csv",
+            "p2a_cycles_prederr.csv",
+            "time.csv"
+            ]

@@ -1,0 +1,167 @@
+{
+    "adder" : {
+        "clkspeed" : {
+            "plot_type" : "log-line",
+            "xlabel" :  "Predicted Number of Cycles",
+            "ylabel" :  "Clock Speed (GHz)",
+            "title" :   "Measured Clock Speed Across Runs",
+            "xlim"  :   [1000000, 100000000000000],
+            "ylim"  :   [1, 4]
+        },
+        "cycles_prederr" : {
+            "plot_type" : "log-line",
+            "xlabel" :  "Predicted Number of Cycles",
+            "ylabel" :  "Average Prediction Error",
+            "title" :   "Prediction Error of Number of Cycles Used",
+            "xlim"  :   [1000000, 100000000000000],
+            "ylim"  :   [0.0, 0.5]
+        },
+        "cycles_act" : {
+            "plot_type" : "log-log",
+            "xlabel" :  "Predicted Number of Cycles",
+            "ylabel" :  "Actual Number of Cycles",
+            "title" :   "Actual vs Predicted Number of Cycles",
+            "xlim"  :   [1000000, 100000000000000],
+            "ylim"  :   [1000000, 100000000000000]
+       },
+        "instr_act" : {
+            "plot_type" : "log-log",
+            "xlabel" :  "Predicted Number of Cycles",
+            "ylabel" :  "Measured Number of Instructions",
+            "title"  :  "Predicted vs Measured Number of Instructions Executed",
+            "xlim"  :   [1000000, 100000000000000],
+            "ylim"  :   [1000000, 100000000000000]
+        },
+        "instr_prederr" : {
+            "plot_type" : "log-line",
+            "xlabel" :  "Predicted Number of Cycles",
+            "ylabel" :  "Average Prediction Error",
+            "title" :   "Prediction Error of Number of Instructions Used",
+            "xlim"  :   [1000000, 100000000000000],
+            "ylim"  :   [-0.1, 0.1]
+        },
+        "instr_rate" : {
+            "plot_type" : "log-line",
+            "xlabel" :  "Number of Instructions",
+            "ylabel" :  "Instructions Executed per Cycle",
+            "title" :   "Instruction Execution Rate with Different Number of Instructions",
+            "xlim"  :   [1000000, 100000000000000],
+            "ylim"  :   [1.00, 1.30]
+        },
+        "p2a_cycles" : {
+            "plot_type" : "log-line",
+            "xlabel" :  "Predicted Number of Cycles",
+            "ylabel" :  "Average Ratio of Predicted to Actual Number of Cycles",
+            "title" :   "Average Ratio of Predicted to Actual Number of Cycles",
+            "xlim"  :   [1000000, 100000000000000],
+            "ylim"  :   [1.00, 1.30]
+        },
+        "p2a_cycles_prederr" : {
+            "plot_type" : "log-line",
+            "xlabel" :  "Predicted Number of Cycles",
+            "ylabel" :  "Error between P2A and Instruction Execution Rate",
+            "title" :   "Error between P2A and Instruction Execution Rate",
+            "xlim"  :   [1000000, 100000000000000],
+            "ylim"  :   [-0.5, 0.5]
+        },
+        "p2a_cycles_speedup_prederr_cpi_adj" : {
+            "plot_type" : "log-line",
+            "xlabel" :  "Predicted Number of Cycles",
+            "ylabel" :  "Prediction Error",
+            "title" :   "Prediction Error, Compensated by Instruction Rate and CPI",
+            "xlim"  :   [1000000, 100000000000000],
+            "ylim"  :   [-0.1, 0.1]
+        },
+        "time" : {
+            "plot_type" : "log-log",
+            "xlabel" :  "Predicted Number of Cycles",
+            "ylabel" :  "Time (s)",
+            "title"  :  "Measured Execution Time",
+            "xlim"  :   [1000000, 100000000000000],
+            "ylim"  :   [0.0001, 10000]
+        }
+    },
+
+    "matmult" : {
+        "clkspeed" : {
+            "plot_type" : "log-line",
+            "xlabel" :  "Predicted Number of Cycles",
+            "ylabel" :  "Clock Speed (GHz)",
+            "title" :   "Measured Clock Speed Across Runs",
+            "xlim"  :   [1000000, 100000000000000],
+            "ylim"  :   [1, 4]
+        },
+        "cycles_prederr" : {
+            "plot_type" : "log-line",
+            "xlabel" :  "Predicted Number of Cycles",
+            "ylabel" :  "Average Prediction Error",
+            "title" :   "Prediction Error of Number of Cycles Used",
+            "xlim"  :   [10000000000, 100000000000000],
+            "ylim"  :   [0, 3]
+        },
+        "cycles_act" : {
+            "plot_type" : "log-log",
+            "xlabel" :  "Predicted Number of Cycles",
+            "ylabel" :  "Actual Number of Cycles",
+            "title" :   "Actual vs Predicted Number of Cycles",
+            "xlim"  :   [10000000000, 100000000000000],
+            "ylim"  :   [10000000000, 100000000000000]
+       },
+        "instr_act" : {
+            "plot_type" : "log-log",
+            "xlabel" :  "Predicted Number of Cycles",
+            "ylabel" :  "Measured Number of Instructions",
+            "title"  :  "Predicted vs Measured Number of Instructions Executed",
+            "xlim"  :   [10000000000, 100000000000000],
+            "ylim"  :   [10000000000, 100000000000000]
+        },
+        "instr_rate" : {
+            "plot_type" : "log-line",
+            "xlabel" :  "Number of Instructions",
+            "ylabel" :  "Instructions Executed per Cycle",
+            "title" :   "Instruction Execution Rate with Different Number of Instructions",
+            "xlim"  :   [10000000000, 100000000000000],
+            "ylim"  :   [1.00, 3.00]
+        },
+        "instr_prederr" : {
+            "plot_type" : "log-line",
+            "xlabel" :  "Predicted Number of Cycles",
+            "ylabel" :  "Average Prediction Error",
+            "title" :   "Prediction Error of Number of Instructions Used",
+            "xlim"  :   [10000000000, 100000000000000],
+            "ylim"  :   [-0.1, 0.1]
+        },
+        "p2a_cycles" : {
+            "plot_type" : "log-line",
+            "xlabel" :  "Predicted Number of Cycles",
+            "ylabel" :  "Average Ratio of Predicted to Actual Number of Cycles",
+            "title" :   "Average Ratio of Predicted to Actual Number of Cycles",
+            "xlim"  :   [10000000000, 100000000000000],
+            "ylim"  :   [1.00, 1.30]
+        },
+        "p2a_cycles_prederr" : {
+            "plot_type" : "log-line",
+            "xlabel" :  "Predicted Number of Cycles",
+            "ylabel" :  "Error between P2A and Instruction Execution Rate",
+            "title" :   "Error between P2A and Instruction Execution Rate",
+            "xlim"  :   [10000000000, 100000000000000],
+            "ylim"  :   [-0.5, 0.5]
+        },
+        "p2a_cycles_speedup_prederr_cpi_adj" : {
+            "plot_type" : "log-line",
+            "xlabel" :  "Predicted Number of Cycles",
+            "ylabel" :  "Prediction Error",
+            "title" :   "Prediction Error, Compensated by Instruction Rate and CPI",
+            "xlim"  :   [10000000000, 100000000000000],
+            "ylim"  :   [-0.01, 0.01]
+        },
+        "time" : {
+            "plot_type" : "log-log",
+            "xlabel" :  "Predicted Number of Cycles",
+            "ylabel" :  "Time (s)",
+            "title"  :  "Measured Execution Time",
+            "xlim"  :   [1000000, 100000000000000],
+            "ylim"  :   [0.0001, 10000]
+        }
+    }
+}
