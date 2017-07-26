@@ -66,23 +66,23 @@ def aggr_data(src_path, aggr_by_transpose_path, aggr_by_measurement_path, kernel
                     if kernel == "matmult":
                         est_instr = INSTRUCTIONS_MATMULT * num_iter**3
                         pred_cycles = CYCLES_MATMULT * num_iter**3
-                        instr_rate_err = (instr_rate - INSTR_RATE_MATMULT) / instr_rate
+                        instr_rate_err = abs(instr_rate - INSTR_RATE_MATMULT) / instr_rate * 100.
                     elif kernel == "adder":
                         est_instr = INSTRUCTIONS_ADDER * num_iter
                         pred_cycles = CYCLES_ADDER * num_iter
-                        instr_rate_err = (instr_rate - INSTR_RATE_ADDER) / instr_rate
+                        instr_rate_err = abs(instr_rate - INSTR_RATE_ADDER) / instr_rate * 100.
                     
-                    est_instr_err = (est_instr - instr) / instr
-                    pred_cycles_err = (pred_cycles - cycles) / cycles
+                    est_instr_err = abs(est_instr - instr) / instr * 100.
+                    pred_cycles_err = abs(pred_cycles - cycles) / cycles * 100.
                     p2a_ratio = pred_cycles / cycles
-                    p2a_instr_rate_err = (p2a_ratio - instr_rate) / instr_rate
+                    p2a_instr_rate_err = abs(p2a_ratio - instr_rate) / instr_rate * 100.
 
                     if kernel == "matmult":
                         cycles_speedup_cpi = instr_rate * CPI_MATMULT
                     elif kernel == "adder":
                         cycles_speedup_cpi = instr_rate * CPI_ADDER
                         
-                    p2a_cycles_speedup_err_cpi = (p2a_ratio - cycles_speedup_cpi) / cycles_speedup_cpi
+                    p2a_cycles_speedup_err_cpi = abs(p2a_ratio - cycles_speedup_cpi) / cycles_speedup_cpi * 100.
 
                     utils_l.append(utils)
                     cycles_l.append(cycles)
@@ -165,3 +165,4 @@ if __name__ == "__main__":
    transpose_path = sys.argv[2]
    measurement_path = sys.argv[3]
    aggr_data_all_dir(src_path, transpose_path, measurement_path)
+   print "test"

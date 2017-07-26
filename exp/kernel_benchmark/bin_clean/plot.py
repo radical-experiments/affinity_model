@@ -5,7 +5,7 @@ import json
 from matplotlib import pyplot as plt
 
 
-def plot_data(filepath, keyword=None):
+def plot_data(filepath, plotpath, keyword=None):
 
     kernel = filepath.split('/')[-2]
 
@@ -75,27 +75,32 @@ def plot_data(filepath, keyword=None):
 
     fig.set_size_inches(14, 12)
     if keyword == None:
-        plt.savefig(kernel+'_'+plot_id+'.pdf', dpi=144)
-        plt.savefig(kernel+'_'+plot_id+'.png', dpi=144)
+        plt.savefig(plot_path+kernel+'_'+plot_id+'.pdf', dpi=144)
+        plt.savefig(plot_path+kernel+'_'+plot_id+'.png', dpi=144)
     else:
-        plt.savefig(keyword+'_'+kernel+'_'+plot_id+'.pdf', dpi=144)
-        plt.savefig(keyword+'_'+kernel+'_'+plot_id+'.png', dpi=144)
+        plt.savefig(plot_path+keyword+'_'+kernel+'_'+plot_id+'.pdf', dpi=144)
+        plt.savefig(plot_path+keyword+'_'+kernel+'_'+plot_id+'.png', dpi=144)
         
 
 
 if __name__ == "__main__":
 
     dir_path = sys.argv[1]
+    plot_path = sys.argv[2]
     if dir_path[-1] != '/':
         dir_path = dir_path + '/'
+    if plot_path[-1] != '/':
+        plot_path = dir_path + '/'
 
     filenames = os.listdir(dir_path)
 
     for filename in filenames:
         if dir_path.split('/')[1] != 'set1':
             keyword = filename[:7]
+        else:
+            keyword = None
         try:
-            plot_data(dir_path+filename, keyword)
+            plot_data(dir_path+filename, plot_path, keyword)
         except:
             print "plot config not setup yet\n"
             pass
