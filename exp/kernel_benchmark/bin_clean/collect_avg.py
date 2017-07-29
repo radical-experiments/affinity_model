@@ -16,12 +16,12 @@ def collect_avg_set1(src_path, kernel):
     num_meas = 0
     for set1_dir in set1_dirs:
         set1_files = sorted(os.listdir(src_path+'/'+set1_dir))
-        num_meas = len(set1_files)
+        num_runs = len(set1_files)
         dirs_d[set1_dir] = set1_files
 
     pprint(dirs_d)
 
-    for m in range(num_meas):
+    for m in range(len(measurements)):
         data_dirs_l = list()
         for set1_dir in set1_dirs:
             fn = dirs_d[set1_dir][0]
@@ -53,6 +53,7 @@ def collect_avg_set1(src_path, kernel):
                 out_data_l.append(data_dir[data_row])
         
         #pprint(out_data_l)
+        pprint(measurements)
         measurement = measurements[m]
         
         with open('plotting_data/set1/'+kernel+'/'+measurement+'.csv', 'w') as f:

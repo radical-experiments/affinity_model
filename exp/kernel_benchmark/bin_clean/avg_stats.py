@@ -1,7 +1,7 @@
 import os
 import sys
 import csv
-import pprint
+from pprint import pprint
 
 import calc_basic_stats as cbs
 from files_dir_mod import *
@@ -18,7 +18,8 @@ def data_stats(src_path, dst_path, session):
         num_cycles_data = list()
         with open(src_path+'/'+filename, 'r') as f:
             for row in f:
-                row_data = row.split(',')
+                row_data = row.strip().split(',')
+                row_data = [entry for entry in row_data if entry]
                 num_cycles.append(int(row_data[0]))
                 num_cycles_data.append(map(float, row_data[1:]))
 
@@ -39,7 +40,7 @@ def data_stats(src_path, dst_path, session):
         #pprint.pprint(write_data)
 
         with open(dst_path+'/'+"avg_"+measurement+"_"+session+".csv", 'w') as f:
-            pprint.pprint(measurement+"_"+session)
+            pprint(measurement+"_"+session)
             writer = csv.writer(f)
             writer.writerows(write_data)
 #            for row in write_data:
@@ -56,6 +57,7 @@ def data_stats_all(src_path, dst_path):
         dir_keywords = dirname.split('/')
         hostname = dir_keywords[1]
 
+        pprint(dirname)
         if hostname == "amarel":
             subdirs = os.listdir(src_path+'/'+dirname)
             for session in subdirs:

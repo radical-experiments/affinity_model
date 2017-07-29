@@ -90,7 +90,7 @@ if __name__ == "__main__":
     if dir_path[-1] != '/':
         dir_path = dir_path + '/'
     if plot_path[-1] != '/':
-        plot_path = dir_path + '/'
+        plot_path = plot_path + '/'
 
     filenames = os.listdir(dir_path)
 

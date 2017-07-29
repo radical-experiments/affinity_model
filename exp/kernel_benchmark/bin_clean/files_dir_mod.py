@@ -4,7 +4,7 @@ CPI_ADDER = CYCLES_ADDER / INSTRUCTIONS_ADDER
 INSTR_RATE_ADDER = INSTRUCTIONS_ADDER / CYCLES_ADDER
 
 INSTRUCTIONS_MATMULT = 35.
-CYCLES_MATMULT = 35.
+CYCLES_MATMULT = 36.
 CPI_MATMULT = CYCLES_MATMULT / INSTRUCTIONS_MATMULT
 INSTR_RATE_MATMULT = INSTRUCTIONS_MATMULT / CYCLES_MATMULT
 
@@ -68,11 +68,11 @@ cleaned_matmult_filenames = [
 measurements = [
                     "clkspeed",
                     "cpu_util",
-                    "cycles",
+                    "cycles_act",
                     "cycles_pred",
                     "cycles_prederr",
                     "cycles_speedup_cpi_adj",
-                    "instr",
+                    "instr_act",
                     "instr_pred",
                     "instr_prederr",
                     "instr_rate",
@@ -121,4 +121,10 @@ plot_filenames = [
             "p2a_cycles.csv",
             "p2a_cycles_prederr.csv",
             "time.csv"
+            ]
+
+amarel_aggr_measurements = [
+            "instr_rate",
+            "p2a_cycles",
+            "time"
             ]
