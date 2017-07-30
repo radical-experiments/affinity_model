@@ -34,7 +34,7 @@ def plot_data(filepath, plotpath, keyword=None):
                 if (i-1) % 3 == 0:
                     labels.append(row_list[0].split('__')[-1])
                     avg.append(map(float, row_list[1:]))
-                elif (i-3) % 3 == 2:
+                elif (i-1) % 3 == 2:
                     confidence.append(map(float, row_list[1:]))
             
             i += 1

@@ -9,13 +9,12 @@ from files_dir_mod import *
 
 
 
-def data_stats_amarel(src_path, dst_path):
+def data_stats_amarel(src_path, dst_path, kernel):
 
-    
     for meas in measurements:
         has_title = 0
 
-        fd_out = open(dst_path+'/'+meas+'.csv', 'w') 
+        fd_out = open(dst_path+'/'+kernel+'_'+meas+'.csv', 'w') 
         writer = csv.writer(fd_out)
 
         for dirname in dirnames:
@@ -26,6 +25,10 @@ def data_stats_amarel(src_path, dst_path):
                 continue
 
             dir_keywords = dirname.split('/')
+            
+            if kernel != dir_keywords[0]:
+                continue
+
             node_type = dir_keywords[-2]
             usage = dir_keywords[-1]
 
@@ -65,13 +68,13 @@ def data_stats_amarel(src_path, dst_path):
             
             pprint(data_stats)
             data_stats[0].insert(0, meas)
-            data_stats[1].insert(0, "_".join([node_type[:3], usage[:3], "min"]))
-            data_stats[2].insert(0, "_".join([node_type[:3], usage[:3], "max"]))
-            data_stats[3].insert(0, "_".join([node_type[:3], usage[:3], "range"]))
-            data_stats[4].insert(0, "_".join([node_type[:3], usage[:3], "avg"]))
-            data_stats[5].insert(0, "_".join([node_type[:3], usage[:3], "std"]))
-            data_stats[6].insert(0, "_".join([node_type[:3], usage[:3], "ci"]))
-            data_stats[7].insert(0, "_".join([node_type[:3], usage[:3], "count"]))
+            data_stats[1].insert(0, "min" + "__" + node_type[:3] + "_" + usage[:3])
+            data_stats[2].insert(0, "max" + "__" + node_type[:3] + "_" + usage[:3])
+            data_stats[3].insert(0, "range" + "__" + node_type[:3] + "_" + usage[:3])
+            data_stats[4].insert(0, "avg" + "__" + node_type[:3] + "_" + usage[:3])
+            data_stats[5].insert(0, "std" + "__" + node_type[:3] + "_" + usage[:3])
+            data_stats[6].insert(0, "ci" + "__" + node_type[:3] + "_" + usage[:3])
+            data_stats[7].insert(0, "count" + "__" + node_type[:3] + "_" + usage[:3])
 
             pprint(data_stats)
 
@@ -85,8 +88,17 @@ def data_stats_amarel(src_path, dst_path):
         fd_out.close()
 
 
+
+def data_stats_amarel_all(src_path, dst_path):
+    
+    kernel_list = ['adder', 'matmult']
+    for kernel in kernel_list:
+        data_stats_amarel(src_path, dst_path, kernel)
+
+
+
 if __name__ == '__main__':
 
     src_path = sys.argv[1]
     dst_path = sys.argv[2]
-    data_stats_amarel(src_path, dst_path)
+    data_stats_amarel_all(src_path, dst_path)
