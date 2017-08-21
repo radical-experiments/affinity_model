@@ -128,3 +128,29 @@ amarel_aggr_measurements = [
             "p2a_cycles",
             "time"
             ]
+
+gromacs_files = [
+            "cycles",
+            "instructions",
+            "task_clock",
+            "time"
+            ]
+
+gromacs_dirs = [
+            "gromacs/amarel/compute/run_1",
+            "gromacs/amarel/compute/run_2",
+            "gromacs/amarel/compute/run_3",
+            "gromacs/amarel/compute/run_4",
+            "gromacs/amarel/compute/run_5",
+            "gromacs/amarel/compute/run_6",
+            "gromacs/amarel/compute/run_7",
+            "gromacs/amarel/compute/run_8",
+            "gromacs/comet/run_1",
+            "gromacs/comet/run_2",
+            "gromacs/comet/run_3",
+            "gromacs/comet/run_4",
+            "gromacs/bridges/run_1",
+            "gromacs/bridges/run_2",
+            "gromacs/bridges/run_3",
+            "gromacs/bridges/run_4"
+            ]
