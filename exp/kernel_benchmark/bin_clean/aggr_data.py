@@ -71,6 +71,10 @@ def aggr_data(src_path, aggr_by_transpose_path, aggr_by_measurement_path, kernel
                         est_instr = INSTRUCTIONS_ADDER * num_iter
                         pred_cycles = CYCLES_ADDER * num_iter
                         instr_rate_err = abs(instr_rate - INSTR_RATE_ADDER) / instr_rate * 100.
+                    else:
+                        est_instr = num_iter
+                        pred_cycles = num_iter
+                        instr_rate_err = 100.
                     
                     est_instr_err = abs(est_instr - instr) / instr * 100.
                     pred_cycles_err = abs(pred_cycles - cycles) / cycles * 100.
@@ -81,6 +85,9 @@ def aggr_data(src_path, aggr_by_transpose_path, aggr_by_measurement_path, kernel
                         cycles_speedup_cpi = instr_rate * CPI_MATMULT
                     elif kernel == "adder":
                         cycles_speedup_cpi = instr_rate * CPI_ADDER
+                    else:
+                        cycles_speedup_cpi = 1
+                        
                         
                     p2a_cycles_speedup_err_cpi = abs(p2a_ratio - cycles_speedup_cpi) / cycles_speedup_cpi * 100.
 
@@ -143,7 +150,13 @@ def aggr_data_all_dir(src_path, transpose_path, measurement_path):
         kernel = dir_keywords[0]
         hostenv = dir_keywords[1]
 
-        if hostenv == "amarel":
+        if kernel == "gromacs":
+            s_path = src_path + '/' + dirname
+            t_path = transpose_path + '/' + dirname
+            m_path = measurement_path + '/' + dirname
+            aggr_data(s_path, t_path, m_path, kernel)
+
+        elif hostenv == "amarel":
             session_dirs = os.listdir(src_path+'/'+dirname)
             for session in session_dirs:
                 s_path = src_path + '/' + dirname + '/' + session

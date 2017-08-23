@@ -146,13 +146,11 @@ def collect_avg_set2(src_path, kernel):
                 writer.writerows(out_data_l)
         
 
-
 def collect_avg(src_path, kernel, setting):
     if setting == '1':
         collect_avg_set1(src_path, kernel)
     elif setting == '2':
         collect_avg_set2(src_path, kernel)
-
 
 
 if __name__ == "__main__":
