@@ -10,7 +10,7 @@ avg_instr_d = dict()
 avg_cycles_d = dict()
 
 
-def aggr_data(src_path, aggr_by_transpose_path, aggr_by_measurement_path, create_avg_dicts=False):
+def aggr_data(src_path, aggr_by_transpose_path, aggr_by_measurement_path, create_avg_dicts=False, cycles_to_iter=None):
 
     files = os.listdir(src_path)
     data_files = list()
@@ -39,6 +39,9 @@ def aggr_data(src_path, aggr_by_transpose_path, aggr_by_measurement_path, create
 
         with open(src_path+'/'+ff, 'r') as f:
             num_iter = float(ff.split('_')[-1].split('.')[0])
+            if num_iter > 100000.:
+                continue
+
             i = 0
             for row in f:
                 title = row.split(',')
@@ -175,7 +178,14 @@ def aggr_data(src_path, aggr_by_transpose_path, aggr_by_measurement_path, create
             writer = csv.writer(f)
             for run_data in data_files:
                 if len(run_data[8]) > 1:
-                    run_data[i][0] = int(run_data[8][1])
+                    if not cycles_to_iter:
+                        run_data[i][0] = int(run_data[8][1])
+                    else:
+                        print "boop"
+                        pprint(cycles_to_iter)
+                        print int(run_data[8][1])
+                        run_data[i][0] = cycles_to_iter[int(run_data[8][1])]
+                    print run_data[i][0]
                     writer.writerow(run_data[i])
 
 
@@ -218,6 +228,10 @@ def aggr_data_all_dir(src_path, transpose_path, measurement_path):
     pprint(avg_cycles_d)
     pprint(avg_instr_d)
 
+    cycles_to_iter_map = {int(v): k for k, v in avg_cycles_d.iteritems()}
+    pprint(cycles_to_iter_map)
+    #sys.exit()
+
     for dirname in not_amarel_dirnames:
         if not os.path.isdir(src_path+'/'+dirname):
             print "test"
@@ -230,7 +244,7 @@ def aggr_data_all_dir(src_path, transpose_path, measurement_path):
         s_path = src_path + '/' + dirname
         t_path = transpose_path + '/' + dirname
         m_path = measurement_path + '/' + dirname
-        aggr_data(s_path, t_path, m_path)
+        aggr_data(s_path, t_path, m_path, cycles_to_iter=cycles_to_iter_map)
 
 
 
