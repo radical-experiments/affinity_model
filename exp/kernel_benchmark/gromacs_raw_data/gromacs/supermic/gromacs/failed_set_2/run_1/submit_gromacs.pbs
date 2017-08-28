@@ -1,0 +1,11 @@
+#!/bin/bash
+
+#PBS -q workq
+#PBS -l walltime=48:00:00
+#PBS -l nodes=1:ppn=20
+#PBS -V
+#PBS -o test.out
+#PBS -e test.err
+
+export WORK_DIR=/home/mha/gromacs/run_1
+$WORK_DIR/gromacs.sh $WORK_DIR
