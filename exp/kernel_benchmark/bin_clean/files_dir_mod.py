@@ -44,7 +44,11 @@ dirnames = [
             "gromacs/bridges/run_1",
             "gromacs/bridges/run_2",
             "gromacs/bridges/run_3",
-            "gromacs/bridges/run_4"
+            "gromacs/bridges/run_4",
+            "gromacs/supermic/run_1",
+            "gromacs/supermic/run_2",
+            "gromacs/supermic/run_3",
+            "gromacs/supermic/run_4"
             ]
 
 adder_filenames = [
@@ -176,12 +180,17 @@ gromacs_dirs = [
             "gromacs/bridges/run_1",
             "gromacs/bridges/run_2",
             "gromacs/bridges/run_3",
-            "gromacs/bridges/run_4"
+            "gromacs/bridges/run_4",
+            "gromacs/supermic/run_1",
+            "gromacs/supermic/run_2",
+            "gromacs/supermic/run_3",
+            "gromacs/supermic/run_4"
             ]
 
 set3_dirs = [
             "gromacs/amarel/compute",
             "gromacs/amarel/mem",
             "gromacs/comet",
-            "gromacs/bridges"
+            "gromacs/bridges",
+            "gromacs/supermic"
             ]
