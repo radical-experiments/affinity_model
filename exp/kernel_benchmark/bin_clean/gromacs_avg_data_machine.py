@@ -50,15 +50,14 @@ def data_stats_gromacs(src_path, dst_path):
                         else:
                             data_aggr_by_node_d[row[0]].extend(row[1:])
 
-            pprint(data_aggr_by_node_d)
+            #pprint(data_aggr_by_node_d)
 
             for num_iter, data in data_aggr_by_node_d.iteritems():
                 tmp_data = [num_iter]
                 tmp_data.extend(data)
-                print tmp_data
                 data_list.append(tmp_data)
 
-            pprint(data_list)
+            #pprint(data_list)
 
             data_aggr_run = dict()
             for data_row in data_list:
@@ -92,7 +91,7 @@ def data_stats_gromacs(src_path, dst_path):
             data_stats = zip(*data_stats)
             data_stats = map(list, data_stats)
             
-            pprint(data_stats)
+            #pprint(data_stats)
             data_stats[0].insert(0, meas)
             data_stats[1].insert(0, "min" + "__" + node_type)
             data_stats[2].insert(0, "max" + "__" + node_type)
@@ -102,7 +101,7 @@ def data_stats_gromacs(src_path, dst_path):
             data_stats[6].insert(0, "ci" + "__" + node_type)
             data_stats[7].insert(0, "count" + "__" + node_type)
 
-            pprint(data_stats)
+            #pprint(data_stats)
 
             if has_title:
                 writer.writerows(data_stats[1:])

@@ -18,18 +18,21 @@ def data_stats_gromacs(src_path, dst_path):
         writer = csv.writer(fd_out)
 
         for dirname in gromacs_dirs:
-            pprint(src_path+'/'+dirname)
+            #pprint(src_path+'/'+dirname)
             if not os.path.isdir(src_path+'/'+dirname):
                 continue
             
             if not os.listdir(src_path+'/'+dirname):
+                pprint("empty dir: "+src_path+'/'+dirname+'/'+meas)
                 continue
 
-            pprint(src_path+'/'+dirname)
+            pprint("\t"+dirname)
             dir_keywords = dirname.split('/')
             
             node_type = dir_keywords[-2]
             usage = dir_keywords[-1]
+
+            print node_type
 
             data_list = list()
             with open(src_path+'/'+dirname+'/'+meas+'.csv') as f:
@@ -37,7 +40,7 @@ def data_stats_gromacs(src_path, dst_path):
                 for row in reader:
                     data_list.append(row)
 
-            pprint(data_list)
+            #pprint(data_list)
 
             data_aggr_run = dict()
             for data_row in data_list:
@@ -71,7 +74,7 @@ def data_stats_gromacs(src_path, dst_path):
             data_stats = zip(*data_stats)
             data_stats = map(list, data_stats)
             
-            pprint(data_stats)
+            #pprint(data_stats)
             data_stats[0].insert(0, meas)
             data_stats[1].insert(0, "min" + "__" + node_type + "_" + usage)
             data_stats[2].insert(0, "max" + "__" + node_type + "_" + usage)
@@ -81,7 +84,7 @@ def data_stats_gromacs(src_path, dst_path):
             data_stats[6].insert(0, "ci" + "__" + node_type + "_" + usage)
             data_stats[7].insert(0, "count" + "__" + node_type + "_" + usage)
 
-            pprint(data_stats)
+            #pprint(data_stats)
 
             if has_title:
                 writer.writerows(data_stats[1:])

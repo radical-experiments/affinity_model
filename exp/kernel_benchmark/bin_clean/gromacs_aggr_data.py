@@ -181,7 +181,6 @@ def aggr_data(src_path, aggr_by_transpose_path, aggr_by_measurement_path, create
                     if not cycles_to_iter:
                         run_data[i][0] = int(run_data[8][1])
                     else:
-                        print "boop"
                         pprint(cycles_to_iter)
                         print int(run_data[8][1])
                         run_data[i][0] = cycles_to_iter[int(run_data[8][1])]

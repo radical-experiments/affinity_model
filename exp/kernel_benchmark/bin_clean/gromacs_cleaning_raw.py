@@ -153,4 +153,6 @@ def clean_gromacs_data(src_path, dst_path):
         extract_from_cleaned_perf(src_path+'/'+dirname, dst_path+'/'+dirname)
 
 if __name__ == "__main__":
-    clean_gromacs_data(sys.argv[1], sys.argv[2])
+    src_path = sys.argv[1]
+    dst_path = sys.argv[2]
+    clean_gromacs_data(src_path, dst_path)
