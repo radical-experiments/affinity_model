@@ -114,24 +114,26 @@ for label_id in range(len(graph_labels)):
             axes[label_id].scatter(x_iter, data_list[1:], s=15, alpha=0.5)
 
         pred_key = graph_labels[label_id].split('_')[1]
-        pprint(predictions[pred_key][0])
         num_runs = len(predictions[pred_key][0])
         if label_id == 0 and i == 0:
+            pprint(predictions[pred_key][0])
             xticklabels = deepcopy(predictions[pred_key][0])
             for k in range(len(xticklabels)):
-                xticklabels[k] = "%.2E" % Decimal(xticklabels[i])
+                xticklabels[k] = "%.2E" % Decimal(xticklabels[k])
             xticklabels.insert(0, "")
-        pprint(xticklabels)
+            pprint(xticklabels)
 
         axes[label_id].set_xticklabels(xticklabels)
         axes[label_id].set_title(graph_labels[label_id], fontsize=24)
-        axes[label_id].set_xlim(-0.5, num_runs - 0.5)
+        axes[label_id].set_xlim(-0.5, num_runs)
         axes[label_id].set_ylim(0.2, 1.5)
         axes[label_id].set_xlabel("Number of Predicted Cycles", fontsize=20)
         axes[label_id].set_ylabel(r"Normalized $T_x$", fontsize=20)
         axes[label_id].tick_params(labelsize=20)
-        axes[label_id].legend(loc='upper right')
-        axes[label_id].legend(fontsize=16)
+
+        if i == 0 and label_id == 0:
+            axes[label_id].legend(loc='upper right')
+            axes[label_id].legend(fontsize=16)
         axes[label_id].grid(True)
         i += 1
 

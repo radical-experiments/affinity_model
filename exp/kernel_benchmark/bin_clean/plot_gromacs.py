@@ -76,8 +76,9 @@ def plot_data(filepath, plotpath):
     #plt.show()
 
     fig.set_size_inches(14, 12)
-    plt.savefig(plot_path+kernel+'_'+plot_id+'.pdf', dpi=144)
-    plt.savefig(plot_path+kernel+'_'+plot_id+'.png', dpi=144)
+    
+    plt.savefig(plotpath+kernel+'_'+plot_id+'.pdf', dpi=144)
+    plt.savefig(plotpath+kernel+'_'+plot_id+'.png', dpi=144)
         
 
 if __name__ == "__main__":

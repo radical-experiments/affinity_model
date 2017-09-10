@@ -1,6 +1,7 @@
 import csv
 import os
 import sys
+from pprint import pprint
 
 from files_dir_mod import *
 
@@ -132,6 +133,7 @@ def aggr_data(src_path, aggr_by_transpose_path, aggr_by_measurement_path, kernel
                 writer.writerow(line)
 
     for i in range(len(data_files[0])):
+        pprint(aggr_by_measurement_path)
         with open(aggr_by_measurement_path+'/'+data_files[0][i][0]+'.csv', 'w') as f:
             writer = csv.writer(f)
             for run_data in data_files:
@@ -147,16 +149,11 @@ def aggr_data_all_dir(src_path, transpose_path, measurement_path):
             continue
 
         dir_keywords = dirname.split('/')
+        pprint(dir_keywords)
         kernel = dir_keywords[0]
         hostenv = dir_keywords[1]
 
-        if kernel == "gromacs":
-            s_path = src_path + '/' + dirname
-            t_path = transpose_path + '/' + dirname
-            m_path = measurement_path + '/' + dirname
-            aggr_data(s_path, t_path, m_path, kernel)
-
-        elif hostenv == "amarel":
+        if hostenv == "amarel":
             session_dirs = os.listdir(src_path+'/'+dirname)
             for session in session_dirs:
                 s_path = src_path + '/' + dirname + '/' + session

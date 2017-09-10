@@ -116,17 +116,18 @@ def extract_from_cleaned_perf(src_pathname, dst_pathname):
         print run
         data_array = list()
        
-        if cpu_util[run]:
+        pprint(cycles_act)
+        if run in cpu_util.keys() and cpu_util[run]:
             data_array.append(cpu_util[run])
-        if cycles_act[run]:
+        if run in cycles_act.keys() and cycles_act[run]:
             data_array.append(cycles_act[run])
-        if clkspeed[run]:
+        if run in clkspeed.keys() and clkspeed[run]:
             data_array.append(clkspeed[run])
-        if instr_act[run]:
+        if run in instr_act.keys() and instr_act[run]:
             data_array.append(instr_act[run])
-        if instr_rate[run]:
+        if run in instr_rate.keys() and instr_rate[run]:
             data_array.append(instr_rate[run])
-        if instr_rate[run]:
+        if run in time.keys() and time[run]:
             data_array.append(time[run])
 
         data_array = map(list, zip(*data_array))
