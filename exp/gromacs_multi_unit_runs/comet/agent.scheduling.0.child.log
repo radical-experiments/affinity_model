@@ -1,0 +1,642 @@
+2017-10-13 10:59:48,107: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : INFO    : python.interpreter   version: 2.7.10 (default, Feb 1 2016, 14:30:50) [GCC 4.9.2]
+2017-10-13 10:59:48,108: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : INFO    :                      pid: 5880
+2017-10-13 10:59:48,108: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : INFO    :                      tid: MainThread
+2017-10-13 10:59:48,108: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : INFO    : radical.pilot        version: 0.47-v0.46.2-133-g78e0b005@rc-v0.46.3
+2017-10-13 10:59:48,122: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : INFO    : initialize agent.scheduling.0.child
+2017-10-13 10:59:48,128: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : INFO    : cfg: {'agent_launch_method': 'SSH',
+ 'agent_name': 'agent_0',
+ 'agents': {},
+ 'bridges': {'agent_executing_queue': {'addr_in': 'tcp://198.202.114.249:46804',
+                                       'addr_out': 'tcp://198.202.114.249:46086',
+                                       'bulk_size': 0,
+                                       'log_level': 'debug',
+                                       'stall_hwm': 1},
+             'agent_reschedule_pubsub': {'addr_in': 'tcp://198.202.114.249:40741',
+                                         'addr_out': 'tcp://198.202.114.249:42371',
+                                         'bulk_size': 0,
+                                         'log_level': 'debug',
+                                         'stall_hwm': 1},
+             'agent_scheduling_queue': {'addr_in': 'tcp://198.202.114.249:39338',
+                                        'addr_out': 'tcp://198.202.114.249:43035',
+                                        'bulk_size': 0,
+                                        'log_level': 'debug',
+                                        'stall_hwm': 1},
+             'agent_staging_input_queue': {'addr_in': 'tcp://198.202.114.249:38054',
+                                           'addr_out': 'tcp://198.202.114.249:46514',
+                                           'bulk_size': 0,
+                                           'log_level': 'debug',
+                                           'stall_hwm': 1},
+             'agent_staging_output_queue': {'addr_in': 'tcp://198.202.114.249:45974',
+                                            'addr_out': 'tcp://198.202.114.249:33021',
+                                            'bulk_size': 0,
+                                            'log_level': 'debug',
+                                            'stall_hwm': 1},
+             'agent_unschedule_pubsub': {'addr_in': 'tcp://198.202.114.249:43471',
+                                         'addr_out': 'tcp://198.202.114.249:38535',
+                                         'bulk_size': 0,
+                                         'log_level': 'debug',
+                                         'stall_hwm': 1},
+             'control_pubsub': {'addr_in': 'tcp://198.202.114.249:40817',
+                                'addr_out': 'tcp://198.202.114.249:35717',
+                                'bulk_size': 0,
+                                'log_level': 'debug',
+                                'stall_hwm': 1},
+             'log_pubsub': {'addr_in': 'tcp://198.202.114.249:44417',
+                            'addr_out': 'tcp://198.202.114.249:45904',
+                            'bulk_size': 0,
+                            'log_level': 'debug',
+                            'stall_hwm': 1},
+             'state_pubsub': {'addr_in': 'tcp://198.202.114.249:44385',
+                              'addr_out': 'tcp://198.202.114.249:35694',
+                              'bulk_size': 0,
+                              'log_level': 'debug',
+                              'stall_hwm': 1}},
+ 'bulk_collection_size': 100,
+ 'bulk_collection_time': 1.0,
+ 'cname': 'AgentSchedulingComponent',
+ 'components': {},
+ 'cores': 264,
+ 'cores_per_node': 24,
+ 'count': 1,
+ 'cu_post_exec': None,
+ 'cu_pre_exec': None,
+ 'cu_tmp': '/scratch/$USER/$SLURM_JOBID',
+ 'db_poll_sleeptime': 1.0,
+ 'dburl': 'mongodb://mingtaiha:mingtaiha@ds053838.mlab.com:53838/hicomb',
+ 'debug': 10,
+ 'export_to_cu': None,
+ 'logdir': '.',
+ 'lrms': 'SLURM',
+ 'lrms_info': {'agent_nodes': {},
+               'cores_per_node': 24,
+               'lm_info': {},
+               'name': 'Slurm',
+               'node_list': ['comet-15-02',
+                             'comet-15-10',
+                             'comet-15-13',
+                             'comet-15-17',
+                             'comet-15-18',
+                             'comet-15-27',
+                             'comet-15-28',
+                             'comet-15-32',
+                             'comet-15-33',
+                             'comet-15-38',
+                             'comet-15-57']},
+ 'max_io_loglength': 1024,
+ 'mode': 'shared',
+ 'mpi_launch_method': 'MPIRUN_RSH',
+ 'number': 0,
+ 'owner': 'agent_0',
+ 'pilot_id': 'pilot.0238',
+ 'pilot_sandbox': '/home/mingtha/radical.pilot.sandbox/rp.session.two.mingtha.017452.0001/pilot.0238/',
+ 'resource_cfg': {'agent_launch_method': 'SSH',
+                  'agent_scheduler': 'CONTINUOUS',
+                  'agent_spawner': 'POPEN',
+                  'cores_per_node': '24',
+                  'cu_tmp': '/scratch/$USER/$SLURM_JOBID',
+                  'default_queue': 'compute',
+                  'description': "The Comet HPC resource at SDSC 'HPC for the 99%' (http://www.sdsc.edu/services/hpc/hpc_systems.html#comet).",
+                  'filesystem_endpoint': 'sftp://comet.sdsc.xsede.org/',
+                  'gsissh': {'filesystem_endpoint': 'gsisftp://comet.sdsc.xsede.org/',
+                             'job_manager_endpoint': 'slurm+gsissh://comet.sdsc.xsede.org/'},
+                  'job_manager_endpoint': 'slurm+ssh://comet.sdsc.xsede.org/',
+                  'label': 'xsede.comet_ssh',
+                  'lrms': 'SLURM',
+                  'mandatory_args': ['project'],
+                  'mpi_launch_method': 'MPIRUN_RSH',
+                  'notes': 'Always set the ``project`` attribute in the ComputePilotDescription or the pilot will fail.',
+                  'pre_bootstrap_1': ['module load python'],
+                  'python_dist': 'default',
+                  'rp_version': 'local',
+                  'schemas': ['ssh', 'gsissh'],
+                  'ssh': {'filesystem_endpoint': 'sftp://comet.sdsc.xsede.org/',
+                          'job_manager_endpoint': 'slurm+ssh://comet.sdsc.xsede.org/'},
+                  'task_launch_method': 'SSH',
+                  'valid_roots': ['/home'],
+                  'virtenv_mode': 'create'},
+ 'resource_sandbox': '/home/mingtha/radical.pilot.sandbox',
+ 'runtime': 120,
+ 'scheduler': 'CONTINUOUS',
+ 'session_id': 'rp.session.two.mingtha.017452.0001',
+ 'session_sandbox': '/home/mingtha/radical.pilot.sandbox/rp.session.two.mingtha.017452.0001',
+ 'spawner': 'POPEN',
+ 'staging_area': 'staging_area',
+ 'staging_schema': 'staging',
+ 'target': 'local',
+ 'task_launch_method': 'SSH',
+ 'uid': 'agent_0',
+ 'workdir': '/home/mingtha/radical.pilot.sandbox/rp.session.two.mingtha.017452.0001/pilot.0238'}
+2017-10-13 10:59:48,128: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : start components: {}
+2017-10-13 10:59:48,128: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : alive check in term
+2017-10-13 10:59:48,128: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : START: agent.scheduling.0.child register publisher log_pubsub
+2017-10-13 10:59:48,128: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : using addr tcp://198.202.114.249:44417 for pubsub log_pubsub
+2017-10-13 10:59:48,132: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : registered publisher : log_pubsub : log.pubsub.pub.0001
+2017-10-13 10:59:48,132: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : alive check in term
+2017-10-13 10:59:48,132: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : START: agent.scheduling.0.child register publisher state_pubsub
+2017-10-13 10:59:48,132: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : using addr tcp://198.202.114.249:44385 for pubsub state_pubsub
+2017-10-13 10:59:48,134: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : registered publisher : state_pubsub : state.pubsub.pub.0001
+2017-10-13 10:59:48,134: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : alive check in term
+2017-10-13 10:59:48,134: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : START: agent.scheduling.0.child register publisher control_pubsub
+2017-10-13 10:59:48,134: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : using addr tcp://198.202.114.249:40817 for pubsub control_pubsub
+2017-10-13 10:59:48,137: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : registered publisher : control_pubsub : control.pubsub.pub.0001
+2017-10-13 10:59:48,139: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : alive check in term
+2017-10-13 10:59:48,139: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : START: agent.scheduling.0.child register subscriber agent.scheduling.0.child.subscriber._cancel_monitor_cb
+2017-10-13 10:59:48,139: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : using addr tcp://198.202.114.249:35717 for pubsub control_pubsub
+2017-10-13 10:59:48,141: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : parent name: agent.scheduling.0.child.subscriber._cancel_monitor_cb
+2017-10-13 10:59:48,141: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : start thread
+2017-10-13 10:59:48,142: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber._cancel_monitor_cb: DEBUG   : child name: agent.scheduling.0.child.subscriber._cancel_monitor_cb.thread
+2017-10-13 10:59:48,142: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber._cancel_monitor_cb: INFO    : child (me) initializing
+2017-10-13 10:59:48,142: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber._cancel_monitor_cb: DEBUG   : ru_initialize_common (NOOP)
+2017-10-13 10:59:48,142: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber._cancel_monitor_cb: DEBUG   : ru_initialize_child (NOOP)
+2017-10-13 10:59:48,142: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber._cancel_monitor_cb: INFO    : send alive
+2017-10-13 10:59:48,142: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber._cancel_monitor_cb: INFO    : put message: [agent.scheduling.0.child.subscriber._cancel_monitor_cb.thread] alive
+2017-10-13 10:59:48,143: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : INFO    : get msg: alive
+2017-10-13 10:59:48,143: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : ru_initialize_common (NOOP)
+2017-10-13 10:59:48,143: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : ru_initialize_parent (NOOP)
+2017-10-13 10:59:48,143: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : child thread agent.scheduling.0.child.subscriber._cancel_monitor_cb started
+2017-10-13 10:59:48,143: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : agent.scheduling.0.child registered control_pubsub subscriber agent.scheduling.0.child.subscriber._cancel_monitor_cb
+2017-10-13 10:59:48,143: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : alive check in term
+2017-10-13 10:59:48,143: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : using addr tcp://198.202.114.249:43035 for input agent_scheduling_queue
+2017-10-13 10:59:48,146: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : registered input agent.scheduling.0.child.work.AGENT_SCHEDULING_PENDING
+2017-10-13 10:59:48,146: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : START: agent.scheduling.0.child register input AGENT_SCHEDULING_PENDING: agent.scheduling.0.child.work.AGENT_SCHEDULING_PENDING
+2017-10-13 10:59:48,146: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : registered worker work [AGENT_SCHEDULING_PENDING]
+2017-10-13 10:59:48,146: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : alive check in term
+2017-10-13 10:59:48,146: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : START: agent.scheduling.0.child register output AGENT_EXECUTING_PENDING
+2017-10-13 10:59:48,146: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : using addr tcp://198.202.114.249:46804 for output agent_executing_queue
+2017-10-13 10:59:48,149: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : registered output    : AGENT_EXECUTING_PENDING : agent_executing_queue : agent.executing.queue.input.0000
+2017-10-13 10:59:48,149: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : alive check in term
+2017-10-13 10:59:48,149: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : START: agent.scheduling.0.child register subscriber agent.scheduling.0.child.subscriber.unschedule_cb
+2017-10-13 10:59:48,149: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : using addr tcp://198.202.114.249:38535 for pubsub agent_unschedule_pubsub
+2017-10-13 10:59:48,151: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : parent name: agent.scheduling.0.child.subscriber.unschedule_cb
+2017-10-13 10:59:48,152: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : start thread
+2017-10-13 10:59:48,152: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.unschedule_cb: DEBUG   : child name: agent.scheduling.0.child.subscriber.unschedule_cb.thread
+2017-10-13 10:59:48,152: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.unschedule_cb: INFO    : child (me) initializing
+2017-10-13 10:59:48,152: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.unschedule_cb: DEBUG   : ru_initialize_common (NOOP)
+2017-10-13 10:59:48,152: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.unschedule_cb: DEBUG   : ru_initialize_child (NOOP)
+2017-10-13 10:59:48,152: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.unschedule_cb: INFO    : send alive
+2017-10-13 10:59:48,152: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.unschedule_cb: INFO    : put message: [agent.scheduling.0.child.subscriber.unschedule_cb.thread] alive
+2017-10-13 10:59:48,153: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : INFO    : get msg: alive
+2017-10-13 10:59:48,153: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : ru_initialize_common (NOOP)
+2017-10-13 10:59:48,153: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : ru_initialize_parent (NOOP)
+2017-10-13 10:59:48,153: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : child thread agent.scheduling.0.child.subscriber.unschedule_cb started
+2017-10-13 10:59:48,153: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : agent.scheduling.0.child registered agent_unschedule_pubsub subscriber agent.scheduling.0.child.subscriber.unschedule_cb
+2017-10-13 10:59:48,153: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : alive check in term
+2017-10-13 10:59:48,153: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : START: agent.scheduling.0.child register publisher agent_reschedule_pubsub
+2017-10-13 10:59:48,153: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : using addr tcp://198.202.114.249:40741 for pubsub agent_reschedule_pubsub
+2017-10-13 10:59:48,161: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : registered publisher : agent_reschedule_pubsub : agent.reschedule.pubsub.pub.0000
+2017-10-13 10:59:48,161: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : alive check in term
+2017-10-13 10:59:48,161: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : START: agent.scheduling.0.child register subscriber agent.scheduling.0.child.subscriber.reschedule_cb
+2017-10-13 10:59:48,161: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : using addr tcp://198.202.114.249:42371 for pubsub agent_reschedule_pubsub
+2017-10-13 10:59:48,163: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : parent name: agent.scheduling.0.child.subscriber.reschedule_cb
+2017-10-13 10:59:48,164: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : start thread
+2017-10-13 10:59:48,164: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.reschedule_cb: DEBUG   : child name: agent.scheduling.0.child.subscriber.reschedule_cb.thread
+2017-10-13 10:59:48,164: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.reschedule_cb: INFO    : child (me) initializing
+2017-10-13 10:59:48,164: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.reschedule_cb: DEBUG   : ru_initialize_common (NOOP)
+2017-10-13 10:59:48,164: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.reschedule_cb: DEBUG   : ru_initialize_child (NOOP)
+2017-10-13 10:59:48,164: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.reschedule_cb: INFO    : send alive
+2017-10-13 10:59:48,164: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.reschedule_cb: INFO    : put message: [agent.scheduling.0.child.subscriber.reschedule_cb.thread] alive
+2017-10-13 10:59:48,165: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : INFO    : get msg: alive
+2017-10-13 10:59:48,165: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : ru_initialize_common (NOOP)
+2017-10-13 10:59:48,165: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : ru_initialize_parent (NOOP)
+2017-10-13 10:59:48,165: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : child thread agent.scheduling.0.child.subscriber.reschedule_cb started
+2017-10-13 10:59:48,165: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : agent.scheduling.0.child registered agent_reschedule_pubsub subscriber agent.scheduling.0.child.subscriber.reschedule_cb
+2017-10-13 10:59:48,165: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : INFO    : child (me) initializing
+2017-10-13 10:59:48,165: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : parent name: agent.scheduling.0.child.watch
+2017-10-13 10:59:48,166: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : start thread
+2017-10-13 10:59:48,166: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.watch: DEBUG   : child name: agent.scheduling.0.child.watch.thread
+2017-10-13 10:59:48,166: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.watch: INFO    : child (me) initializing
+2017-10-13 10:59:48,166: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.watch: DEBUG   : ru_initialize_common (NOOP)
+2017-10-13 10:59:48,166: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.watch: DEBUG   : ru_initialize_child (NOOP)
+2017-10-13 10:59:48,166: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.watch: INFO    : send alive
+2017-10-13 10:59:48,166: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.watch: INFO    : put message: [agent.scheduling.0.child.watch.thread] alive
+2017-10-13 10:59:48,167: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : INFO    : get msg: alive
+2017-10-13 10:59:48,167: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : ru_initialize_common (NOOP)
+2017-10-13 10:59:48,167: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : ru_initialize_parent (NOOP)
+2017-10-13 10:59:48,167: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : child thread agent.scheduling.0.child.watch started
+2017-10-13 10:59:48,167: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : INFO    : child (me) is alive
+2017-10-13 10:59:48,167: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : INFO    : send alive
+2017-10-13 10:59:48,167: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : INFO    : send message: [agent.scheduling.0.child] alive
+2017-10-13 10:59:49,169: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : got unit (unit.000260)
+2017-10-13 10:59:49,169: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : got unit (unit.000261)
+2017-10-13 10:59:49,169: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : got unit (unit.000262)
+2017-10-13 10:59:49,169: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : got unit (unit.000263)
+2017-10-13 10:59:49,170: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : got unit (unit.000264)
+2017-10-13 10:59:49,170: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : got unit (unit.000265)
+2017-10-13 10:59:49,170: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : got unit (unit.000266)
+2017-10-13 10:59:49,170: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : got unit (unit.000267)
+2017-10-13 10:59:49,170: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : got unit (unit.000268)
+2017-10-13 10:59:49,170: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : got unit (unit.000269)
+2017-10-13 10:59:49,170: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : got unit (unit.000270)
+2017-10-13 10:59:49,170: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : advance bulk size: 11 [False, True]
+2017-10-13 10:59:49,170: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : after  allocate   unit.000260: {'timestamp': 1507917589.170786, 'slotstate': '|++++++++++++++++++++++++|------------------------|------------------------|------------------------|------------------------|------------------------|------------------------|------------------------|------------------------|------------------------|------------------------|'}
+2017-10-13 10:59:49,172: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : unit.000260 [24] : {'lm_info': {},
+ 'task_offsets': 0,
+ 'task_slots': ['comet-15-02:0',
+                'comet-15-02:1',
+                'comet-15-02:2',
+                'comet-15-02:3',
+                'comet-15-02:4',
+                'comet-15-02:5',
+                'comet-15-02:6',
+                'comet-15-02:7',
+                'comet-15-02:8',
+                'comet-15-02:9',
+                'comet-15-02:10',
+                'comet-15-02:11',
+                'comet-15-02:12',
+                'comet-15-02:13',
+                'comet-15-02:14',
+                'comet-15-02:15',
+                'comet-15-02:16',
+                'comet-15-02:17',
+                'comet-15-02:18',
+                'comet-15-02:19',
+                'comet-15-02:20',
+                'comet-15-02:21',
+                'comet-15-02:22',
+                'comet-15-02:23']}
+2017-10-13 10:59:49,172: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : advance bulk size: 1 [True, True]
+2017-10-13 10:59:49,172: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : put bulk AGENT_EXECUTING_PENDING: 1
+2017-10-13 10:59:49,172: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : after  allocate   unit.000261: {'timestamp': 1507917589.172721, 'slotstate': '|++++++++++++++++++++++++|++++++++++++++++++++++++|------------------------|------------------------|------------------------|------------------------|------------------------|------------------------|------------------------|------------------------|------------------------|'}
+2017-10-13 10:59:49,173: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : unit.000261 [24] : {'lm_info': {},
+ 'task_offsets': 24,
+ 'task_slots': ['comet-15-10:0',
+                'comet-15-10:1',
+                'comet-15-10:2',
+                'comet-15-10:3',
+                'comet-15-10:4',
+                'comet-15-10:5',
+                'comet-15-10:6',
+                'comet-15-10:7',
+                'comet-15-10:8',
+                'comet-15-10:9',
+                'comet-15-10:10',
+                'comet-15-10:11',
+                'comet-15-10:12',
+                'comet-15-10:13',
+                'comet-15-10:14',
+                'comet-15-10:15',
+                'comet-15-10:16',
+                'comet-15-10:17',
+                'comet-15-10:18',
+                'comet-15-10:19',
+                'comet-15-10:20',
+                'comet-15-10:21',
+                'comet-15-10:22',
+                'comet-15-10:23']}
+2017-10-13 10:59:49,173: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : advance bulk size: 1 [True, True]
+2017-10-13 10:59:49,173: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : put bulk AGENT_EXECUTING_PENDING: 1
+2017-10-13 10:59:49,173: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : after  allocate   unit.000262: {'timestamp': 1507917589.173858, 'slotstate': '|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|------------------------|------------------------|------------------------|------------------------|------------------------|------------------------|------------------------|------------------------|'}
+2017-10-13 10:59:49,174: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : unit.000262 [24] : {'lm_info': {},
+ 'task_offsets': 48,
+ 'task_slots': ['comet-15-13:0',
+                'comet-15-13:1',
+                'comet-15-13:2',
+                'comet-15-13:3',
+                'comet-15-13:4',
+                'comet-15-13:5',
+                'comet-15-13:6',
+                'comet-15-13:7',
+                'comet-15-13:8',
+                'comet-15-13:9',
+                'comet-15-13:10',
+                'comet-15-13:11',
+                'comet-15-13:12',
+                'comet-15-13:13',
+                'comet-15-13:14',
+                'comet-15-13:15',
+                'comet-15-13:16',
+                'comet-15-13:17',
+                'comet-15-13:18',
+                'comet-15-13:19',
+                'comet-15-13:20',
+                'comet-15-13:21',
+                'comet-15-13:22',
+                'comet-15-13:23']}
+2017-10-13 10:59:49,174: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : advance bulk size: 1 [True, True]
+2017-10-13 10:59:49,174: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : put bulk AGENT_EXECUTING_PENDING: 1
+2017-10-13 10:59:49,175: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : after  allocate   unit.000263: {'timestamp': 1507917589.175002, 'slotstate': '|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|------------------------|------------------------|------------------------|------------------------|------------------------|------------------------|------------------------|'}
+2017-10-13 10:59:49,175: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : unit.000263 [24] : {'lm_info': {},
+ 'task_offsets': 72,
+ 'task_slots': ['comet-15-17:0',
+                'comet-15-17:1',
+                'comet-15-17:2',
+                'comet-15-17:3',
+                'comet-15-17:4',
+                'comet-15-17:5',
+                'comet-15-17:6',
+                'comet-15-17:7',
+                'comet-15-17:8',
+                'comet-15-17:9',
+                'comet-15-17:10',
+                'comet-15-17:11',
+                'comet-15-17:12',
+                'comet-15-17:13',
+                'comet-15-17:14',
+                'comet-15-17:15',
+                'comet-15-17:16',
+                'comet-15-17:17',
+                'comet-15-17:18',
+                'comet-15-17:19',
+                'comet-15-17:20',
+                'comet-15-17:21',
+                'comet-15-17:22',
+                'comet-15-17:23']}
+2017-10-13 10:59:49,175: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : advance bulk size: 1 [True, True]
+2017-10-13 10:59:49,175: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : put bulk AGENT_EXECUTING_PENDING: 1
+2017-10-13 10:59:49,176: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : after  allocate   unit.000264: {'timestamp': 1507917589.176148, 'slotstate': '|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|------------------------|------------------------|------------------------|------------------------|------------------------|------------------------|'}
+2017-10-13 10:59:49,176: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : unit.000264 [24] : {'lm_info': {},
+ 'task_offsets': 96,
+ 'task_slots': ['comet-15-18:0',
+                'comet-15-18:1',
+                'comet-15-18:2',
+                'comet-15-18:3',
+                'comet-15-18:4',
+                'comet-15-18:5',
+                'comet-15-18:6',
+                'comet-15-18:7',
+                'comet-15-18:8',
+                'comet-15-18:9',
+                'comet-15-18:10',
+                'comet-15-18:11',
+                'comet-15-18:12',
+                'comet-15-18:13',
+                'comet-15-18:14',
+                'comet-15-18:15',
+                'comet-15-18:16',
+                'comet-15-18:17',
+                'comet-15-18:18',
+                'comet-15-18:19',
+                'comet-15-18:20',
+                'comet-15-18:21',
+                'comet-15-18:22',
+                'comet-15-18:23']}
+2017-10-13 10:59:49,176: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : advance bulk size: 1 [True, True]
+2017-10-13 10:59:49,177: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : put bulk AGENT_EXECUTING_PENDING: 1
+2017-10-13 10:59:49,177: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : after  allocate   unit.000265: {'timestamp': 1507917589.17729, 'slotstate': '|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|------------------------|------------------------|------------------------|------------------------|------------------------|'}
+2017-10-13 10:59:49,178: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : unit.000265 [24] : {'lm_info': {},
+ 'task_offsets': 120,
+ 'task_slots': ['comet-15-27:0',
+                'comet-15-27:1',
+                'comet-15-27:2',
+                'comet-15-27:3',
+                'comet-15-27:4',
+                'comet-15-27:5',
+                'comet-15-27:6',
+                'comet-15-27:7',
+                'comet-15-27:8',
+                'comet-15-27:9',
+                'comet-15-27:10',
+                'comet-15-27:11',
+                'comet-15-27:12',
+                'comet-15-27:13',
+                'comet-15-27:14',
+                'comet-15-27:15',
+                'comet-15-27:16',
+                'comet-15-27:17',
+                'comet-15-27:18',
+                'comet-15-27:19',
+                'comet-15-27:20',
+                'comet-15-27:21',
+                'comet-15-27:22',
+                'comet-15-27:23']}
+2017-10-13 10:59:49,178: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : advance bulk size: 1 [True, True]
+2017-10-13 10:59:49,178: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : put bulk AGENT_EXECUTING_PENDING: 1
+2017-10-13 10:59:49,178: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : after  allocate   unit.000266: {'timestamp': 1507917589.178439, 'slotstate': '|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|------------------------|------------------------|------------------------|------------------------|'}
+2017-10-13 10:59:49,179: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : unit.000266 [24] : {'lm_info': {},
+ 'task_offsets': 144,
+ 'task_slots': ['comet-15-28:0',
+                'comet-15-28:1',
+                'comet-15-28:2',
+                'comet-15-28:3',
+                'comet-15-28:4',
+                'comet-15-28:5',
+                'comet-15-28:6',
+                'comet-15-28:7',
+                'comet-15-28:8',
+                'comet-15-28:9',
+                'comet-15-28:10',
+                'comet-15-28:11',
+                'comet-15-28:12',
+                'comet-15-28:13',
+                'comet-15-28:14',
+                'comet-15-28:15',
+                'comet-15-28:16',
+                'comet-15-28:17',
+                'comet-15-28:18',
+                'comet-15-28:19',
+                'comet-15-28:20',
+                'comet-15-28:21',
+                'comet-15-28:22',
+                'comet-15-28:23']}
+2017-10-13 10:59:49,179: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : advance bulk size: 1 [True, True]
+2017-10-13 10:59:49,179: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : put bulk AGENT_EXECUTING_PENDING: 1
+2017-10-13 10:59:49,179: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : after  allocate   unit.000267: {'timestamp': 1507917589.179589, 'slotstate': '|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|------------------------|------------------------|------------------------|'}
+2017-10-13 10:59:49,180: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : unit.000267 [24] : {'lm_info': {},
+ 'task_offsets': 168,
+ 'task_slots': ['comet-15-32:0',
+                'comet-15-32:1',
+                'comet-15-32:2',
+                'comet-15-32:3',
+                'comet-15-32:4',
+                'comet-15-32:5',
+                'comet-15-32:6',
+                'comet-15-32:7',
+                'comet-15-32:8',
+                'comet-15-32:9',
+                'comet-15-32:10',
+                'comet-15-32:11',
+                'comet-15-32:12',
+                'comet-15-32:13',
+                'comet-15-32:14',
+                'comet-15-32:15',
+                'comet-15-32:16',
+                'comet-15-32:17',
+                'comet-15-32:18',
+                'comet-15-32:19',
+                'comet-15-32:20',
+                'comet-15-32:21',
+                'comet-15-32:22',
+                'comet-15-32:23']}
+2017-10-13 10:59:49,180: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : advance bulk size: 1 [True, True]
+2017-10-13 10:59:49,180: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : put bulk AGENT_EXECUTING_PENDING: 1
+2017-10-13 10:59:49,180: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : after  allocate   unit.000268: {'timestamp': 1507917589.180742, 'slotstate': '|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|------------------------|------------------------|'}
+2017-10-13 10:59:49,181: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : unit.000268 [24] : {'lm_info': {},
+ 'task_offsets': 192,
+ 'task_slots': ['comet-15-33:0',
+                'comet-15-33:1',
+                'comet-15-33:2',
+                'comet-15-33:3',
+                'comet-15-33:4',
+                'comet-15-33:5',
+                'comet-15-33:6',
+                'comet-15-33:7',
+                'comet-15-33:8',
+                'comet-15-33:9',
+                'comet-15-33:10',
+                'comet-15-33:11',
+                'comet-15-33:12',
+                'comet-15-33:13',
+                'comet-15-33:14',
+                'comet-15-33:15',
+                'comet-15-33:16',
+                'comet-15-33:17',
+                'comet-15-33:18',
+                'comet-15-33:19',
+                'comet-15-33:20',
+                'comet-15-33:21',
+                'comet-15-33:22',
+                'comet-15-33:23']}
+2017-10-13 10:59:49,181: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : advance bulk size: 1 [True, True]
+2017-10-13 10:59:49,181: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : put bulk AGENT_EXECUTING_PENDING: 1
+2017-10-13 10:59:49,181: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : after  allocate   unit.000269: {'timestamp': 1507917589.181907, 'slotstate': '|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|------------------------|'}
+2017-10-13 10:59:49,182: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : unit.000269 [24] : {'lm_info': {},
+ 'task_offsets': 216,
+ 'task_slots': ['comet-15-38:0',
+                'comet-15-38:1',
+                'comet-15-38:2',
+                'comet-15-38:3',
+                'comet-15-38:4',
+                'comet-15-38:5',
+                'comet-15-38:6',
+                'comet-15-38:7',
+                'comet-15-38:8',
+                'comet-15-38:9',
+                'comet-15-38:10',
+                'comet-15-38:11',
+                'comet-15-38:12',
+                'comet-15-38:13',
+                'comet-15-38:14',
+                'comet-15-38:15',
+                'comet-15-38:16',
+                'comet-15-38:17',
+                'comet-15-38:18',
+                'comet-15-38:19',
+                'comet-15-38:20',
+                'comet-15-38:21',
+                'comet-15-38:22',
+                'comet-15-38:23']}
+2017-10-13 10:59:49,182: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : advance bulk size: 1 [True, True]
+2017-10-13 10:59:49,182: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : put bulk AGENT_EXECUTING_PENDING: 1
+2017-10-13 10:59:49,183: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : after  allocate   unit.000270: {'timestamp': 1507917589.183099, 'slotstate': '|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|'}
+2017-10-13 10:59:49,183: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : unit.000270 [24] : {'lm_info': {},
+ 'task_offsets': 240,
+ 'task_slots': ['comet-15-57:0',
+                'comet-15-57:1',
+                'comet-15-57:2',
+                'comet-15-57:3',
+                'comet-15-57:4',
+                'comet-15-57:5',
+                'comet-15-57:6',
+                'comet-15-57:7',
+                'comet-15-57:8',
+                'comet-15-57:9',
+                'comet-15-57:10',
+                'comet-15-57:11',
+                'comet-15-57:12',
+                'comet-15-57:13',
+                'comet-15-57:14',
+                'comet-15-57:15',
+                'comet-15-57:16',
+                'comet-15-57:17',
+                'comet-15-57:18',
+                'comet-15-57:19',
+                'comet-15-57:20',
+                'comet-15-57:21',
+                'comet-15-57:22',
+                'comet-15-57:23']}
+2017-10-13 10:59:49,183: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : advance bulk size: 1 [True, True]
+2017-10-13 10:59:49,184: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : put bulk AGENT_EXECUTING_PENDING: 1
+2017-10-13 10:59:49,809: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.unschedule_cb: DEBUG   : before unschedule unit.000260: {'timestamp': 1507917589.809101, 'slotstate': '|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|'}
+2017-10-13 10:59:49,809: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.unschedule_cb: DEBUG   : after  unschedule unit.000260: {'timestamp': 1507917589.809433, 'slotstate': '|------------------------|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|'}
+2017-10-13 10:59:49,809: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.unschedule_cb: DEBUG   : before unschedule unit.000262: {'timestamp': 1507917589.809679, 'slotstate': '|------------------------|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|'}
+2017-10-13 10:59:49,809: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.unschedule_cb: DEBUG   : after  unschedule unit.000262: {'timestamp': 1507917589.80989, 'slotstate': '|------------------------|++++++++++++++++++++++++|------------------------|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|'}
+2017-10-13 10:59:49,810: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.reschedule_cb: DEBUG   : before reschedule unit.000260: {'timestamp': 1507917589.810067, 'slotstate': '|------------------------|++++++++++++++++++++++++|------------------------|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|'}
+2017-10-13 10:59:49,810: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.reschedule_cb: DEBUG   : after  reschedule unit.000260: {'timestamp': 1507917589.810251, 'slotstate': '|------------------------|++++++++++++++++++++++++|------------------------|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|'}
+2017-10-13 10:59:49,810: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.unschedule_cb: DEBUG   : before unschedule unit.000267: {'timestamp': 1507917589.810443, 'slotstate': '|------------------------|++++++++++++++++++++++++|------------------------|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|'}
+2017-10-13 10:59:49,810: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.unschedule_cb: DEBUG   : after  unschedule unit.000267: {'timestamp': 1507917589.810685, 'slotstate': '|------------------------|++++++++++++++++++++++++|------------------------|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|------------------------|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|'}
+2017-10-13 10:59:49,810: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.reschedule_cb: DEBUG   : before reschedule unit.000262: {'timestamp': 1507917589.810854, 'slotstate': '|------------------------|++++++++++++++++++++++++|------------------------|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|------------------------|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|'}
+2017-10-13 10:59:49,811: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.reschedule_cb: DEBUG   : after  reschedule unit.000262: {'timestamp': 1507917589.81101, 'slotstate': '|------------------------|++++++++++++++++++++++++|------------------------|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|------------------------|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|'}
+2017-10-13 10:59:49,811: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.unschedule_cb: DEBUG   : before unschedule unit.000261: {'timestamp': 1507917589.811185, 'slotstate': '|------------------------|++++++++++++++++++++++++|------------------------|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|------------------------|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|'}
+2017-10-13 10:59:49,811: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.unschedule_cb: DEBUG   : after  unschedule unit.000261: {'timestamp': 1507917589.811395, 'slotstate': '|------------------------|------------------------|------------------------|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|------------------------|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|'}
+2017-10-13 10:59:49,811: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.reschedule_cb: DEBUG   : before reschedule unit.000267: {'timestamp': 1507917589.811544, 'slotstate': '|------------------------|------------------------|------------------------|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|------------------------|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|'}
+2017-10-13 10:59:49,811: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.reschedule_cb: DEBUG   : after  reschedule unit.000267: {'timestamp': 1507917589.811653, 'slotstate': '|------------------------|------------------------|------------------------|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|------------------------|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|'}
+2017-10-13 10:59:49,811: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.reschedule_cb: DEBUG   : before reschedule unit.000261: {'timestamp': 1507917589.811796, 'slotstate': '|------------------------|------------------------|------------------------|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|------------------------|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|'}
+2017-10-13 10:59:49,811: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.reschedule_cb: DEBUG   : after  reschedule unit.000261: {'timestamp': 1507917589.811895, 'slotstate': '|------------------------|------------------------|------------------------|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|------------------------|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|'}
+2017-10-13 10:59:50,811: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.unschedule_cb: DEBUG   : before unschedule unit.000263: {'timestamp': 1507917590.811677, 'slotstate': '|------------------------|------------------------|------------------------|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|------------------------|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|'}
+2017-10-13 10:59:50,811: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.unschedule_cb: DEBUG   : after  unschedule unit.000263: {'timestamp': 1507917590.811902, 'slotstate': '|------------------------|------------------------|------------------------|------------------------|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|------------------------|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|'}
+2017-10-13 10:59:50,812: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.reschedule_cb: DEBUG   : before reschedule unit.000263: {'timestamp': 1507917590.81211, 'slotstate': '|------------------------|------------------------|------------------------|------------------------|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|------------------------|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|'}
+2017-10-13 10:59:50,812: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.reschedule_cb: DEBUG   : after  reschedule unit.000263: {'timestamp': 1507917590.81227, 'slotstate': '|------------------------|------------------------|------------------------|------------------------|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|------------------------|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|'}
+2017-10-13 10:59:50,812: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.unschedule_cb: DEBUG   : before unschedule unit.000265: {'timestamp': 1507917590.81243, 'slotstate': '|------------------------|------------------------|------------------------|------------------------|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|------------------------|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|'}
+2017-10-13 10:59:50,812: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.unschedule_cb: DEBUG   : after  unschedule unit.000265: {'timestamp': 1507917590.812648, 'slotstate': '|------------------------|------------------------|------------------------|------------------------|++++++++++++++++++++++++|------------------------|++++++++++++++++++++++++|------------------------|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|'}
+2017-10-13 10:59:50,812: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.reschedule_cb: DEBUG   : before reschedule unit.000265: {'timestamp': 1507917590.812852, 'slotstate': '|------------------------|------------------------|------------------------|------------------------|++++++++++++++++++++++++|------------------------|++++++++++++++++++++++++|------------------------|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|'}
+2017-10-13 10:59:50,813: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.reschedule_cb: DEBUG   : after  reschedule unit.000265: {'timestamp': 1507917590.813005, 'slotstate': '|------------------------|------------------------|------------------------|------------------------|++++++++++++++++++++++++|------------------------|++++++++++++++++++++++++|------------------------|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|'}
+2017-10-13 10:59:50,813: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.unschedule_cb: DEBUG   : before unschedule unit.000268: {'timestamp': 1507917590.813153, 'slotstate': '|------------------------|------------------------|------------------------|------------------------|++++++++++++++++++++++++|------------------------|++++++++++++++++++++++++|------------------------|++++++++++++++++++++++++|++++++++++++++++++++++++|++++++++++++++++++++++++|'}
+2017-10-13 10:59:50,813: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.unschedule_cb: DEBUG   : after  unschedule unit.000268: {'timestamp': 1507917590.81338, 'slotstate': '|------------------------|------------------------|------------------------|------------------------|++++++++++++++++++++++++|------------------------|++++++++++++++++++++++++|------------------------|------------------------|++++++++++++++++++++++++|++++++++++++++++++++++++|'}
+2017-10-13 10:59:50,813: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.reschedule_cb: DEBUG   : before reschedule unit.000268: {'timestamp': 1507917590.813585, 'slotstate': '|------------------------|------------------------|------------------------|------------------------|++++++++++++++++++++++++|------------------------|++++++++++++++++++++++++|------------------------|------------------------|++++++++++++++++++++++++|++++++++++++++++++++++++|'}
+2017-10-13 10:59:50,813: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.reschedule_cb: DEBUG   : after  reschedule unit.000268: {'timestamp': 1507917590.813739, 'slotstate': '|------------------------|------------------------|------------------------|------------------------|++++++++++++++++++++++++|------------------------|++++++++++++++++++++++++|------------------------|------------------------|++++++++++++++++++++++++|++++++++++++++++++++++++|'}
+2017-10-13 10:59:50,813: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.unschedule_cb: DEBUG   : before unschedule unit.000270: {'timestamp': 1507917590.813911, 'slotstate': '|------------------------|------------------------|------------------------|------------------------|++++++++++++++++++++++++|------------------------|++++++++++++++++++++++++|------------------------|------------------------|++++++++++++++++++++++++|++++++++++++++++++++++++|'}
+2017-10-13 10:59:50,814: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.unschedule_cb: DEBUG   : after  unschedule unit.000270: {'timestamp': 1507917590.814136, 'slotstate': '|------------------------|------------------------|------------------------|------------------------|++++++++++++++++++++++++|------------------------|++++++++++++++++++++++++|------------------------|------------------------|++++++++++++++++++++++++|------------------------|'}
+2017-10-13 10:59:50,814: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.reschedule_cb: DEBUG   : before reschedule unit.000270: {'timestamp': 1507917590.814336, 'slotstate': '|------------------------|------------------------|------------------------|------------------------|++++++++++++++++++++++++|------------------------|++++++++++++++++++++++++|------------------------|------------------------|++++++++++++++++++++++++|------------------------|'}
+2017-10-13 10:59:50,814: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.reschedule_cb: DEBUG   : after  reschedule unit.000270: {'timestamp': 1507917590.814486, 'slotstate': '|------------------------|------------------------|------------------------|------------------------|++++++++++++++++++++++++|------------------------|++++++++++++++++++++++++|------------------------|------------------------|++++++++++++++++++++++++|------------------------|'}
+2017-10-13 10:59:50,814: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.unschedule_cb: DEBUG   : before unschedule unit.000264: {'timestamp': 1507917590.814624, 'slotstate': '|------------------------|------------------------|------------------------|------------------------|++++++++++++++++++++++++|------------------------|++++++++++++++++++++++++|------------------------|------------------------|++++++++++++++++++++++++|------------------------|'}
+2017-10-13 10:59:50,814: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.unschedule_cb: DEBUG   : after  unschedule unit.000264: {'timestamp': 1507917590.814836, 'slotstate': '|------------------------|------------------------|------------------------|------------------------|------------------------|------------------------|++++++++++++++++++++++++|------------------------|------------------------|++++++++++++++++++++++++|------------------------|'}
+2017-10-13 10:59:50,815: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.reschedule_cb: DEBUG   : before reschedule unit.000264: {'timestamp': 1507917590.815039, 'slotstate': '|------------------------|------------------------|------------------------|------------------------|------------------------|------------------------|++++++++++++++++++++++++|------------------------|------------------------|++++++++++++++++++++++++|------------------------|'}
+2017-10-13 10:59:50,815: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.reschedule_cb: DEBUG   : after  reschedule unit.000264: {'timestamp': 1507917590.815187, 'slotstate': '|------------------------|------------------------|------------------------|------------------------|------------------------|------------------------|++++++++++++++++++++++++|------------------------|------------------------|++++++++++++++++++++++++|------------------------|'}
+2017-10-13 10:59:50,815: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.unschedule_cb: DEBUG   : before unschedule unit.000269: {'timestamp': 1507917590.815326, 'slotstate': '|------------------------|------------------------|------------------------|------------------------|------------------------|------------------------|++++++++++++++++++++++++|------------------------|------------------------|++++++++++++++++++++++++|------------------------|'}
+2017-10-13 10:59:50,815: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.unschedule_cb: DEBUG   : after  unschedule unit.000269: {'timestamp': 1507917590.815554, 'slotstate': '|------------------------|------------------------|------------------------|------------------------|------------------------|------------------------|++++++++++++++++++++++++|------------------------|------------------------|------------------------|------------------------|'}
+2017-10-13 10:59:50,815: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.reschedule_cb: DEBUG   : before reschedule unit.000269: {'timestamp': 1507917590.815753, 'slotstate': '|------------------------|------------------------|------------------------|------------------------|------------------------|------------------------|++++++++++++++++++++++++|------------------------|------------------------|------------------------|------------------------|'}
+2017-10-13 10:59:50,815: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.reschedule_cb: DEBUG   : after  reschedule unit.000269: {'timestamp': 1507917590.815904, 'slotstate': '|------------------------|------------------------|------------------------|------------------------|------------------------|------------------------|++++++++++++++++++++++++|------------------------|------------------------|------------------------|------------------------|'}
+2017-10-13 10:59:50,816: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.unschedule_cb: DEBUG   : before unschedule unit.000266: {'timestamp': 1507917590.816042, 'slotstate': '|------------------------|------------------------|------------------------|------------------------|------------------------|------------------------|++++++++++++++++++++++++|------------------------|------------------------|------------------------|------------------------|'}
+2017-10-13 10:59:50,816: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.unschedule_cb: DEBUG   : after  unschedule unit.000266: {'timestamp': 1507917590.816256, 'slotstate': '|------------------------|------------------------|------------------------|------------------------|------------------------|------------------------|------------------------|------------------------|------------------------|------------------------|------------------------|'}
+2017-10-13 10:59:50,816: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.reschedule_cb: DEBUG   : before reschedule unit.000266: {'timestamp': 1507917590.816439, 'slotstate': '|------------------------|------------------------|------------------------|------------------------|------------------------|------------------------|------------------------|------------------------|------------------------|------------------------|------------------------|'}
+2017-10-13 10:59:50,816: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.reschedule_cb: DEBUG   : after  reschedule unit.000266: {'timestamp': 1507917590.816546, 'slotstate': '|------------------------|------------------------|------------------------|------------------------|------------------------|------------------------|------------------------|------------------------|------------------------|------------------------|------------------------|'}
+2017-10-13 12:59:47,484: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.watch: INFO    : recv message: STOP
+2017-10-13 12:59:47,484: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.watch: INFO    : message received: STOP
+2017-10-13 12:59:47,484: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.watch: INFO    : STOP received: STOP
+2017-10-13 12:59:47,484: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.watch: INFO    : watcher closes
+2017-10-13 12:59:47,484: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.watch: INFO    : put message: [agent.scheduling.0.child.watch.thread] work finished
+2017-10-13 12:59:47,484: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.watch: DEBUG   : ru_finalize_child (NOOP)
+2017-10-13 12:59:47,484: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.watch: DEBUG   : ru_finalize_common (NOOP)
+2017-10-13 12:59:47,484: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.watch: INFO    : put message: [agent.scheduling.0.child.watch.thread] terminating
+2017-10-13 12:59:48,475: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : ru_finalize_common()
+2017-10-13 12:59:48,475: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : WARNING : alive check: proc invalid - stop [False - True]
+2017-10-13 12:59:48,520: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : INFO    : stop agent.scheduling.0.child (5880 : 5880 : MainThread) [radical.utils.process.Continuous.is_valid]
+2017-10-13 12:59:48,520: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : INFO    : parent stops child  5880 -> 5880 [agent.scheduling.0.child]
+2017-10-13 12:59:48,520: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : INFO    : send message: [agent.scheduling.0.child] STOP
+2017-10-13 12:59:48,520: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : WARNING : send failed ([Errno 9] Bad file descriptor) - terminate
+2017-10-13 12:59:48,520: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : ru_finalize_common()
+2017-10-13 12:59:48,520: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : TERM : agent.scheduling.0.child unregister publisher log_pubsub
+2017-10-13 12:59:48,529: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : unregistered publisher log_pubsub
+2017-10-13 12:59:48,529: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : TERM : agent.scheduling.0.child unregister publisher state_pubsub
+2017-10-13 12:59:48,534: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : unregistered publisher state_pubsub
+2017-10-13 12:59:48,534: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : TERM : agent.scheduling.0.child unregister publisher control_pubsub
+2017-10-13 12:59:48,547: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : unregistered publisher control_pubsub
+2017-10-13 12:59:48,547: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : agent.scheduling.0.child close prof
+2017-10-13 12:59:48,568: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : INFO    : parent stops child
+2017-10-13 12:59:48,568: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : ru_finalize_parent (NOOP)
+2017-10-13 12:59:48,568: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : ru_finalize_common (NOOP)
+2017-10-13 12:59:48,569: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : INFO    : parent stops child
+2017-10-13 12:59:48,569: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : ru_finalize_parent (NOOP)
+2017-10-13 12:59:48,569: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.unschedule_cb: DEBUG   : ru_finalize_child (NOOP)
+2017-10-13 12:59:48,569: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.unschedule_cb: INFO    : put message: [agent.scheduling.0.child.subscriber.unschedule_cb.thread] terminating
+2017-10-13 12:59:48,570: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : INFO    : parent stops child
+2017-10-13 12:59:48,570: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : ru_finalize_parent (NOOP)
+2017-10-13 12:59:48,570: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber._cancel_monitor_cb: DEBUG   : ru_finalize_child (NOOP)
+2017-10-13 12:59:48,571: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber._cancel_monitor_cb: INFO    : put message: [agent.scheduling.0.child.subscriber._cancel_monitor_cb.thread] terminating
+2017-10-13 12:59:48,572: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : INFO    : parent stops child
+2017-10-13 12:59:48,572: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : ru_finalize_parent (NOOP)
+2017-10-13 12:59:48,572: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.reschedule_cb: DEBUG   : ru_finalize_child (NOOP)
+2017-10-13 12:59:48,572: agent.scheduling.0.child: agent.scheduling.0              : agent.scheduling.0.child.subscriber.reschedule_cb: INFO    : put message: [agent.scheduling.0.child.subscriber.reschedule_cb.thread] terminating
+2017-10-13 12:59:48,573: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : WARNING : super agent.scheduling.0.child is invalid
+2017-10-13 12:59:48,574: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : WARNING : component agent.scheduling.0.child is invalid
+2017-10-13 12:59:48,574: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : INFO    : stop agent.scheduling.0.child (5880 : 5880 : MainThread) [radical.pilot.utils.component.Continuous.is_valid]
+2017-10-13 12:59:48,574: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : WARNING : publisher log_pubsub is not registered
+2017-10-13 12:59:48,574: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : WARNING : publisher state_pubsub is not registered
+2017-10-13 12:59:48,575: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : WARNING : publisher control_pubsub is not registered
+2017-10-13 12:59:48,575: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : DEBUG   : agent.scheduling.0.child close prof
+2017-10-13 12:59:48,575: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : INFO    : send message: [agent.scheduling.0.child] terminating
+2017-10-13 12:59:48,575: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : WARNING : send failed ([Errno 9] Bad file descriptor) - terminate
+2017-10-13 12:59:48,575: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : INFO    : parent stops child
+2017-10-13 12:59:48,575: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : INFO    : parent stops child
+2017-10-13 12:59:48,575: agent.scheduling.0.child: agent.scheduling.0              : MainThread     : INFO    : parent stops child
