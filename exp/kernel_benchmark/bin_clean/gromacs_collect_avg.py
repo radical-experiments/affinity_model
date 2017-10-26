@@ -87,7 +87,7 @@ def collect_avg_gromacs(src_path):
             measurement = measurements[m]
             
             outfile_name = node_type + '/' + measurement + '.csv'
-            with open('plotting_data/set3/'+outfile_name, 'w') as f:
+            with open('plotting_data/set3/gromacs/'+outfile_name, 'w') as f:
                 writer = csv.writer(f)
                 writer.writerows(out_data_l)
         
