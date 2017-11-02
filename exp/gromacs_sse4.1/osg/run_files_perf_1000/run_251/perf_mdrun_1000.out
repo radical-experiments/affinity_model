@@ -1,0 +1,69 @@
+GROMACS:    gmx mdrun, VERSION 5.0
+
+GROMACS is written by:
+Emile Apol         Rossen Apostolov   Herman J.C. Berendsen Par Bjelkmar       
+Aldert van Buuren  Rudi van Drunen    Anton Feenstra     Sebastian Fritsch  
+Gerrit Groenhof    Christoph Junghans Peter Kasson       Carsten Kutzner    
+Per Larsson        Justin A. Lemkul   Magnus Lundborg    Pieter Meulenhoff  
+Erik Marklund      Teemu Murtola      Szilard Pall       Sander Pronk       
+Roland Schulz      Alexey Shvetsov    Michael Shirts     Alfons Sijbers     
+Peter Tieleman     Christian Wennberg Maarten Wolf       
+and the project leaders:
+Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+
+Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+Copyright (c) 2001-2014, The GROMACS development team at
+Uppsala University, Stockholm University and
+the Royal Institute of Technology, Sweden.
+check out http://www.gromacs.org for more information.
+
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+GROMACS:      gmx mdrun, VERSION 5.0
+Executable:   /cvmfs/oasis.opensciencegrid.org/osg/modules/gromacs/5.0.0/bin/gmx
+Library dir:  /cvmfs/oasis.opensciencegrid.org/osg/modules/gromacs/5.0.0/share/gromacs/top
+Command line:
+  gmx mdrun -ntomp 1 -nt 1 -s out.tpr -c out.gro
+
+Reading file out.tpr, VERSION 5.0 (single precision)
+The number of OpenMP threads was set by environment variable OMP_NUM_THREADS to 1 (and the command-line setting agreed with that)
+Using 1 MPI thread
+Using 1 OpenMP thread 
+
+The current CPU can measure timings more accurately than the code in
+gmx was configured to use. This might affect your simulation
+speed as accurate timings are needed for load-balancing.
+Please consider rebuilding gmx with the GMX_USE_RDTSCP=OFF CMake option.
+
+starting mdrun 'Protein in water'
+1000 steps,      2.0 ps.
+
+Writing final coordinates.
+
+               Core t (s)   Wall t (s)        (%)
+       Time:      101.867      109.893       92.7
+                 (ns/day)    (hour/ns)
+Performance:        1.574       15.248
+
+gcq#22: "I Had So Many Problem, and Then I Got Me a Walkman" (F. Black)
+
+
+ Performance counter stats for 'gmx mdrun -ntomp 1 -nt 1 -s out.tpr -c out.gro':
+
+     102616.047326 task-clock                #    0.927 CPUs utilized          
+               921 context-switches          #    0.009 K/sec                  
+               420 CPU-migrations            #    0.004 K/sec                  
+              9387 page-faults               #    0.091 K/sec                  
+      283027206653 cycles                    #    2.758 GHz                     [83.33%]
+      157169858989 stalled-cycles-frontend   #   55.53% frontend cycles idle    [83.33%]
+       30113196838 stalled-cycles-backend    #   10.64% backend  cycles idle    [66.67%]
+      403625983435 instructions              #    1.43  insns per cycle        
+                                             #    0.39  stalled cycles per insn [83.34%]
+        6453629171 branches                  #   62.891 M/sec                   [83.33%]
+         109255783 branch-misses             #    1.69% of all branches         [83.33%]
+
+     110.668661459 seconds time elapsed
+
