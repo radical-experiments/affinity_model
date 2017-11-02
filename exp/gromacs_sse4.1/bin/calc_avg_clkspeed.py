@@ -25,6 +25,13 @@ for timestep, clkspeed_list in clkspeed_dict.iteritems():
     avg_clkspeed_dict[timestep] = [avg(clkspeed_list), samp_std(clkspeed_list), conf_itv(clkspeed_list)]
 
 
+all_clkspeed_list = list()
+for timestep, clkspeed_list in clkspeed_dict.iteritems():
+    all_clkspeed_list.extend(clkspeed_list)
+
+avg_clkspeed_all = [avg(all_clkspeed_list), samp_std(all_clkspeed_list), conf_itv(all_clkspeed_list)]
+pprint(avg_clkspeed_all)
+
 with open("avg_clkspeed__"+resource+".csv", "w") as f_out:
     writer = csv.writer(f_out)
     for timestep, clkspeed_list in avg_clkspeed_dict.iteritems():
@@ -32,5 +39,7 @@ with open("avg_clkspeed__"+resource+".csv", "w") as f_out:
         row.extend(clkspeed_list)
         pprint(row)
         writer.writerow(row)
-
-
+    last_row = ['all']
+    last_row.extend(avg_clkspeed_all)
+    pprint(last_row)
+    writer.writerow(last_row)

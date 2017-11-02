@@ -13,7 +13,7 @@ with open(input_path+"/cpu_util.txt") as f_in:
 
     for line in f_in:
         col_split = line.split(':')
-        timesteps = int(col_split[0].split('_')[-1])
+        timesteps = int(col_split[0].split('_')[-1].split('.')[0])
         cpu_util = float(col_split[1].lstrip().split('#')[1].lstrip().split(' ')[0])
         print timesteps, cpu_util
 
