@@ -1,0 +1,304 @@
+2017-10-27 15:29:59,904: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : INFO    : python.interpreter   version: 2.7.12 (default, Nov 19 2016, 06:48:10) [GCC 5.4.0 20160609]
+2017-10-27 15:29:59,905: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : INFO    :                      pid: 1388
+2017-10-27 15:29:59,905: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : INFO    :                      tid: MainThread
+2017-10-27 15:29:59,905: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : INFO    : radical.pilot        version: 0.47-v0.46.2-133-g78e0b005@rc-v0.46.3
+2017-10-27 15:29:59,954: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : INFO    : initialize umgr.scheduling.0.child
+2017-10-27 15:29:59,959: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : INFO    : cfg: {'agents': {},
+ u'bridges': {u'control_pubsub': {'addr_in': 'tcp://138.201.86.166:33908',
+                                  'addr_out': 'tcp://138.201.86.166:41875',
+                                  u'bulk_size': 0,
+                                  u'log_level': u'debug',
+                                  u'stall_hwm': 1},
+              u'log_pubsub': {'addr_in': 'tcp://138.201.86.166:33344',
+                              'addr_out': 'tcp://138.201.86.166:42320',
+                              u'bulk_size': 0,
+                              u'log_level': u'debug',
+                              u'stall_hwm': 1},
+              u'state_pubsub': {'addr_in': 'tcp://138.201.86.166:42715',
+                                'addr_out': 'tcp://138.201.86.166:45309',
+                                u'bulk_size': 0,
+                                u'log_level': u'debug',
+                                u'stall_hwm': 1},
+              u'umgr_reschedule_pubsub': {'addr_in': 'tcp://138.201.86.166:42062',
+                                          'addr_out': 'tcp://138.201.86.166:37289',
+                                          u'bulk_size': 0,
+                                          u'log_level': u'debug',
+                                          u'stall_hwm': 1},
+              u'umgr_scheduling_queue': {'addr_in': 'tcp://138.201.86.166:43247',
+                                         'addr_out': 'tcp://138.201.86.166:38938',
+                                         u'bulk_size': 0,
+                                         u'log_level': u'debug',
+                                         u'stall_hwm': 1},
+              u'umgr_staging_input_queue': {'addr_in': 'tcp://138.201.86.166:43241',
+                                            'addr_out': 'tcp://138.201.86.166:43028',
+                                            u'bulk_size': 0,
+                                            u'log_level': u'debug',
+                                            u'stall_hwm': 1},
+              u'umgr_staging_output_queue': {'addr_in': 'tcp://138.201.86.166:40730',
+                                             'addr_out': 'tcp://138.201.86.166:34975',
+                                             u'bulk_size': 0,
+                                             u'log_level': u'debug',
+                                             u'stall_hwm': 1},
+              u'umgr_unschedule_pubsub': {'addr_in': 'tcp://138.201.86.166:45440',
+                                          'addr_out': 'tcp://138.201.86.166:42138',
+                                          u'bulk_size': 0,
+                                          u'log_level': u'debug',
+                                          u'stall_hwm': 1}},
+ u'bulk_collection_size': 100,
+ u'bulk_collection_time': 1.0,
+ 'cname': u'UMGRSchedulingComponent',
+ u'components': {},
+ u'count': 1,
+ u'db_poll_sleeptime': 1.0,
+ 'number': 0,
+ 'owner': 'umgr.0000',
+ u'scheduler': u'round_robin',
+ 'uid': 'umgr.0000'}
+2017-10-27 15:29:59,959: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : start components: {}
+2017-10-27 15:29:59,959: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : alive check in term
+2017-10-27 15:29:59,960: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : START: umgr.scheduling.0.child register publisher log_pubsub
+2017-10-27 15:29:59,960: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : using addr tcp://138.201.86.166:33344 for pubsub log_pubsub
+2017-10-27 15:29:59,963: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : registered publisher : log_pubsub : log.pubsub.pub.0005
+2017-10-27 15:29:59,963: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : alive check in term
+2017-10-27 15:29:59,963: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : START: umgr.scheduling.0.child register publisher state_pubsub
+2017-10-27 15:29:59,963: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : using addr tcp://138.201.86.166:42715 for pubsub state_pubsub
+2017-10-27 15:29:59,965: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : registered publisher : state_pubsub : state.pubsub.pub.0005
+2017-10-27 15:29:59,965: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : alive check in term
+2017-10-27 15:29:59,965: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : START: umgr.scheduling.0.child register publisher control_pubsub
+2017-10-27 15:29:59,965: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : using addr tcp://138.201.86.166:33908 for pubsub control_pubsub
+2017-10-27 15:29:59,968: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : registered publisher : control_pubsub : control.pubsub.pub.0005
+2017-10-27 15:29:59,968: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : alive check in term
+2017-10-27 15:29:59,968: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : START: umgr.scheduling.0.child register subscriber umgr.scheduling.0.child.subscriber._cancel_monitor_cb
+2017-10-27 15:29:59,968: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : using addr tcp://138.201.86.166:41875 for pubsub control_pubsub
+2017-10-27 15:29:59,971: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : parent name: umgr.scheduling.0.child.subscriber._cancel_monitor_cb
+2017-10-27 15:29:59,971: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : start thread
+2017-10-27 15:29:59,971: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._cancel_monitor_cb: DEBUG   : child name: umgr.scheduling.0.child.subscriber._cancel_monitor_cb.thread
+2017-10-27 15:29:59,971: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._cancel_monitor_cb: INFO    : child (me) initializing
+2017-10-27 15:29:59,971: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._cancel_monitor_cb: DEBUG   : ru_initialize_common (NOOP)
+2017-10-27 15:29:59,972: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._cancel_monitor_cb: DEBUG   : ru_initialize_child (NOOP)
+2017-10-27 15:29:59,972: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._cancel_monitor_cb: INFO    : send alive
+2017-10-27 15:29:59,972: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._cancel_monitor_cb: INFO    : put message: [umgr.scheduling.0.child.subscriber._cancel_monitor_cb.thread] alive
+2017-10-27 15:29:59,973: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : INFO    : get msg: alive
+2017-10-27 15:29:59,973: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : ru_initialize_common (NOOP)
+2017-10-27 15:29:59,973: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : ru_initialize_parent (NOOP)
+2017-10-27 15:29:59,973: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : child thread umgr.scheduling.0.child.subscriber._cancel_monitor_cb started
+2017-10-27 15:29:59,973: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : umgr.scheduling.0.child registered control_pubsub subscriber umgr.scheduling.0.child.subscriber._cancel_monitor_cb
+2017-10-27 15:29:59,973: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : RoundRobin umgr scheduler configured
+2017-10-27 15:29:59,973: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : alive check in term
+2017-10-27 15:29:59,974: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : using addr tcp://138.201.86.166:38938 for input umgr_scheduling_queue
+2017-10-27 15:29:59,976: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : registered input umgr.scheduling.0.child.work.UMGR_SCHEDULING_PENDING
+2017-10-27 15:29:59,976: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : START: umgr.scheduling.0.child register input UMGR_SCHEDULING_PENDING: umgr.scheduling.0.child.work.UMGR_SCHEDULING_PENDING
+2017-10-27 15:29:59,976: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : registered worker work [UMGR_SCHEDULING_PENDING]
+2017-10-27 15:29:59,976: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : alive check in term
+2017-10-27 15:29:59,976: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : START: umgr.scheduling.0.child register output UMGR_STAGING_INPUT_PENDING
+2017-10-27 15:29:59,976: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : using addr tcp://138.201.86.166:43241 for output umgr_staging_input_queue
+2017-10-27 15:29:59,979: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : registered output    : UMGR_STAGING_INPUT_PENDING : umgr_staging_input_queue : umgr.staging.input.queue.input.0000
+2017-10-27 15:29:59,979: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : alive check in term
+2017-10-27 15:29:59,979: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : START: umgr.scheduling.0.child register subscriber umgr.scheduling.0.child.subscriber._base_state_cb
+2017-10-27 15:29:59,979: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : using addr tcp://138.201.86.166:45309 for pubsub state_pubsub
+2017-10-27 15:29:59,981: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : parent name: umgr.scheduling.0.child.subscriber._base_state_cb
+2017-10-27 15:29:59,981: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : start thread
+2017-10-27 15:29:59,982: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : child name: umgr.scheduling.0.child.subscriber._base_state_cb.thread
+2017-10-27 15:29:59,982: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: INFO    : child (me) initializing
+2017-10-27 15:29:59,982: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : ru_initialize_common (NOOP)
+2017-10-27 15:29:59,982: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : ru_initialize_child (NOOP)
+2017-10-27 15:29:59,982: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: INFO    : send alive
+2017-10-27 15:29:59,982: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: INFO    : put message: [umgr.scheduling.0.child.subscriber._base_state_cb.thread] alive
+2017-10-27 15:29:59,983: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : INFO    : get msg: alive
+2017-10-27 15:29:59,983: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : ru_initialize_common (NOOP)
+2017-10-27 15:29:59,983: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : ru_initialize_parent (NOOP)
+2017-10-27 15:29:59,983: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : child thread umgr.scheduling.0.child.subscriber._base_state_cb started
+2017-10-27 15:29:59,984: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : umgr.scheduling.0.child registered state_pubsub subscriber umgr.scheduling.0.child.subscriber._base_state_cb
+2017-10-27 15:29:59,984: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : alive check in term
+2017-10-27 15:29:59,984: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : START: umgr.scheduling.0.child register subscriber umgr.scheduling.0.child.subscriber._base_command_cb
+2017-10-27 15:29:59,984: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : using addr tcp://138.201.86.166:41875 for pubsub control_pubsub
+2017-10-27 15:29:59,986: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : parent name: umgr.scheduling.0.child.subscriber._base_command_cb
+2017-10-27 15:29:59,986: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : start thread
+2017-10-27 15:29:59,987: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_command_cb: DEBUG   : child name: umgr.scheduling.0.child.subscriber._base_command_cb.thread
+2017-10-27 15:29:59,987: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_command_cb: INFO    : child (me) initializing
+2017-10-27 15:29:59,987: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_command_cb: DEBUG   : ru_initialize_common (NOOP)
+2017-10-27 15:29:59,987: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_command_cb: DEBUG   : ru_initialize_child (NOOP)
+2017-10-27 15:29:59,987: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_command_cb: INFO    : send alive
+2017-10-27 15:29:59,987: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_command_cb: INFO    : put message: [umgr.scheduling.0.child.subscriber._base_command_cb.thread] alive
+2017-10-27 15:29:59,988: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : INFO    : get msg: alive
+2017-10-27 15:29:59,988: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : ru_initialize_common (NOOP)
+2017-10-27 15:29:59,988: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : ru_initialize_parent (NOOP)
+2017-10-27 15:29:59,988: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : child thread umgr.scheduling.0.child.subscriber._base_command_cb started
+2017-10-27 15:29:59,988: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : umgr.scheduling.0.child registered control_pubsub subscriber umgr.scheduling.0.child.subscriber._base_command_cb
+2017-10-27 15:29:59,989: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : INFO    : child (me) initializing
+2017-10-27 15:29:59,989: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : parent name: umgr.scheduling.0.child.watch
+2017-10-27 15:29:59,989: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : start thread
+2017-10-27 15:29:59,989: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.watch: DEBUG   : child name: umgr.scheduling.0.child.watch.thread
+2017-10-27 15:29:59,989: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.watch: INFO    : child (me) initializing
+2017-10-27 15:29:59,989: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.watch: DEBUG   : ru_initialize_common (NOOP)
+2017-10-27 15:29:59,989: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.watch: DEBUG   : ru_initialize_child (NOOP)
+2017-10-27 15:29:59,989: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.watch: INFO    : send alive
+2017-10-27 15:29:59,990: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.watch: INFO    : put message: [umgr.scheduling.0.child.watch.thread] alive
+2017-10-27 15:29:59,990: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : INFO    : get msg: alive
+2017-10-27 15:29:59,990: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : ru_initialize_common (NOOP)
+2017-10-27 15:29:59,991: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : ru_initialize_parent (NOOP)
+2017-10-27 15:29:59,991: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : child thread umgr.scheduling.0.child.watch started
+2017-10-27 15:29:59,991: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : INFO    : child (me) is alive
+2017-10-27 15:29:59,991: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : INFO    : send alive
+2017-10-27 15:29:59,991: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : INFO    : send message: [umgr.scheduling.0.child] alive
+2017-10-27 15:30:00,335: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_command_cb: INFO    : scheduler command: add_pilots: {'pilots': [{'resource_sandbox': 'gsisftp://supermic.cct-lsu.xsede.org:2222/work/mha/radical.pilot.sandbox', 'resource_details': None, 'resource': 'xsede.supermic', 'description': {'queue': 'workq', 'resource': 'xsede.supermic', 'exit_on_error': False, 'candidate_hosts': None, 'project': 'TG-MCB090174', 'sandbox': None, 'cleanup': None, 'access_schema': 'gsissh', 'memory': None, 'cores': 64, 'runtime': 120}, 'pmgr': 'pmgr.0000', 'stdout': None, 'state': 'PMGR_LAUNCHING', 'sandbox': 'gsisftp://supermic.cct-lsu.xsede.org:2222/work/mha/radical.pilot.sandbox/rp.session.two.mingtha.017466.0004/pilot.0000/', 'session': 'rp.session.two.mingtha.017466.0004', 'log': None, 'stderr': None, 'client_sandbox': '/home/mingtha/repos/affinity_model/exp/gromacs_res_select', 'type': 'pilot', 'pilot_sandbox': 'gsisftp://supermic.cct-lsu.xsede.org:2222/work/mha/radical.pilot.sandbox/rp.session.two.mingtha.017466.0004/pilot.0000/', 'uid': 'pilot.0000'}], 'umgr': 'umgr.0000'}
+2017-10-27 15:30:00,335: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_command_cb: DEBUG   : added pilot: {'info': {}, 'state': None, 'role': 'added', 'pilot': {'resource_sandbox': 'gsisftp://supermic.cct-lsu.xsede.org:2222/work/mha/radical.pilot.sandbox', 'resource_details': None, 'resource': 'xsede.supermic', 'description': {'queue': 'workq', 'resource': 'xsede.supermic', 'exit_on_error': False, 'candidate_hosts': None, 'project': 'TG-MCB090174', 'sandbox': None, 'cleanup': None, 'access_schema': 'gsissh', 'memory': None, 'cores': 64, 'runtime': 120}, 'pmgr': 'pmgr.0000', 'stdout': None, 'state': 'PMGR_LAUNCHING', 'sandbox': 'gsisftp://supermic.cct-lsu.xsede.org:2222/work/mha/radical.pilot.sandbox/rp.session.two.mingtha.017466.0004/pilot.0000/', 'session': 'rp.session.two.mingtha.017466.0004', 'log': None, 'stderr': None, 'client_sandbox': '/home/mingtha/repos/affinity_model/exp/gromacs_res_select', 'type': 'pilot', 'pilot_sandbox': 'gsisftp://supermic.cct-lsu.xsede.org:2222/work/mha/radical.pilot.sandbox/rp.session.two.mingtha.017466.0004/pilot.0000/', 'uid': 'pilot.0000'}}
+2017-10-27 15:30:00,336: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_command_cb: DEBUG   : update pilot states for ['pilot.0000']
+2017-10-27 15:30:00,336: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_command_cb: DEBUG   : update pilot state: None -> ['NEW', 'PMGR_LAUNCHING_PENDING', 'PMGR_LAUNCHING']
+2017-10-27 15:30:00,453: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: INFO    : scheduler state_cb: update
+2017-10-27 15:30:00,454: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update pilots []
+2017-10-27 15:30:00,454: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update units  ['unit.000000', 'unit.000001', 'unit.000002', 'unit.000003']
+2017-10-27 15:30:00,454: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update pilot states for []
+2017-10-27 15:30:00,455: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : got unit (unit.000000)
+2017-10-27 15:30:00,455: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : got unit (unit.000001)
+2017-10-27 15:30:00,455: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : got unit (unit.000002)
+2017-10-27 15:30:00,455: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : got unit (unit.000003)
+2017-10-27 15:30:00,455: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : advance bulk size: 4 [False, True]
+2017-10-27 15:30:00,457: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : advance bulk size: 0 [False, True]
+2017-10-27 15:30:00,457: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : advance bulk size: 4 [True, True]
+2017-10-27 15:30:00,457: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : put bulk UMGR_STAGING_INPUT_PENDING: 4
+2017-10-27 15:30:00,458: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: INFO    : scheduler state_cb: update
+2017-10-27 15:30:00,458: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update pilots []
+2017-10-27 15:30:00,459: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update units  ['unit.000000', 'unit.000001', 'unit.000002', 'unit.000003']
+2017-10-27 15:30:00,459: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update pilot states for []
+2017-10-27 15:30:00,459: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: INFO    : scheduler state_cb: update
+2017-10-27 15:30:00,459: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update pilots []
+2017-10-27 15:30:00,459: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update units  []
+2017-10-27 15:30:00,459: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update pilot states for []
+2017-10-27 15:30:00,460: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: INFO    : scheduler state_cb: update
+2017-10-27 15:30:00,460: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update pilots []
+2017-10-27 15:30:00,460: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update units  ['unit.000000', 'unit.000001', 'unit.000002', 'unit.000003']
+2017-10-27 15:30:00,460: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update pilot states for []
+2017-10-27 15:30:00,460: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: INFO    : scheduler state_cb: update
+2017-10-27 15:30:00,461: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update pilots []
+2017-10-27 15:30:00,461: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update units  ['unit.000000', 'unit.000001', 'unit.000002', 'unit.000003']
+2017-10-27 15:30:00,461: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update pilot states for []
+2017-10-27 15:30:00,462: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: INFO    : scheduler state_cb: update
+2017-10-27 15:30:00,462: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update pilots []
+2017-10-27 15:30:00,462: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update units  ['unit.000000', 'unit.000001', 'unit.000002', 'unit.000003']
+2017-10-27 15:30:00,462: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update pilot states for []
+2017-10-27 15:30:21,845: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: INFO    : scheduler state_cb: update
+2017-10-27 15:30:21,845: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update pilots ['pilot.0000']
+2017-10-27 15:30:21,845: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update units  []
+2017-10-27 15:30:21,846: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update pilot states for ['pilot.0000']
+2017-10-27 15:30:21,846: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update pilot state: PMGR_LAUNCHING -> ['PMGR_ACTIVE_PENDING']
+2017-10-27 15:31:14,673: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: INFO    : scheduler state_cb: update
+2017-10-27 15:31:14,674: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update pilots ['pilot.0000']
+2017-10-27 15:31:14,674: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update units  []
+2017-10-27 15:31:14,674: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update pilot states for ['pilot.0000']
+2017-10-27 15:31:14,674: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update pilot state: PMGR_ACTIVE_PENDING -> ['PMGR_ACTIVE']
+2017-10-27 16:52:46,592: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: INFO    : scheduler state_cb: update
+2017-10-27 16:52:46,592: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update pilots []
+2017-10-27 16:52:46,593: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update units  ['unit.000001']
+2017-10-27 16:52:46,593: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update pilot states for []
+2017-10-27 16:52:46,594: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: INFO    : scheduler state_cb: update
+2017-10-27 16:52:46,595: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update pilots []
+2017-10-27 16:52:46,595: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update units  ['unit.000001']
+2017-10-27 16:52:46,595: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update pilot states for []
+2017-10-27 16:52:46,595: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: INFO    : scheduler state_cb: update
+2017-10-27 16:52:46,596: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update pilots []
+2017-10-27 16:52:46,596: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update units  ['unit.000001']
+2017-10-27 16:52:46,596: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update pilot states for []
+2017-10-27 16:53:12,195: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: INFO    : scheduler state_cb: update
+2017-10-27 16:53:12,195: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update pilots []
+2017-10-27 16:53:12,195: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update units  ['unit.000003']
+2017-10-27 16:53:12,196: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update pilot states for []
+2017-10-27 16:53:12,197: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: INFO    : scheduler state_cb: update
+2017-10-27 16:53:12,197: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update pilots []
+2017-10-27 16:53:12,198: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update units  ['unit.000003']
+2017-10-27 16:53:12,198: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update pilot states for []
+2017-10-27 16:53:12,198: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: INFO    : scheduler state_cb: update
+2017-10-27 16:53:12,198: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update pilots []
+2017-10-27 16:53:12,198: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update units  ['unit.000003']
+2017-10-27 16:53:12,199: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update pilot states for []
+2017-10-27 16:53:56,582: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: INFO    : scheduler state_cb: update
+2017-10-27 16:53:56,582: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update pilots []
+2017-10-27 16:53:56,582: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update units  ['unit.000002']
+2017-10-27 16:53:56,582: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update pilot states for []
+2017-10-27 16:53:56,583: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: INFO    : scheduler state_cb: update
+2017-10-27 16:53:56,583: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update pilots []
+2017-10-27 16:53:56,584: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update units  ['unit.000002']
+2017-10-27 16:53:56,584: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update pilot states for []
+2017-10-27 16:53:56,584: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: INFO    : scheduler state_cb: update
+2017-10-27 16:53:56,584: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update pilots []
+2017-10-27 16:53:56,584: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update units  ['unit.000002']
+2017-10-27 16:53:56,584: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update pilot states for []
+2017-10-27 17:01:18,710: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: INFO    : scheduler state_cb: update
+2017-10-27 17:01:18,711: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update pilots []
+2017-10-27 17:01:18,711: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update units  ['unit.000000']
+2017-10-27 17:01:18,711: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update pilot states for []
+2017-10-27 17:01:18,712: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: INFO    : scheduler state_cb: update
+2017-10-27 17:01:18,712: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update pilots []
+2017-10-27 17:01:18,713: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update units  ['unit.000000']
+2017-10-27 17:01:18,713: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update pilot states for []
+2017-10-27 17:01:18,713: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: INFO    : scheduler state_cb: update
+2017-10-27 17:01:18,713: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update pilots []
+2017-10-27 17:01:18,713: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update units  ['unit.000000']
+2017-10-27 17:01:18,713: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : update pilot states for []
+2017-10-27 17:01:48,295: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.watch: INFO    : recv message: 
+2017-10-27 17:01:48,295: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.watch: INFO    : message received: 
+2017-10-27 17:01:48,296: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.watch: WARNING : message received is an empty string, assuming parent closed endpoint
+2017-10-27 17:01:48,296: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.watch: INFO    : watcher closes
+2017-10-27 17:01:48,296: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.watch: INFO    : put message: [umgr.scheduling.0.child.watch.thread] work finished
+2017-10-27 17:01:48,296: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.watch: DEBUG   : ru_finalize_child (NOOP)
+2017-10-27 17:01:48,296: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.watch: DEBUG   : ru_finalize_common (NOOP)
+2017-10-27 17:01:48,296: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.watch: INFO    : put message: [umgr.scheduling.0.child.watch.thread] terminating
+2017-10-27 17:01:48,720: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : INFO    : finalize_child
+2017-10-27 17:01:48,720: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : WARNING : alive check: proc invalid - stop [False - True]
+2017-10-27 17:01:48,776: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : INFO    : stop umgr.scheduling.0.child (1388 : 1388 : MainThread) [radical.utils.process.RoundRobin.is_valid]
+2017-10-27 17:01:48,777: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : INFO    : parent stops child  1388 -> 1388 [umgr.scheduling.0.child]
+2017-10-27 17:01:48,777: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : INFO    : send message: [umgr.scheduling.0.child] STOP
+2017-10-27 17:01:48,777: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : WARNING : send failed ([Errno 9] Bad file descriptor) - terminate
+2017-10-27 17:01:48,777: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : INFO    : finalize_child
+2017-10-27 17:01:48,777: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : TERM : umgr.scheduling.0.child unregister subscriber umgr.scheduling.0.child.subscriber._base_command_cb
+2017-10-27 17:01:48,777: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : unregistered subscriber umgr.scheduling.0.child.subscriber._base_command_cb
+2017-10-27 17:01:48,777: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : TERM : umgr.scheduling.0.child unregister subscriber umgr.scheduling.0.child.subscriber._base_state_cb
+2017-10-27 17:01:48,777: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : unregistered subscriber umgr.scheduling.0.child.subscriber._base_state_cb
+2017-10-27 17:01:48,777: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : TERM : umgr.scheduling.0.child unregister output UMGR_STAGING_INPUT_PENDING
+2017-10-27 17:01:48,777: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : WARNING : input UMGR_STAGING_INPUT_PENDING is not registered
+2017-10-27 17:01:48,777: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : WARNING : input umgr.scheduling.0.child.work.UMGR_SCHEDULING_PENDING not registered
+2017-10-27 17:01:48,777: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : INFO    : finalize_child done
+2017-10-27 17:01:48,777: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : ru_finalize_common()
+2017-10-27 17:01:48,777: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : TERM : umgr.scheduling.0.child unregister publisher log_pubsub
+2017-10-27 17:01:48,778: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : unregistered publisher log_pubsub
+2017-10-27 17:01:48,778: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : TERM : umgr.scheduling.0.child unregister publisher state_pubsub
+2017-10-27 17:01:48,778: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : unregistered publisher state_pubsub
+2017-10-27 17:01:48,778: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : TERM : umgr.scheduling.0.child unregister publisher control_pubsub
+2017-10-27 17:01:48,779: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : unregistered publisher control_pubsub
+2017-10-27 17:01:48,779: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : umgr.scheduling.0.child close prof
+2017-10-27 17:01:48,851: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : INFO    : parent stops child
+2017-10-27 17:01:48,851: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : ru_finalize_parent (NOOP)
+2017-10-27 17:01:48,851: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : ru_finalize_common (NOOP)
+2017-10-27 17:01:48,852: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : INFO    : parent stops child
+2017-10-27 17:01:48,852: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : ru_finalize_parent (NOOP)
+2017-10-27 17:01:48,853: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._cancel_monitor_cb: DEBUG   : ru_finalize_child (NOOP)
+2017-10-27 17:01:48,853: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._cancel_monitor_cb: INFO    : put message: [umgr.scheduling.0.child.subscriber._cancel_monitor_cb.thread] terminating
+2017-10-27 17:01:48,854: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : INFO    : parent stops child
+2017-10-27 17:01:48,855: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : ru_finalize_parent (NOOP)
+2017-10-27 17:01:48,855: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: DEBUG   : ru_finalize_child (NOOP)
+2017-10-27 17:01:48,855: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_state_cb: INFO    : put message: [umgr.scheduling.0.child.subscriber._base_state_cb.thread] terminating
+2017-10-27 17:01:49,107: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : INFO    : parent stops child
+2017-10-27 17:01:49,107: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : ru_finalize_parent (NOOP)
+2017-10-27 17:01:49,108: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_command_cb: DEBUG   : ru_finalize_child (NOOP)
+2017-10-27 17:01:49,108: umgr.scheduling.0.child: umgr.scheduling.0               : umgr.scheduling.0.child.subscriber._base_command_cb: INFO    : put message: [umgr.scheduling.0.child.subscriber._base_command_cb.thread] terminating
+2017-10-27 17:01:49,358: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : WARNING : super umgr.scheduling.0.child is invalid
+2017-10-27 17:01:49,359: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : WARNING : component umgr.scheduling.0.child is invalid
+2017-10-27 17:01:49,361: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : INFO    : stop umgr.scheduling.0.child (1388 : 1388 : MainThread) [radical.pilot.utils.component.RoundRobin.is_valid]
+2017-10-27 17:01:49,361: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : TERM : umgr.scheduling.0.child unregister subscriber umgr.scheduling.0.child.subscriber._base_command_cb
+2017-10-27 17:01:49,361: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : WARNING : subscriber _base_command_cb is not registered
+2017-10-27 17:01:49,361: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : TERM : umgr.scheduling.0.child unregister subscriber umgr.scheduling.0.child.subscriber._base_state_cb
+2017-10-27 17:01:49,361: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : WARNING : subscriber _base_state_cb is not registered
+2017-10-27 17:01:49,361: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : TERM : umgr.scheduling.0.child unregister output UMGR_STAGING_INPUT_PENDING
+2017-10-27 17:01:49,362: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : WARNING : input UMGR_STAGING_INPUT_PENDING is not registered
+2017-10-27 17:01:49,362: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : WARNING : input umgr.scheduling.0.child.work.UMGR_SCHEDULING_PENDING not registered
+2017-10-27 17:01:49,362: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : INFO    : finalize_child done
+2017-10-27 17:01:49,362: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : ru_finalize_common()
+2017-10-27 17:01:49,362: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : WARNING : publisher log_pubsub is not registered
+2017-10-27 17:01:49,362: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : WARNING : publisher state_pubsub is not registered
+2017-10-27 17:01:49,362: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : WARNING : publisher control_pubsub is not registered
+2017-10-27 17:01:49,362: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : DEBUG   : umgr.scheduling.0.child close prof
+2017-10-27 17:01:49,363: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : INFO    : send message: [umgr.scheduling.0.child] terminating
+2017-10-27 17:01:49,363: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : WARNING : send failed ([Errno 9] Bad file descriptor) - terminate
+2017-10-27 17:01:49,363: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : INFO    : parent stops child
+2017-10-27 17:01:49,363: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : INFO    : parent stops child
+2017-10-27 17:01:49,363: umgr.scheduling.0.child: umgr.scheduling.0               : MainThread     : INFO    : parent stops child

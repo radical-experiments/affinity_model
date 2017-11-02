@@ -1,0 +1,698 @@
+{
+    "pilot": [
+        {
+            "_id": "pilot.0000", 
+            "cfg": {
+                "agent_launch_method": "SSH", 
+                "bridges": {
+                    "agent_executing_queue": {
+                        "bulk_size": 0, 
+                        "log_level": "debug", 
+                        "stall_hwm": 1
+                    }, 
+                    "agent_reschedule_pubsub": {
+                        "bulk_size": 0, 
+                        "log_level": "debug", 
+                        "stall_hwm": 1
+                    }, 
+                    "agent_scheduling_queue": {
+                        "bulk_size": 0, 
+                        "log_level": "debug", 
+                        "stall_hwm": 1
+                    }, 
+                    "agent_staging_input_queue": {
+                        "bulk_size": 0, 
+                        "log_level": "debug", 
+                        "stall_hwm": 1
+                    }, 
+                    "agent_staging_output_queue": {
+                        "bulk_size": 0, 
+                        "log_level": "debug", 
+                        "stall_hwm": 1
+                    }, 
+                    "agent_unschedule_pubsub": {
+                        "bulk_size": 0, 
+                        "log_level": "debug", 
+                        "stall_hwm": 1
+                    }, 
+                    "control_pubsub": {
+                        "bulk_size": 0, 
+                        "log_level": "debug", 
+                        "stall_hwm": 1
+                    }, 
+                    "log_pubsub": {
+                        "bulk_size": 0, 
+                        "log_level": "debug", 
+                        "stall_hwm": 1
+                    }, 
+                    "state_pubsub": {
+                        "bulk_size": 0, 
+                        "log_level": "debug", 
+                        "stall_hwm": 1
+                    }
+                }, 
+                "bulk_collection_size": 100, 
+                "bulk_collection_time": 1.0, 
+                "components": {
+                    "AgentExecutingComponent": {
+                        "count": 1
+                    }, 
+                    "AgentSchedulingComponent": {
+                        "count": 1
+                    }, 
+                    "AgentStagingInputComponent": {
+                        "count": 1
+                    }, 
+                    "AgentStagingOutputComponent": {
+                        "count": 1
+                    }, 
+                    "UpdateWorker": {
+                        "count": 1
+                    }
+                }, 
+                "cores": 80, 
+                "cores_per_node": 20, 
+                "cu_post_exec": null, 
+                "cu_pre_exec": null, 
+                "cu_tmp": null, 
+                "db_poll_sleeptime": 1.0, 
+                "dburl": "mongodb://mingtaiha:mingtaiha@ds053838.mlab.com:53838/hicomb", 
+                "debug": 10, 
+                "export_to_cu": null, 
+                "logdir": ".", 
+                "lrms": "TORQUE", 
+                "max_io_loglength": 1024, 
+                "mode": "shared", 
+                "mpi_launch_method": "MPIEXEC", 
+                "owner": "agent_0", 
+                "pilot_id": "pilot.0000", 
+                "pilot_sandbox": "/work/mha/radical.pilot.sandbox/rp.session.two.mingtha.017466.0006/pilot.0000/", 
+                "resource_cfg": {
+                    "agent_launch_method": "SSH", 
+                    "agent_scheduler": "CONTINUOUS", 
+                    "agent_spawner": "POPEN", 
+                    "cores_per_node": "20", 
+                    "default_queue": "workq", 
+                    "default_remote_workdir": "/work/$USER", 
+                    "description": "SuperMIC (pronounced 'Super Mick') is Louisiana State University's (LSU) newest supercomputer funded by the National Science Foundation's (NSF) Major Research Instrumentation (MRI) award to the Center for Computation & Technology. (https://portal.xsede.org/lsu-supermic)", 
+                    "filesystem_endpoint": "gsisftp://supermic.cct-lsu.xsede.org:2222/", 
+                    "gsissh": {
+                        "filesystem_endpoint": "gsisftp://supermic.cct-lsu.xsede.org:2222/", 
+                        "job_manager_endpoint": "torque+gsissh://supermic.cct-lsu.xsede.org:2222/"
+                    }, 
+                    "job_manager_endpoint": "torque+gsissh://supermic.cct-lsu.xsede.org:2222/", 
+                    "label": "xsede.supermic_ssh", 
+                    "lrms": "TORQUE", 
+                    "mpi_launch_method": "MPIEXEC", 
+                    "notes": "Partially allocated through XSEDE. Primary access through GSISSH. Allows SSH key authentication too.", 
+                    "pre_bootstrap_1": [
+                        "module load python/2.7.7/GCC-4.9.0"
+                    ], 
+                    "python_dist": "default", 
+                    "rp_version": "local", 
+                    "schemas": [
+                        "gsissh", 
+                        "ssh"
+                    ], 
+                    "ssh": {
+                        "filesystem_endpoint": "sftp://supermic.cct-lsu.xsede.org/", 
+                        "job_manager_endpoint": "torque+ssh://supermic.cct-lsu.xsede.org/"
+                    }, 
+                    "task_launch_method": "SSH", 
+                    "valid_roots": [
+                        "/work"
+                    ], 
+                    "virtenv_mode": "create"
+                }, 
+                "resource_sandbox": "/work/mha/radical.pilot.sandbox", 
+                "runtime": 120, 
+                "scheduler": "CONTINUOUS", 
+                "session_id": "rp.session.two.mingtha.017466.0006", 
+                "session_sandbox": "/work/mha/radical.pilot.sandbox/rp.session.two.mingtha.017466.0006", 
+                "spawner": "POPEN", 
+                "staging_area": "staging_area", 
+                "staging_schema": "staging", 
+                "target": "local", 
+                "task_launch_method": "SSH"
+            }, 
+            "client_sandbox": "/home/mingtha/repos/affinity_model/exp/gromacs_res_select", 
+            "cmd": [], 
+            "control": "pmgr", 
+            "description": {
+                "access_schema": "gsissh", 
+                "candidate_hosts": null, 
+                "cleanup": null, 
+                "cores": 64, 
+                "exit_on_error": false, 
+                "memory": null, 
+                "project": "TG-MCB090174", 
+                "queue": "workq", 
+                "resource": "xsede.supermic", 
+                "runtime": 120, 
+                "sandbox": null
+            }, 
+            "log": null, 
+            "pilot_sandbox": "gsisftp://supermic.cct-lsu.xsede.org:2222/work/mha/radical.pilot.sandbox/rp.session.two.mingtha.017466.0006/pilot.0000/", 
+            "pmgr": "pmgr.0000", 
+            "resource": "xsede.supermic", 
+            "resource_details": {
+                "lm_detail": null, 
+                "lm_info": null
+            }, 
+            "resource_sandbox": "gsisftp://supermic.cct-lsu.xsede.org:2222/work/mha/radical.pilot.sandbox", 
+            "sandbox": "gsisftp://supermic.cct-lsu.xsede.org:2222/work/mha/radical.pilot.sandbox/rp.session.two.mingtha.017466.0006/pilot.0000/", 
+            "session": "rp.session.two.mingtha.017466.0006", 
+            "state": "PMGR_ACTIVE", 
+            "states": [
+                "NEW", 
+                "PMGR_LAUNCHING_PENDING", 
+                "PMGR_LAUNCHING", 
+                "PMGR_ACTIVE_PENDING", 
+                "PMGR_ACTIVE", 
+                "PMGR_ACTIVE"
+            ], 
+            "stderr": null, 
+            "stdout": null, 
+            "type": "pilot", 
+            "uid": "pilot.0000", 
+            "unit_ids": [
+                "unit.000002", 
+                "unit.000001", 
+                "unit.000003", 
+                "unit.000000"
+            ]
+        }
+    ], 
+    "pmgr": [
+        {
+            "_id": "pmgr.0000", 
+            "cfg": {
+                "bridges": {
+                    "control_pubsub": {
+                        "addr_in": "tcp://138.201.86.166:40804", 
+                        "addr_out": "tcp://138.201.86.166:39111", 
+                        "bulk_size": 0, 
+                        "log_level": "debug", 
+                        "stall_hwm": 1
+                    }, 
+                    "log_pubsub": {
+                        "addr_in": "tcp://138.201.86.166:46020", 
+                        "addr_out": "tcp://138.201.86.166:37460", 
+                        "bulk_size": 0, 
+                        "log_level": "debug", 
+                        "stall_hwm": 1
+                    }, 
+                    "pmgr_launching_queue": {
+                        "addr_in": "tcp://138.201.86.166:33128", 
+                        "addr_out": "tcp://138.201.86.166:36679", 
+                        "bulk_size": 0, 
+                        "log_level": "debug", 
+                        "stall_hwm": 1
+                    }, 
+                    "state_pubsub": {
+                        "addr_in": "tcp://138.201.86.166:43490", 
+                        "addr_out": "tcp://138.201.86.166:44893", 
+                        "bulk_size": 0, 
+                        "log_level": "debug", 
+                        "stall_hwm": 1
+                    }
+                }, 
+                "components": {
+                    "PMGRLaunchingComponent": {
+                        "count": 1
+                    }
+                }, 
+                "db_poll_sleeptime": 1.0, 
+                "owner": "pmgr.0000", 
+                "uid": "pmgr.0000"
+            }, 
+            "type": "pmgr", 
+            "uid": "pmgr.0000"
+        }
+    ], 
+    "session": {
+        "_id": "rp.session.two.mingtha.017466.0006", 
+        "cfg": {
+            "bridges": {
+                "control_pubsub": {
+                    "bulk_size": 0, 
+                    "log_level": "debug", 
+                    "stall_hwm": 1
+                }, 
+                "log_pubsub": {
+                    "bulk_size": 0, 
+                    "log_level": "debug", 
+                    "stall_hwm": 1
+                }, 
+                "state_pubsub": {
+                    "bulk_size": 0, 
+                    "log_level": "debug", 
+                    "stall_hwm": 1
+                }
+            }, 
+            "components": {
+                "UpdateWorker": {
+                    "count": 1
+                }
+            }, 
+            "dburl": "mongodb://mingtaiha:mingtaiha@ds053838.mlab.com:53838/hicomb", 
+            "debug": "DEBUG", 
+            "default_dburl": "mongodb://rp:rp@ds015335.mlab.com:15335/rp", 
+            "logdir": "/home/mingtha/repos/affinity_model/exp/gromacs_res_select/rp.session.two.mingtha.017466.0006", 
+            "owner": "rp.session.two.mingtha.017466.0006", 
+            "session_id": "rp.session.two.mingtha.017466.0006"
+        }, 
+        "connected": 1509121660.09572, 
+        "created": 1509121659.581688, 
+        "type": "session", 
+        "uid": "rp.session.two.mingtha.017466.0006"
+    }, 
+    "umgr": [
+        {
+            "_id": "umgr.0000", 
+            "cfg": {
+                "bridges": {
+                    "control_pubsub": {
+                        "addr_in": "tcp://138.201.86.166:40804", 
+                        "addr_out": "tcp://138.201.86.166:39111", 
+                        "bulk_size": 0, 
+                        "log_level": "debug", 
+                        "stall_hwm": 1
+                    }, 
+                    "log_pubsub": {
+                        "addr_in": "tcp://138.201.86.166:46020", 
+                        "addr_out": "tcp://138.201.86.166:37460", 
+                        "bulk_size": 0, 
+                        "log_level": "debug", 
+                        "stall_hwm": 1
+                    }, 
+                    "state_pubsub": {
+                        "addr_in": "tcp://138.201.86.166:43490", 
+                        "addr_out": "tcp://138.201.86.166:44893", 
+                        "bulk_size": 0, 
+                        "log_level": "debug", 
+                        "stall_hwm": 1
+                    }, 
+                    "umgr_reschedule_pubsub": {
+                        "addr_in": "tcp://138.201.86.166:39775", 
+                        "addr_out": "tcp://138.201.86.166:44692", 
+                        "bulk_size": 0, 
+                        "log_level": "debug", 
+                        "stall_hwm": 1
+                    }, 
+                    "umgr_scheduling_queue": {
+                        "addr_in": "tcp://138.201.86.166:35349", 
+                        "addr_out": "tcp://138.201.86.166:39592", 
+                        "bulk_size": 0, 
+                        "log_level": "debug", 
+                        "stall_hwm": 1
+                    }, 
+                    "umgr_staging_input_queue": {
+                        "addr_in": "tcp://138.201.86.166:36915", 
+                        "addr_out": "tcp://138.201.86.166:39897", 
+                        "bulk_size": 0, 
+                        "log_level": "debug", 
+                        "stall_hwm": 1
+                    }, 
+                    "umgr_staging_output_queue": {
+                        "addr_in": "tcp://138.201.86.166:46816", 
+                        "addr_out": "tcp://138.201.86.166:41066", 
+                        "bulk_size": 0, 
+                        "log_level": "debug", 
+                        "stall_hwm": 1
+                    }, 
+                    "umgr_unschedule_pubsub": {
+                        "addr_in": "tcp://138.201.86.166:37030", 
+                        "addr_out": "tcp://138.201.86.166:36944", 
+                        "bulk_size": 0, 
+                        "log_level": "debug", 
+                        "stall_hwm": 1
+                    }
+                }, 
+                "bulk_collection_size": 100, 
+                "bulk_collection_time": 1.0, 
+                "components": {
+                    "UMGRSchedulingComponent": {
+                        "count": 1
+                    }, 
+                    "UMGRStagingInputComponent": {
+                        "count": 1
+                    }, 
+                    "UMGRStagingOutputComponent": {
+                        "count": 1
+                    }
+                }, 
+                "db_poll_sleeptime": 1.0, 
+                "owner": "umgr.0000", 
+                "scheduler": "round_robin", 
+                "uid": "umgr.0000"
+            }, 
+            "type": "umgr", 
+            "uid": "umgr.0000"
+        }
+    ], 
+    "unit": [
+        {
+            "_id": "unit.000002", 
+            "client_sandbox": "/home/mingtha/repos/affinity_model/exp/gromacs_res_select", 
+            "cmd": [], 
+            "control": null, 
+            "description": {
+                "arguments": null, 
+                "cleanup": false, 
+                "cores": 20, 
+                "environment": null, 
+                "executable": "/home/mha/bin/gromacs_pinned.sh", 
+                "input_staging": [], 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": [], 
+                "pilot": null, 
+                "post_exec": null, 
+                "pre_exec": [
+                    "/bin/true"
+                ], 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exit_code": 0, 
+            "name": null, 
+            "opaque_slots": {
+                "lm_info": {}, 
+                "task_offsets": 40, 
+                "task_slots": [
+                    "smic074:0", 
+                    "smic074:1", 
+                    "smic074:2", 
+                    "smic074:3", 
+                    "smic074:4", 
+                    "smic074:5", 
+                    "smic074:6", 
+                    "smic074:7", 
+                    "smic074:8", 
+                    "smic074:9", 
+                    "smic074:10", 
+                    "smic074:11", 
+                    "smic074:12", 
+                    "smic074:13", 
+                    "smic074:14", 
+                    "smic074:15", 
+                    "smic074:16", 
+                    "smic074:17", 
+                    "smic074:18", 
+                    "smic074:19"
+                ]
+            }, 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://supermic.cct-lsu.xsede.org:2222/work/mha/radical.pilot.sandbox/rp.session.two.mingtha.017466.0006/pilot.0000/", 
+            "resource_sandbox": "gsisftp://supermic.cct-lsu.xsede.org:2222/work/mha/radical.pilot.sandbox", 
+            "state": "DONE", 
+            "states": [
+                "NEW", 
+                "UMGR_SCHEDULING_PENDING", 
+                "UMGR_SCHEDULING", 
+                "UMGR_STAGING_INPUT_PENDING", 
+                "UMGR_STAGING_INPUT", 
+                "AGENT_STAGING_INPUT_PENDING", 
+                "AGENT_STAGING_INPUT", 
+                "AGENT_SCHEDULING_PENDING", 
+                "AGENT_SCHEDULING", 
+                "AGENT_EXECUTING_PENDING", 
+                "AGENT_EXECUTING", 
+                "AGENT_STAGING_OUTPUT_PENDING", 
+                "AGENT_STAGING_OUTPUT", 
+                "UMGR_STAGING_OUTPUT_PENDING", 
+                "UMGR_STAGING_OUTPUT_PENDING", 
+                "UMGR_STAGING_OUTPUT", 
+                "DONE"
+            ], 
+            "stderr": "", 
+            "stderr_file": "/worka/work/mha/radical.pilot.sandbox/rp.session.two.mingtha.017466.0006/pilot.0000/unit.000002/STDERR", 
+            "stdout": "", 
+            "stdout_file": "/worka/work/mha/radical.pilot.sandbox/rp.session.two.mingtha.017466.0006/pilot.0000/unit.000002/STDOUT", 
+            "target_state": "DONE", 
+            "type": "unit", 
+            "uid": "unit.000002", 
+            "umgr": "umgr.0000", 
+            "unit_sandbox": "gsisftp://supermic.cct-lsu.xsede.org:2222/work/mha/radical.pilot.sandbox/rp.session.two.mingtha.017466.0006/pilot.0000//unit.000002/"
+        }, 
+        {
+            "_id": "unit.000001", 
+            "client_sandbox": "/home/mingtha/repos/affinity_model/exp/gromacs_res_select", 
+            "cmd": [], 
+            "control": null, 
+            "description": {
+                "arguments": null, 
+                "cleanup": false, 
+                "cores": 20, 
+                "environment": null, 
+                "executable": "/home/mha/bin/gromacs_pinned.sh", 
+                "input_staging": [], 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": [], 
+                "pilot": null, 
+                "post_exec": null, 
+                "pre_exec": [
+                    "/bin/true"
+                ], 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exit_code": 0, 
+            "name": null, 
+            "opaque_slots": {
+                "lm_info": {}, 
+                "task_offsets": 20, 
+                "task_slots": [
+                    "smic073:0", 
+                    "smic073:1", 
+                    "smic073:2", 
+                    "smic073:3", 
+                    "smic073:4", 
+                    "smic073:5", 
+                    "smic073:6", 
+                    "smic073:7", 
+                    "smic073:8", 
+                    "smic073:9", 
+                    "smic073:10", 
+                    "smic073:11", 
+                    "smic073:12", 
+                    "smic073:13", 
+                    "smic073:14", 
+                    "smic073:15", 
+                    "smic073:16", 
+                    "smic073:17", 
+                    "smic073:18", 
+                    "smic073:19"
+                ]
+            }, 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://supermic.cct-lsu.xsede.org:2222/work/mha/radical.pilot.sandbox/rp.session.two.mingtha.017466.0006/pilot.0000/", 
+            "resource_sandbox": "gsisftp://supermic.cct-lsu.xsede.org:2222/work/mha/radical.pilot.sandbox", 
+            "state": "DONE", 
+            "states": [
+                "NEW", 
+                "UMGR_SCHEDULING_PENDING", 
+                "UMGR_SCHEDULING", 
+                "UMGR_STAGING_INPUT_PENDING", 
+                "UMGR_STAGING_INPUT", 
+                "AGENT_STAGING_INPUT_PENDING", 
+                "AGENT_STAGING_INPUT", 
+                "AGENT_SCHEDULING_PENDING", 
+                "AGENT_SCHEDULING", 
+                "AGENT_EXECUTING_PENDING", 
+                "AGENT_EXECUTING", 
+                "AGENT_STAGING_OUTPUT_PENDING", 
+                "AGENT_STAGING_OUTPUT", 
+                "UMGR_STAGING_OUTPUT_PENDING", 
+                "UMGR_STAGING_OUTPUT_PENDING", 
+                "UMGR_STAGING_OUTPUT", 
+                "DONE"
+            ], 
+            "stderr": "", 
+            "stderr_file": "/worka/work/mha/radical.pilot.sandbox/rp.session.two.mingtha.017466.0006/pilot.0000/unit.000001/STDERR", 
+            "stdout": "", 
+            "stdout_file": "/worka/work/mha/radical.pilot.sandbox/rp.session.two.mingtha.017466.0006/pilot.0000/unit.000001/STDOUT", 
+            "target_state": "DONE", 
+            "type": "unit", 
+            "uid": "unit.000001", 
+            "umgr": "umgr.0000", 
+            "unit_sandbox": "gsisftp://supermic.cct-lsu.xsede.org:2222/work/mha/radical.pilot.sandbox/rp.session.two.mingtha.017466.0006/pilot.0000//unit.000001/"
+        }, 
+        {
+            "_id": "unit.000003", 
+            "client_sandbox": "/home/mingtha/repos/affinity_model/exp/gromacs_res_select", 
+            "cmd": [], 
+            "control": null, 
+            "description": {
+                "arguments": null, 
+                "cleanup": false, 
+                "cores": 20, 
+                "environment": null, 
+                "executable": "/home/mha/bin/gromacs_pinned.sh", 
+                "input_staging": [], 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": [], 
+                "pilot": null, 
+                "post_exec": null, 
+                "pre_exec": [
+                    "/bin/true"
+                ], 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exit_code": 0, 
+            "name": null, 
+            "opaque_slots": {
+                "lm_info": {}, 
+                "task_offsets": 60, 
+                "task_slots": [
+                    "smic080:0", 
+                    "smic080:1", 
+                    "smic080:2", 
+                    "smic080:3", 
+                    "smic080:4", 
+                    "smic080:5", 
+                    "smic080:6", 
+                    "smic080:7", 
+                    "smic080:8", 
+                    "smic080:9", 
+                    "smic080:10", 
+                    "smic080:11", 
+                    "smic080:12", 
+                    "smic080:13", 
+                    "smic080:14", 
+                    "smic080:15", 
+                    "smic080:16", 
+                    "smic080:17", 
+                    "smic080:18", 
+                    "smic080:19"
+                ]
+            }, 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://supermic.cct-lsu.xsede.org:2222/work/mha/radical.pilot.sandbox/rp.session.two.mingtha.017466.0006/pilot.0000/", 
+            "resource_sandbox": "gsisftp://supermic.cct-lsu.xsede.org:2222/work/mha/radical.pilot.sandbox", 
+            "state": "DONE", 
+            "states": [
+                "NEW", 
+                "UMGR_SCHEDULING_PENDING", 
+                "UMGR_SCHEDULING", 
+                "UMGR_STAGING_INPUT_PENDING", 
+                "UMGR_STAGING_INPUT", 
+                "AGENT_STAGING_INPUT_PENDING", 
+                "AGENT_STAGING_INPUT", 
+                "AGENT_SCHEDULING_PENDING", 
+                "AGENT_SCHEDULING", 
+                "AGENT_EXECUTING_PENDING", 
+                "AGENT_EXECUTING", 
+                "AGENT_STAGING_OUTPUT_PENDING", 
+                "AGENT_STAGING_OUTPUT", 
+                "UMGR_STAGING_OUTPUT_PENDING", 
+                "UMGR_STAGING_OUTPUT_PENDING", 
+                "UMGR_STAGING_OUTPUT", 
+                "DONE"
+            ], 
+            "stderr": "", 
+            "stderr_file": "/worka/work/mha/radical.pilot.sandbox/rp.session.two.mingtha.017466.0006/pilot.0000/unit.000003/STDERR", 
+            "stdout": "", 
+            "stdout_file": "/worka/work/mha/radical.pilot.sandbox/rp.session.two.mingtha.017466.0006/pilot.0000/unit.000003/STDOUT", 
+            "target_state": "DONE", 
+            "type": "unit", 
+            "uid": "unit.000003", 
+            "umgr": "umgr.0000", 
+            "unit_sandbox": "gsisftp://supermic.cct-lsu.xsede.org:2222/work/mha/radical.pilot.sandbox/rp.session.two.mingtha.017466.0006/pilot.0000//unit.000003/"
+        }, 
+        {
+            "_id": "unit.000000", 
+            "client_sandbox": "/home/mingtha/repos/affinity_model/exp/gromacs_res_select", 
+            "cmd": [], 
+            "control": "umgr", 
+            "description": {
+                "arguments": null, 
+                "cleanup": false, 
+                "cores": 20, 
+                "environment": null, 
+                "executable": "/home/mha/bin/gromacs_pinned.sh", 
+                "input_staging": [], 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": [], 
+                "pilot": null, 
+                "post_exec": null, 
+                "pre_exec": [
+                    "/bin/true"
+                ], 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exit_code": 0, 
+            "name": null, 
+            "opaque_slots": {
+                "lm_info": {}, 
+                "task_offsets": 0, 
+                "task_slots": [
+                    "smic049:0", 
+                    "smic049:1", 
+                    "smic049:2", 
+                    "smic049:3", 
+                    "smic049:4", 
+                    "smic049:5", 
+                    "smic049:6", 
+                    "smic049:7", 
+                    "smic049:8", 
+                    "smic049:9", 
+                    "smic049:10", 
+                    "smic049:11", 
+                    "smic049:12", 
+                    "smic049:13", 
+                    "smic049:14", 
+                    "smic049:15", 
+                    "smic049:16", 
+                    "smic049:17", 
+                    "smic049:18", 
+                    "smic049:19"
+                ]
+            }, 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://supermic.cct-lsu.xsede.org:2222/work/mha/radical.pilot.sandbox/rp.session.two.mingtha.017466.0006/pilot.0000/", 
+            "resource_sandbox": "gsisftp://supermic.cct-lsu.xsede.org:2222/work/mha/radical.pilot.sandbox", 
+            "state": "UMGR_STAGING_OUTPUT_PENDING", 
+            "states": [
+                "NEW", 
+                "UMGR_SCHEDULING_PENDING", 
+                "UMGR_SCHEDULING", 
+                "UMGR_STAGING_INPUT_PENDING", 
+                "UMGR_STAGING_INPUT", 
+                "AGENT_STAGING_INPUT_PENDING", 
+                "AGENT_STAGING_INPUT", 
+                "AGENT_SCHEDULING_PENDING", 
+                "AGENT_SCHEDULING", 
+                "AGENT_EXECUTING_PENDING", 
+                "AGENT_EXECUTING", 
+                "AGENT_STAGING_OUTPUT_PENDING", 
+                "AGENT_STAGING_OUTPUT", 
+                "UMGR_STAGING_OUTPUT_PENDING", 
+                "UMGR_STAGING_OUTPUT_PENDING"
+            ], 
+            "stderr": "", 
+            "stderr_file": "/worka/work/mha/radical.pilot.sandbox/rp.session.two.mingtha.017466.0006/pilot.0000/unit.000000/STDERR", 
+            "stdout": "", 
+            "stdout_file": "/worka/work/mha/radical.pilot.sandbox/rp.session.two.mingtha.017466.0006/pilot.0000/unit.000000/STDOUT", 
+            "target_state": "DONE", 
+            "type": "unit", 
+            "uid": "unit.000000", 
+            "umgr": "umgr.0000", 
+            "unit_sandbox": "gsisftp://supermic.cct-lsu.xsede.org:2222/work/mha/radical.pilot.sandbox/rp.session.two.mingtha.017466.0006/pilot.0000//unit.000000/"
+        }
+    ]
+}
