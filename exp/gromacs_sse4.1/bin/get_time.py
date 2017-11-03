@@ -13,8 +13,11 @@ with open(input_path+"/time.txt") as f_in:
 
     for line in f_in:
         col_split = line.split(':')
-        timesteps = int(col_split[0].split('_')[-1].split('.')[0])
-        run_time = float(col_split[1].lstrip().split(' ')[0])
+        #timesteps = int(col_split[0].split('_')[-1].split('.')[0])
+        timesteps = int(col_split[0].split('/')[0].split('_')[-1])
+        #run_time = float(col_split[1].lstrip().split(' ')[0])
+        print col_split
+        run_time = float([elem for elem in col_split[2].lstrip().split(' ') if elem][1])
         print timesteps, run_time
 
         if timesteps > 50000 and run_time < 600.0:
@@ -24,7 +27,7 @@ with open(input_path+"/time.txt") as f_in:
         else:
             input_dict[timesteps].append(run_time)
 
-pprint(input_dict)
+#pprint(input_dict)
 
 
 with open("time__"+resource+".csv", "w") as f_out:
@@ -33,5 +36,5 @@ with open("time__"+resource+".csv", "w") as f_out:
     for timestep, runtime in input_dict.iteritems():
         row = [timestep]
         row.extend(runtime)
-        pprint(row)
+        #pprint(row)
         writer.writerow(row)
