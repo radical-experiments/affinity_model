@@ -1,4 +1,5 @@
 import sys
+import csv
 from pprint import pprint
 from copy import deepcopy
 
@@ -80,11 +81,21 @@ def remove_tx_olap_from_tq(tx_ranges, tq_ranges):
 
 if __name__ == "__main__":
 
+    # Go to directory containing the directory of the profiles, then run this script,
+    # where the argument is the name of the directory containing the profiles, but with
+    # with no slash at the end
+
     src = sys.argv[1]
     session = ra.Session(src, 'radical.pilot')
 
     relationships = session.describe('relations', ['pilot', 'unit'])
-    #pprint(relationships)
+    pprint(relationships)
+
+    rev_relationships = dict()
+    for pilot_id, unit_list in relationships.iteritems():
+        for unit_id in unit_list:
+            rev_relationships[unit_id] = pilot_id
+    pprint(rev_relationships)
 
     pilots = session.filter(etype='pilot', inplace=False)
     pilot_info = dict()
@@ -95,15 +106,16 @@ if __name__ == "__main__":
             wait_end  = pilot.timestamps(rp.PMGR_ACTIVE)[0]
             pilot_info[pilot.uid] = { 'resource' : pilot.description['resource'], 
                                       'hostid' : pilot.cfg['hostid'],
-                                      'wait_period' : [wait_start, wait_end]}
+                                      'wait_period' : [wait_start, wait_end],
+                                      'units' : relationships[pilot.uid]}
             pilot_queue_times.append([wait_start, wait_end])
         except:
-            pilot_info[pilot.uid] = { 'resource' : pilot.description['resource'], 
+            pilot_info[pilot.uid] = { 'resource' : None, 
                                       'hostid' : pilot.cfg['hostid'],
-                                       'wait_period' : [-1, -1]}
+                                      'wait_period' : [-1, -1]}
     pilot_queue_times = sorted(pilot_queue_times, key=lambda x: x[0])
-    #pprint(pilot_info)
-    pprint(pilot_queue_times)
+    pprint(pilot_info)
+    #pprint(pilot_queue_times)
     collapsed_queue_times = ranges(pilot_queue_times)
 
     units = session.filter(etype='unit', inplace=False)
@@ -114,16 +126,20 @@ if __name__ == "__main__":
             exec_start = unit.timestamps(rp.AGENT_EXECUTING)[0]
             exec_end  = unit.timestamps(rp.AGENT_STAGING_OUTPUT_PENDING)[0]
             #duration_exec = unit.duration([rp.AGENT_EXECUTING, rp.AGENT_STAGING_OUTPUT_PENDING])
-            unit_info[unit.uid] = { 'exec_period' : [exec_start, exec_end]}
             if (exec_end - exec_start) > 600.0:
+                unit_info[unit.uid] = { 'exec_period' : [exec_start, exec_end],
+                                        'pilot_id' : rev_relationships[unit.uid],
+                                        'resource' : pilot_info[rev_relationships[unit.uid]]['resource'],
+                                        'wait_period' : pilot_info[rev_relationships[unit.uid]]['wait_period']}
                 unit_exec_times.append([exec_start, exec_end])
         except:
             unit_info[unit.uid] = { 'exec_period' : [-1, -1]}
     
     #unit_exec_times = sorted(unit_exec_times, key=lambda x: x[0])
     print
-    #pprint(unit_info)
-    pprint(unit_exec_times)
+
+    pprint(unit_info)
+    #pprint(unit_exec_times)
     collapsed_exec_times = ranges(unit_exec_times)
 
     # Some pilots may wait hang, and never execute a unit. This doesn't happen often, but
@@ -142,3 +158,24 @@ if __name__ == "__main__":
     red_queue_range = remove_tx_olap_from_tq(collapsed_exec_times, collapsed_queue_times)
     print red_queue_range, collapsed_exec_times
     print "{},{}".format(sum_all_ranges(red_queue_range), sum_all_ranges(collapsed_exec_times))
+    
+    session_name = "_".join(src.split('/')[-1].split('.')[-2:])
+
+    with open('timestamps_task_'+session_name+'.csv', 'w') as f:
+        writer = csv.writer(f)
+        for unit_id, unit_inf in unit_info.iteritems():
+            if unit_inf['exec_period'][0] != -1:
+                row = [unit_id, unit_inf['wait_period'][0], unit_inf['wait_period'][1], \
+                       unit_inf['exec_period'][0], unit_inf['exec_period'][1], \
+                       unit_inf['resource']]
+                writer.writerow(row)
+
+    with open('ttc_task_'+session_name+'.csv', 'w') as f:
+        writer = csv.writer(f)
+        for unit_id, unit_inf in unit_info.iteritems():
+            print unit_inf
+            if unit_inf['exec_period'][0] != -1:
+                row = [unit_id, (unit_inf['wait_period'][1] - unit_inf['wait_period'][0]), \
+                       (unit_inf['exec_period'][1] - unit_inf['exec_period'][0]), \
+                       unit_inf['resource']]
+                writer.writerow(row)
